@@ -1,0 +1,87 @@
+{
+  "builtAt": "2026-11-16T09:34:48.872Z",
+  "sources": {
+    "permit": {
+      "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtPrmsnInq08",
+      "total": 10787,
+      "received": 10787,
+      "keys": [
+        "ITEM_SEQ",
+        "ITEM_NAME",
+        "ITEM_ENG_NAME",
+        "ENTP_NAME",
+        "ENTP_ENG_NAME",
+        "ENTP_SEQ",
+        "ENTP_NO",
+        "ITEM_PERMIT_DATE",
+        "INDUTY",
+        "PRDLST_STDR_CODE",
+        "SPCLTY_PBLC",
+        "PRDUCT_TYPE",
+        "PRDUCT_PRMISN_NO",
+        "ITEM_INGR_NAME",
+        "ITEM_INGR_CNT",
+        "BIG_PRDT_IMG_URL",
+        "PERMIT_KIND_CODE",
+        "CANCEL_DATE",
+        "CANCEL_NAME",
+        "EDI_CODE",
+        "BIZRNO"
+      ]
+    },
+    "easy": {
+      "api": "DrbEasyDrugInfoService/getDrbEasyDrugList",
+      "ok": true,
+      "total": 4746,
+      "received": 4746,
+      "keys": [
+        "entpName",
+        "itemName",
+        "itemSeq",
+        "efcyQesitm",
+        "useMethodQesitm",
+        "atpnWarnQesitm",
+        "atpnQesitm",
+        "intrcQesitm",
+        "seQesitm",
+        "depositMethodQesitm",
+        "openDe",
+        "updateDe",
+        "itemImage",
+        "bizrno"
+      ]
+    }
+  },
+  "otcCount": 10787,
+  "skippedNonOtc": 0,
+  "statusCounts": {
+    "정상": 8577,
+    "취소": 3,
+    "취하": 782,
+    "폐업": 64,
+    "행정(취소)": 7,
+    "유효기간만료": 1354
+  },
+  "formCounts": {
+    "기타": 1037,
+    "정제": 3411,
+    "액제": 1047,
+    "캡슐제": 2274,
+    "시럽제": 368,
+    "외용제(연고·크림·액)": 1023,
+    "트로키·껌·필름": 31,
+    "점안·점비제": 287,
+    "첩부제(파스)": 361,
+    "산·과립제": 939,
+    "좌제·질정": 9
+  },
+  "fieldCoverage": {
+    "ingredients": 10719,
+    "class": 10763,
+    "manufacturer": 0,
+    "permitDate": 10787,
+    "status": 10787,
+    "efficacy": 4716
+  },
+  "warnings": []
+}
