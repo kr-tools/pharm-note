@@ -1,0 +1,7 @@
+{
+  "updatedAt": null,
+  "count": 0,
+  "supplyKnown": false,
+  "columns": ["id", "name", "company", "manufacturer", "ingredients", "form", "className", "status", "permitDate", "supply", "efficacy"],
+  "rows": []
+}
