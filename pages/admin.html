@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>출시 확인 관리 · PHARM NOTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="admin">
+  <main class="page">
+    <header class="subhead">
+      <a class="back" href="../index.html" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <h1 class="page-title" style="flex:1">출시 확인 관리</h1>
+      <span class="badge admin-badge">관리자</span>
+    </header>
+
+    <div class="notice info">
+      버튼을 누르면 <b>GitHub 이슈 작성 화면</b>이 새 창으로 열려요. 내용을 고치지 말고 제출하면,
+      저장소 주인인지 확인한 뒤 1~2분 안에 반영돼요.<br>
+      <span class="sec-note">연결된 저장소: <b id="repo-name"></b></span>
+    </div>
+
+    <details class="a-add">
+      <summary>＋ 후보 직접 추가 (식약처 DB에서 찾기)</summary>
+      <div class="search-box" style="margin-top:12px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr-only" for="add-q">제품명 또는 품목기준코드</label>
+        <input id="add-q" type="search" placeholder="제품명 또는 품목기준코드" autocomplete="off">
+      </div>
+      <div id="add-results" style="margin-top:10px"></div>
+    </details>
+
+    <div class="tabs3" id="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="pending">확인 대기 <span class="cnt" id="count-pending">0</span></button>
+      <button type="button" role="tab" data-tab="confirmed">확인 완료 <span class="cnt" id="count-confirmed">0</span></button>
+      <button type="button" role="tab" data-tab="unconfirmable">확인 불가 <span class="cnt" id="count-unconfirmable">0</span></button>
+    </div>
+
+    <div id="list" aria-live="polite"></div>
+
+    <footer class="foot-info">
+      원칙: 실제 출시일과 공식 근거 URL이 모두 있어야 ‘확인 완료’가 되고, 확인 완료된 제품만 주간 브리핑에 올라가요.<br>
+      데이터 업데이트: <span id="updated-at">확인 중…</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

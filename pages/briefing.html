@@ -13,7 +13,7 @@
   <main class="page">
     <header class="subhead">
       <a class="back" href="../index.html" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
-      <span class="page-title" style="flex:1">주간 브리핑</span>
+      <span class="page-title" style="flex:1">브리핑</span>
     </header>
 
     <div class="notice warn" id="demo-banner" hidden style="margin-bottom:14px">
@@ -21,6 +21,10 @@
     </div>
 
     <div class="week-area" id="week-area" hidden>
+      <div class="tabs2 mode-tabs" id="mode" role="tablist">
+        <button type="button" role="tab" data-mode="week" aria-selected="true">주간</button>
+        <button type="button" role="tab" data-mode="month" aria-selected="false">월간</button>
+      </div>
       <label class="select" style="display:block">
         <span class="sr-only">브리핑 주차 선택</span>
         <select id="week-select" style="width:100%"></select>
