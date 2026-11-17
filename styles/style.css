@@ -886,3 +886,111 @@ a.ext { color: var(--green-700); font-weight: 600; text-decoration: underline; t
 
 .b-evidence { margin-top: 14px; }
 .b-evidence ul { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.8; }
+
+/* =========================================================
+   관리자 — 출시 확인 관리
+   ========================================================= */
+body.admin { background: #fafbfa; }
+.admin-badge { background: var(--ink); color: #fff; }
+.notice.info { background: #eef4fb; color: #2c4a6b; margin-bottom: 14px; line-height: 1.65; }
+
+.a-add {
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.a-add summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--green-800); }
+.add-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; }
+.add-row > span:first-child { min-width: 0; }
+
+.tabs3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+.tabs3 button { height: 40px; border: 0; border-radius: 10px; background: transparent; font-size: 13.5px; color: var(--muted); }
+.tabs3 button[aria-selected="true"] { background: var(--bg); color: var(--ink); font-weight: 600; box-shadow: 0 1px 3px rgba(29,42,35,.08); }
+.tabs3 .cnt { margin-left: 3px; font-size: 12px; color: var(--green-700); }
+
+.a-card { padding: 18px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--bg); }
+.a-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.a-seen { font-size: 12px; color: var(--muted); }
+.a-name { margin: 10px 0 12px; font-size: 17px; font-weight: 700; line-height: 1.4; }
+.a-kvs .kv { grid-template-columns: 92px 1fr; font-size: 13.5px; }
+.a-links { margin: 0; padding-left: 16px; }
+
+.a-form { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.a-form summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--green-800); margin-bottom: 4px; }
+.a-form label { display: block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+.a-form .req { margin-left: 4px; font-size: 11px; color: var(--error-ink); font-weight: 600; }
+.a-form .opt { margin-left: 4px; font-size: 11px; color: var(--muted); font-weight: 500; }
+.a-form input, .a-form textarea {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+  font: inherit; font-size: 14px; color: var(--ink); font-weight: 400;
+}
+.a-form input:focus, .a-form textarea:focus { outline: 0; border-color: var(--green-300); box-shadow: 0 0 0 3px var(--green-50); }
+.a-error { margin: 12px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--error-bg); color: var(--error-ink); font-size: 13px; }
+.a-actions { margin-top: 4px; }
+.a-sub { display: flex; gap: 8px; margin-top: 8px; }
+.btn-ghost {
+  flex: 1; height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); font-size: 13px; font-weight: 600; color: var(--ink-soft); white-space: nowrap;
+}
+.btn-ghost:hover { background: var(--surface); }
+.btn-ghost.danger { color: var(--error-ink); }
+.add-row .btn-ghost { flex: none; height: 34px; }
+
+/* =========================================================
+   Monthly Briefing
+   ========================================================= */
+.briefing-col { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.briefing-col .briefing-card { margin-bottom: 0; }
+.monthly-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 20px;
+  border-radius: 18px;
+  background: #f8fcf9;
+  border: 1px solid #e6f2ea;
+  transition: border-color 0.15s ease;
+}
+.monthly-card:hover { border-color: var(--green-300); }
+.monthly-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.eyebrow.small { font-size: 10.5px; letter-spacing: 0.1em; }
+.monthly-title { font-size: 15px; font-weight: 600; color: var(--green-800); }
+.monthly-count { flex: none; font-size: 14px; font-weight: 600; color: var(--green-700); font-variant-numeric: tabular-nums; }
+
+.mode-tabs { margin-bottom: 10px; }
+
+.month-head {
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: #f8fcf9;
+  border: 1px solid #e6f2ea;
+}
+.month-title { margin: 6px 0 2px; font-size: 18px; font-weight: 700; color: var(--green-800); }
+.month-sub { margin: 0; font-size: 13px; color: var(--green-700); }
+
+.month-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; background: var(--bg); }
+.month-list li + li { border-top: 1px solid var(--line); }
+.month-list a { display: flex; gap: 14px; align-items: flex-start; padding: 13px 16px; }
+.month-list a:hover { background: var(--surface); }
+.m-date { flex: none; width: 44px; font-size: 13px; font-weight: 700; color: var(--green-700); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.m-body { min-width: 0; }
+.m-body strong { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.4; }
+.m-body span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+@media (min-width: 900px) {
+  .briefing-col { margin-bottom: 0; }
+  .home-grid .briefing-card { min-height: 228px; }
+}
