@@ -768,3 +768,62 @@ a.ext { color: var(--green-700); font-weight: 600; text-decoration: underline; t
 .ingr-table th:last-child { text-align: right; }
 .ingr-table .eng { display: block; font-size: 12px; color: var(--muted); }
 .ingr-list li { word-break: break-word; max-width: 100%; }
+
+/* =========================================================
+   나의 보관함 (즐겨찾기 · 최근 본 제품)
+   ========================================================= */
+.tabs2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+.tabs2 button {
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 14px;
+  color: var(--muted);
+}
+.tabs2 button[aria-selected="true"] {
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(29, 42, 35, 0.08);
+}
+.tabs2 .cnt { margin-left: 4px; font-size: 12px; color: var(--green-700); font-variant-numeric: tabular-nums; }
+
+.saved-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.saved-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.saved-item:hover { border-color: var(--green-300); }
+.saved-link { flex: 1; min-width: 0; padding: 13px 4px 13px 16px; }
+.saved-link strong { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; }
+.saved-link span { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+.saved-action {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  margin-right: 4px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+}
+.saved-action:hover { background: var(--surface); }
+.saved-action svg { width: 20px; height: 20px; }
+.star-on { fill: #f3b62b; stroke: #d99a12; }
+
+#clear-area .more-btn { color: var(--ink-soft); }
+.more-btn.danger { color: var(--error-ink) !important; border-color: #f0c4c4; background: var(--error-bg); }
