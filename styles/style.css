@@ -827,3 +827,62 @@ a.ext { color: var(--green-700); font-weight: 600; text-decoration: underline; t
 
 #clear-area .more-btn { color: var(--ink-soft); }
 .more-btn.danger { color: var(--error-ink) !important; border-color: #f0c4c4; background: var(--error-bg); }
+
+/* =========================================================
+   주간 브리핑
+   ========================================================= */
+.week-area { margin-bottom: 14px; }
+
+.week-head {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--card-mint);
+  border: 1px solid var(--card-mint-line);
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+.week-head .briefing-count { padding-top: 12px; }
+
+.b-card {
+  padding: 18px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.b-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.b-date { font-size: 12.5px; font-weight: 600; color: var(--green-800); font-variant-numeric: tabular-nums; }
+.b-name { margin: 10px 0 2px; font-size: 18px; font-weight: 700; line-height: 1.4; }
+.b-company { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
+
+.b-block {
+  position: relative;
+  margin-top: 10px;
+  padding: 34px 14px 12px;
+  border-radius: 12px;
+}
+.b-block.official { background: #fbfdfc; border: 1px solid var(--card-mint-line); }
+.b-block.ai { background: #faf8fe; border: 1.5px dashed #cfc6ea; }
+.b-label {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 5px 14px;
+  border-radius: 12px 12px 0 0;
+  font-size: 11px; font-weight: 700;
+}
+.b-block.official .b-label { background: var(--card-mint); color: var(--green-800); border-bottom: 1px solid var(--card-mint-line); }
+.b-block.ai .b-label { background: #efebfa; color: #5a4a96; border-bottom: 1px dashed #cfc6ea; }
+
+.b-card h3 { margin: 10px 0 4px; font-size: 13px; font-weight: 700; color: var(--green-800); }
+.b-card h3:first-of-type { margin-top: 0; }
+.b-block.ai h3 { color: #5a4a96; }
+.b-text { margin: 0; font-size: 14px; line-height: 1.65; }
+.b-text.none { color: var(--muted); font-size: 13px; }
+
+.b-ingr { list-style: none; margin: 0; padding: 0; font-size: 13.5px; }
+.b-ingr li { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+.b-ingr li:last-child { border-bottom: 0; }
+.b-ingr b { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.b-evidence { margin-top: 14px; }
+.b-evidence ul { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.8; }
