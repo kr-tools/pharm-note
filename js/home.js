@@ -35,14 +35,15 @@
   function renderBriefing(latest) {
     const start = PN.parseDate(latest.periodStart);
     const end = PN.parseDate(latest.periodEnd);
-    const count = Array.isArray(latest.productIds) ? latest.productIds.length : 0;
+    const list = latest.items || latest.productIds || [];
+    const count = Array.isArray(list) ? list.length : 0;
     card.innerHTML = `
       <h2 class="briefing-title">${PN.escapeHTML(latest.title || `${PN.formatRange(start, end)} 신제품 브리핑`)}</h2>
       <div class="briefing-period">${PN.formatRange(start, end)} 출시 확인분</div>
       <div class="briefing-count">
         <span class="num">${count}</span><span class="label">개 신제품 출시 확인</span>
       </div>
-      <a class="btn-primary" href="pages/briefing.html">브리핑 확인하기 →</a>`;
+      <a class="btn-primary" href="pages/briefing.html#${encodeURIComponent(latest.id || "")}">브리핑 확인하기 →</a>`;
   }
 
   function renderEmpty() {
