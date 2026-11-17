@@ -24,12 +24,12 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: 저장소 내려받기
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Node.js 준비
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
 
       - name: 식약처 데이터 수집 및 DB 생성
         run: node scripts/build-otc-db.mjs
