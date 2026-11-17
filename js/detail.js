@@ -122,7 +122,7 @@
       <section class="sec">
         <h2 class="sec-title"><span class="num">2</span>성분 정보</h2>
         ${ingredientsHTML(p)}
-        <p class="sec-note">${p.ingredientDetails?.some((d) => d.amount) ? "함량은 식약처 주성분 정보 기준이에요. " : "성분별 함량은 "}첨가제는 식약처 허가사항 원문에서 확인할 수 있어요.
+        <p class="sec-note">${p.ingredientDetails?.some((d) => d.amount) ? "함량은 식약처 주성분 정보(허가 기준 단위) 기준이에요. " : "성분별 함량은 "}첨가제는 식약처 허가사항 원문에서 확인할 수 있어요.
           <a class="ext" href="${nedrugURL(p.id)}" target="_blank" rel="noopener">의약품안전나라에서 보기 ↗</a></p>
       </section>
 
@@ -179,7 +179,19 @@
   }
 
   function ingredientsHTML(p) {
-    const details = (p.ingredientDetails || []).filter((d) => d.name || d.nameEng);
+    // 같은 성분 행 중복 제거 + 소수점 끝 0 정리 (이전 수집 데이터도 깔끔하게 보이도록)
+    const seen = new Set();
+    const details = (p.ingredientDetails || [])
+      .filter((d) => d.name || d.nameEng)
+      .map((d) => ({
+        ...d,
+        nameEng: d.nameEng && !d.nameEng.includes("/") ? d.nameEng : "",
+        amount: /^\d+\.\d+$/.test(d.amount || "") ? d.amount.replace(/\.?0+$/, "") : d.amount,
+      }))
+      .filter((d) => {
+        const k = `${d.name}|${d.amount}|${d.unit}`;
+        return seen.has(k) ? false : seen.add(k);
+      });
     if (details.some((d) => d.amount)) {
       return `
         <table class="ingr-table">
@@ -190,7 +202,8 @@
               <td class="amt">${esc([d.amount, d.unit].filter(Boolean).join(" "))}${d.basis ? `<span class="eng">${esc(d.basis)}</span>` : ""}</td>
             </tr>`).join("")}
           </tbody>
-        </table>`;
+        </table>
+        ${p.ingredientsEng?.length ? `<p class="sec-note">영문: ${esc(p.ingredientsEng.join(", "))}</p>` : ""}`;
     }
     const ingr = p.ingredients || [];
     if (!ingr.length) return `<p class="none-block">유효성분 정보가 없어요.</p>`;
