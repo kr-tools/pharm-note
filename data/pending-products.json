@@ -1,5 +1,23 @@
 {
-  "updatedAt": null,
-  "items": {},
+  "updatedAt": "2026-11-17T05:44:03.507Z",
+  "items": {
+    "202500588": {
+      "id": "202500588",
+      "itemSeq": "202500588",
+      "name": "판콜에이치건조시럽",
+      "company": "동화약품(주)",
+      "ingredients": "아세트아미노펜 · 슈도에페드린염산염 · 구아이페네신 · 디펜히드라민염산염 · 리보플라빈포스페이트나트륨",
+      "permitDate": "2025-03-17",
+      "foundInfo": "관리자가 직접 추가한 후보",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500588"
+        }
+      ],
+      "firstSeen": "2026-11-17",
+      "status": "pending"
+    }
+  },
   "deleted": {}
 }
