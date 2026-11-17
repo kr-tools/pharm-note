@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>주간 브리핑 · PHARM NOTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -11,13 +13,29 @@
   <main class="page">
     <header class="subhead">
       <a class="back" href="../index.html" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
-      <h1 class="page-title">주간 브리핑</h1>
+      <span class="page-title" style="flex:1">주간 브리핑</span>
     </header>
-    <div class="placeholder">
-      <strong>5단계에서 완성돼요</strong>
-      <p>출시가 확인된 OTC 신제품을 주차별로 모아 보여주는 화면입니다.</p>
+
+    <div class="notice warn" id="demo-banner" hidden style="margin-bottom:14px">
+      화면 확인용 <b>예시 데이터</b>예요. 실제 출시 제품이 아닙니다.
     </div>
+
+    <div class="week-area" id="week-area" hidden>
+      <label class="select" style="display:block">
+        <span class="sr-only">브리핑 주차 선택</span>
+        <select id="week-select" style="width:100%"></select>
+      </label>
+    </div>
+
+    <div id="content" aria-live="polite"></div>
+
+    <footer class="foot-info">
+      브리핑에는 공식 출시 근거가 확인된 제품만 올라와요.<br>
+      공식 정보는 식품의약품안전처 자료, AI 분석은 관리자 검토를 거친 참고 정보입니다.<br>
+      데이터 업데이트: <span id="updated-at">확인 중…</span>
+    </footer>
   </main>
+
   <nav class="tabbar" aria-label="주요 메뉴">
     <div class="tabbar-inner">
       <a class="tab" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>홈</a>
@@ -26,5 +44,8 @@
       <a class="tab" href="favorites.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>즐겨찾기</a>
     </div>
   </nav>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/briefing.js"></script>
 </body>
 </html>
