@@ -33,11 +33,22 @@
     <p class="welcome">안녕하세요!<br><em>오늘도 새로운 약</em>을 알아봐요.</p>
 
     <div class="home-grid">
-      <!-- ② Weekly Briefing (가장 강조되는 카드) -->
-      <section class="briefing-card" aria-labelledby="wb-label">
-        <span class="eyebrow" id="wb-label"><span class="dot"></span>Weekly Briefing</span>
-        <div id="briefing-body" style="display:flex;flex-direction:column;flex:1" aria-live="polite"></div>
-      </section>
+      <div class="briefing-col">
+        <!-- ② Weekly Briefing (가장 강조되는 카드) -->
+        <section class="briefing-card" aria-labelledby="wb-label">
+          <span class="eyebrow" id="wb-label"><span class="dot"></span>Weekly Briefing</span>
+          <div id="briefing-body" style="display:flex;flex-direction:column;flex:1" aria-live="polite"></div>
+        </section>
+
+        <!-- Monthly Briefing (얇고 옅은 카드) -->
+        <a class="monthly-card" id="monthly-card" href="pages/briefing.html">
+          <span class="monthly-left">
+            <span class="eyebrow small"><span class="dot"></span>Monthly Briefing</span>
+            <span class="monthly-title" id="monthly-title">이번 달 신제품 요약</span>
+          </span>
+          <span class="monthly-count" id="monthly-count">–</span>
+        </a>
+      </div>
 
       <div>
         <!-- ③ 빠른 검색 -->
