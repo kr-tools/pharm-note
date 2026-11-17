@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-16T09:34:48.872Z",
+  "builtAt": "2026-11-17T04:13:44.729Z",
   "sources": {
     "permit": {
       "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtPrmsnInq08",
@@ -50,33 +50,70 @@
         "itemImage",
         "bizrno"
       ]
+    },
+    "ingredients": {
+      "found": true,
+      "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq08",
+      "total": 125604,
+      "keys": [
+        "ENTRPS_PRMISN_NO",
+        "ENTRPS",
+        "PRDUCT",
+        "MTRAL_SN",
+        "MTRAL_CODE",
+        "MTRAL_NM",
+        "QNT",
+        "INGD_UNIT_CD",
+        "ITEM_SEQ",
+        "MAIN_INGR_ENG",
+        "BIZRNO",
+        "CPNT_CTNT_CONT",
+        "TAMT_SEQ"
+      ],
+      "sample": {
+        "ENTRPS_PRMISN_NO": "1302",
+        "ENTRPS": "제이더블유중외제약(주)",
+        "PRDUCT": "중외5%포도당생리식염액(수출명:5%DextroseinnormalsalineInj.)",
+        "MTRAL_SN": "1",
+        "MTRAL_CODE": "M040702",
+        "MTRAL_NM": "포도당",
+        "QNT": "50",
+        "INGD_UNIT_CD": "그램",
+        "ITEM_SEQ": "195500005",
+        "MAIN_INGR_ENG": "Glucose/Sodium Chloride",
+        "BIZRNO": "1188102477",
+        "CPNT_CTNT_CONT": null,
+        "TAMT_SEQ": "1"
+      }
     }
   },
   "otcCount": 10787,
   "skippedNonOtc": 0,
   "statusCounts": {
-    "정상": 8577,
+    "정상": 8576,
     "취소": 3,
-    "취하": 782,
+    "취하": 783,
     "폐업": 64,
     "행정(취소)": 7,
     "유효기간만료": 1354
   },
   "formCounts": {
-    "기타": 1037,
-    "정제": 3411,
-    "액제": 1047,
-    "캡슐제": 2274,
-    "시럽제": 368,
-    "외용제(연고·크림·액)": 1023,
-    "트로키·껌·필름": 31,
+    "기타": 255,
+    "환·고·엑스제(한방 등)": 452,
+    "정제": 3577,
+    "액제": 1050,
+    "캡슐제": 2396,
+    "시럽제": 388,
+    "외용제(연고·크림·액)": 1033,
+    "트로키·껌·필름": 35,
+    "산·과립제": 941,
     "점안·점비제": 287,
-    "첩부제(파스)": 361,
-    "산·과립제": 939,
+    "첩부제(파스)": 364,
     "좌제·질정": 9
   },
   "fieldCoverage": {
-    "ingredients": 10719,
+    "ingredients": 10731,
+    "ingredientsKorean": 10731,
     "class": 10763,
     "manufacturer": 0,
     "permitDate": 10787,
