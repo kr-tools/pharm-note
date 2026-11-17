@@ -45,7 +45,7 @@
         cols.forEach((c, i) => (p[c] = row[i]));
         p._n = {
           name: norm(p.name),
-          ingredients: norm(p.ingredients),
+          ingredients: norm(`${p.ingredients} ${p.ingredientsEng || ""}`),
           company: norm(`${p.company} ${p.manufacturer}`),
           efficacy: norm(p.efficacy),
           form: norm(p.form),

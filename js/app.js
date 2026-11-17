@@ -88,7 +88,39 @@ const PN = (() => {
     }[c]));
   }
 
+  /* ---------- 즐겨찾기 · 최근 본 제품 ---------- */
+  // 저장 형태: [{ id, name, company, savedAt }]
+  function getFavorites() {
+    return readStore(KEYS.favorites, []);
+  }
+
+  function isFavorite(id) {
+    return getFavorites().some((f) => f.id === id);
+  }
+
+  // 즐겨찾기에 없으면 추가, 있으면 해제. 결과(추가됐는지)를 돌려줌
+  function toggleFavorite(item) {
+    const list = getFavorites();
+    const idx = list.findIndex((f) => f.id === item.id);
+    if (idx >= 0) {
+      list.splice(idx, 1);
+      writeStore(KEYS.favorites, list);
+      return false;
+    }
+    list.unshift({ id: item.id, name: item.name, company: item.company || "", savedAt: new Date().toISOString() });
+    writeStore(KEYS.favorites, list);
+    return true;
+  }
+
+  // 최근 본 제품: 같은 제품은 맨 앞으로 옮기고 최대 30개까지 보관
+  function addRecent(item) {
+    const list = readStore(KEYS.recent, []).filter((r) => r.id !== item.id);
+    list.unshift({ id: item.id, name: item.name, company: item.company || "", viewedAt: new Date().toISOString() });
+    writeStore(KEYS.recent, list.slice(0, 30));
+  }
+
   return {
+    getFavorites, isFavorite, toggleFavorite, addRecent,
     KEYS, ROOT, readStore, writeStore, loadData,
     formatLongDate, formatShortDate, parseDate, lastWeekRange, formatRange,
     formatUpdated, escapeHTML,
