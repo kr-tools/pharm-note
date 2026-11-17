@@ -126,6 +126,12 @@ async function findIngredientApi() {
 
 /* ---------- 값 정리 ---------- */
 
+// "300.0" → "300", "35.000" → "35", "618.56" → "618.56"
+function normAmount(s) {
+  const t = String(s || "").trim();
+  return /^\d+\.\d+$/.test(t) ? t.replace(/\.?0+$/, "") : t;
+}
+
 const toCamel = (k) => k.toLowerCase().replace(/_([a-z])/g, (_, c) => c.toUpperCase());
 
 // 같은 정보가 대문자/소문자/카멜표기로 올 수 있어 여러 이름을 차례로 확인
@@ -244,13 +250,16 @@ async function main() {
         if (!id) continue;
         const row = {
           name: pick(it, ["MTRAL_NM", "INGR_KOR_NAME", "MAIN_INGR_NAME", "INGR_NAME", "MATERIAL_NAME", "MTRAL_NAME"]),
-          nameEng: pick(it, ["MTRAL_ENG_NM", "INGR_ENG_NAME", "MAIN_INGR_ENG", "INGR_NAME_ENG"]),
-          amount: pick(it, ["QNT", "INGR_QY", "AMOUNT", "TOTAL_CONTENT", "CONTENT"]),
+          // MAIN_INGR_ENG는 제품 전체 성분 목록이라 성분별 영문명으로 쓰지 않음
+          nameEng: pick(it, ["MTRAL_ENG_NM", "INGR_ENG_NAME"]),
+          amount: normAmount(pick(it, ["QNT", "INGR_QY", "AMOUNT", "TOTAL_CONTENT", "CONTENT"])),
           unit: pick(it, ["INGD_UNIT_CD", "INGR_UNIT", "UNIT", "UNIT_NAME"]),
           basis: pick(it, ["MAIN_INGR_UNIT", "BASIS", "PRDT_UNIT", "ITEM_UNIT"]),
         };
         if (!row.name && !row.nameEng) continue;
-        (ingrById.get(id) || ingrById.set(id, []).get(id)).push(row);
+        const list = ingrById.get(id) || ingrById.set(id, []).get(id);
+        // 포장 단위별로 같은 성분 행이 반복되는 경우가 있어 완전히 같은 행은 한 번만
+        if (!list.some((r) => r.name === row.name && r.amount === row.amount && r.unit === row.unit)) list.push(row);
       }
     } else {
       warnings.push("주성분 상세 API를 찾지 못함 — 성분명은 허가정보(영문) 기준으로 표시");
