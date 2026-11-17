@@ -38,13 +38,13 @@ const log = (...a) => console.log(`[${new Date().toISOString().slice(11, 19)}]`,
 
 /* ---------- API 호출 ---------- */
 
-async function getPage(api, pageNo) {
+async function getPage(api, pageNo, maxAttempts = 4) {
   const url = new URL(`${BASE}/${api.path}`);
   const qs = { serviceKey: KEY, pageNo, numOfRows: ROWS, type: "json", ...api.params };
   for (const [k, v] of Object.entries(qs)) url.searchParams.set(k, v);
 
   let lastErr;
-  for (let attempt = 1; attempt <= 4; attempt++) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 30000);
@@ -76,7 +76,7 @@ async function getPage(api, pageNo) {
     } catch (e) {
       lastErr = e;
       // 인증키 문제는 다시 시도해도 같으므로 바로 중단
-      if (/SERVICE_KEY|SERVICE KEY|등록되지 않은|인증/i.test(e.message)) break;
+      if (/SERVICE_KEY|SERVICE KEY|등록되지 않은|인증|HTTP 404|API not found/i.test(e.message) || attempt >= maxAttempts) break;
       log(`  재시도 ${attempt}/4 (${api.label} ${pageNo}페이지): ${e.message}`);
       await sleep(2000 * attempt);
     }
@@ -96,6 +96,32 @@ async function fetchAll(api) {
     await sleep(120);
   }
   return { total: first.total, items: all };
+}
+
+/* ---------- 주성분 상세(한글 성분명·함량) — 작업 이름을 시험해서 찾음 ---------- */
+
+const INGR_CANDIDATES = [
+  "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq08",
+  "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq07",
+  "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq06",
+  "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq05",
+  "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq04",
+];
+
+async function findIngredientApi() {
+  for (const p of INGR_CANDIDATES) {
+    const api = { label: "주성분 상세", path: p, params: {} };
+    try {
+      const r = await getPage(api, 1, 1);
+      if (r.total > 0 && r.items.length) {
+        log(`주성분 상세 API 발견: ${p} (전체 ${r.total}건)`);
+        return api;
+      }
+    } catch (e) {
+      log(`  주성분 상세 후보 실패: ${p} — ${e.message.slice(0, 80)}`);
+    }
+  }
+  return null;
 }
 
 /* ---------- 값 정리 ---------- */
@@ -123,10 +149,11 @@ function toISODate(s) {
 // "[M040702]포도당|[M040426]염화나트륨" → ["포도당", "염화나트륨"]
 function parseIngredients(s) {
   if (!s) return [];
-  return String(s)
-    .split(/[|;]/)
-    .map((x) => x.replace(/\[[^\]]*\]/g, "").trim())
+  const out = String(s)
+    .split(/[|;/]/)
+    .map((x) => x.replace(/\[[^\]]*\]/g, "").replace(/\s+/g, " ").trim())
     .filter(Boolean);
+  return [...new Set(out)];
 }
 
 // "[01140]해열.진통.소염제" → { code: "01140", name: "해열.진통.소염제" }
@@ -144,16 +171,23 @@ const FORM_RULES = [
   [/(시럽|건조시럽)$/, "시럽제"],
   [/(현탁액|내복액|액|드링크|엘릭서|용액)$/, "액제"],
   [/(과립|세립|산|가루)$/, "산·과립제"],
-  [/(연고|크림|겔|젤|로션|외용액|스프레이|에어로솔|폼)$/, "외용제(연고·크림·액)"],
+  [/(연고|크림|겔|젤|로션|로오숀|외용액|스프레이|에어로솔|폼)$/, "외용제(연고·크림·액)"],
   [/(패취|패치|플라스타|카타플라스마|파프|첩부제|테이프)$/, "첩부제(파스)"],
   [/(좌제|좌약|질정|질좌제)$/, "좌제·질정"],
+  [/(환|단|원|고|연조엑스|엑스|엑기스)$/, "환·고·엑스제(한방 등)"],
 ];
 
 function guessForm(name) {
-  const base = String(name || "")
-    .replace(/\([^)]*\)/g, "")
+  // 여러 제품이 묶인 이름("1.OO정 2.OO정")은 첫 제품 기준
+  let base = String(name || "");
+  if (/^\s*1\s*\./.test(base)) base = base.replace(/^\s*1\s*\.\s*/, "").split(/\s*2\s*\.\s*/)[0];
+  // 괄호(중첩 포함)를 안쪽부터 모두 제거
+  for (let i = 0; i < 5 && /\([^()]*\)/.test(base); i++) base = base.replace(/\([^()]*\)/g, "");
+  base = base
+    .replace(/[()]/g, "")
     .replace(/\[[^\]]*\]/g, "")
-    .replace(/[\d.,/\s]*(밀리그램|mg|g|mL|ml|그램|%)?\s*$/i, "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/[\d.,/\s]*(밀리그램|밀리그람|마이크로그램|마이크로그람|만아이유|아이유|IU|mg|g|mL|ml|그램|그람|%|호)?\s*$/i, "")
     .trim();
   for (const [re, label] of FORM_RULES) if (re.test(base)) return label;
   return "기타";
@@ -195,14 +229,45 @@ async function main() {
   }
   const easyKeys = easy.items[0] ? Object.keys(easy.items[0]) : [];
 
+  // 3) 주성분 상세 (선택: 찾지 못하거나 실패해도 계속 진행)
+  const ingrById = new Map();
+  let ingrInfo = { found: false };
+  try {
+    const ingrApi = await findIngredientApi();
+    if (ingrApi) {
+      const all = await fetchAll(ingrApi);
+      const keys = all.items[0] ? Object.keys(all.items[0]) : [];
+      log("주성분 항목 이름:", keys.join(", "));
+      ingrInfo = { found: true, api: ingrApi.path, total: all.total, keys, sample: all.items[0] || null };
+      for (const it of all.items) {
+        const id = pick(it, ["ITEM_SEQ", "itemSeq", "PRDLST_STDR_CODE"]);
+        if (!id) continue;
+        const row = {
+          name: pick(it, ["MTRAL_NM", "INGR_KOR_NAME", "MAIN_INGR_NAME", "INGR_NAME", "MATERIAL_NAME", "MTRAL_NAME"]),
+          nameEng: pick(it, ["MTRAL_ENG_NM", "INGR_ENG_NAME", "MAIN_INGR_ENG", "INGR_NAME_ENG"]),
+          amount: pick(it, ["QNT", "INGR_QY", "AMOUNT", "TOTAL_CONTENT", "CONTENT"]),
+          unit: pick(it, ["INGD_UNIT_CD", "INGR_UNIT", "UNIT", "UNIT_NAME"]),
+          basis: pick(it, ["MAIN_INGR_UNIT", "BASIS", "PRDT_UNIT", "ITEM_UNIT"]),
+        };
+        if (!row.name && !row.nameEng) continue;
+        (ingrById.get(id) || ingrById.set(id, []).get(id)).push(row);
+      }
+    } else {
+      warnings.push("주성분 상세 API를 찾지 못함 — 성분명은 허가정보(영문) 기준으로 표시");
+    }
+  } catch (e) {
+    warnings.push(`주성분 상세 수집 실패: ${e.message} — 성분명은 허가정보(영문) 기준으로 표시`);
+    log("⚠️", warnings.at(-1));
+  }
+
   const easyById = new Map();
   for (const it of easy.items) {
     const id = pick(it, ["itemSeq", "ITEM_SEQ"]);
     if (id) easyById.set(id, it);
   }
 
-  // 3) 합치기
-  const coverage = { ingredients: 0, class: 0, manufacturer: 0, permitDate: 0, status: 0, efficacy: 0 };
+  // 4) 합치기
+  const coverage = { ingredients: 0, ingredientsKorean: 0, class: 0, manufacturer: 0, permitDate: 0, status: 0, efficacy: 0 };
   const statusCounts = {};
   const formCounts = {};
   const products = new Map();
@@ -216,11 +281,14 @@ async function main() {
     const kind = pick(it, ["SPCLTY_PBLC", "ETC_OTC_CODE", "ETC_OTC_NAME"]);
     if (kind && !kind.includes("일반")) { skippedEtc++; continue; }
 
-    const name = pick(it, ["ITEM_NAME", "PRDUCT", "itemName"]);
+    const name = pick(it, ["ITEM_NAME", "PRDUCT", "itemName"]).replace(/\s+/g, " ");
     const cls = parseClass(pick(it, ["PRDUCT_TYPE", "CLASS_NO", "CLASS_NAME"]));
-    const ingredients = parseIngredients(
+    const ingredientsEng = parseIngredients(
       pick(it, ["ITEM_INGR_NAME", "MAIN_ITEM_INGR", "MAIN_INGR", "MATERIAL_NAME"])
     );
+    const ingrRows = ingrById.get(id) || [];
+    const korNames = [...new Set(ingrRows.map((r) => r.name).filter(Boolean))];
+    const ingredients = korNames.length ? korNames : ingredientsEng;
     const status = pick(it, ["CANCEL_NAME", "CANCEL_STATUS"]) || "정보 없음";
     const ez = easyById.get(id);
 
@@ -230,7 +298,9 @@ async function main() {
       company: pick(it, ["ENTP_NAME", "entpName"]),
       manufacturer: pick(it, ["CNSGN_MANUF", "MANUF_NAME"]),
       ingredients,
-      ingredientsEng: pick(it, ["ITEM_INGR_ENG_NAME", "MAIN_INGR_ENG"]),
+      ingredientsEng,
+      ingredientDetails: ingrRows,
+      ingredientCount: Number(pick(it, ["ITEM_INGR_CNT"])) || null,
       form: guessForm(name),
       classCode: cls.code,
       className: cls.name,
@@ -255,6 +325,7 @@ async function main() {
     };
 
     if (p.ingredients.length) coverage.ingredients++;
+    if (korNames.length) coverage.ingredientsKorean++;
     if (p.className) coverage.class++;
     if (p.manufacturer) coverage.manufacturer++;
     if (p.permitDate) coverage.permitDate++;
@@ -283,12 +354,13 @@ async function main() {
   // 검색용 목록 (가볍게, 배열 형태로)
   const columns = [
     "id", "name", "company", "manufacturer", "ingredients", "form",
-    "className", "status", "permitDate", "supply", "efficacy",
+    "className", "status", "permitDate", "supply", "efficacy", "ingredientsEng",
   ];
   const rows = list.map((p) => [
     p.id, p.name, p.company, p.manufacturer, p.ingredients.join(" · "), p.form,
     p.className, p.status, p.permitDate, p.supply,
     p.easy?.efficacy ? p.easy.efficacy.slice(0, 160) : "",
+    p.ingredients === p.ingredientsEng ? "" : p.ingredientsEng.join(" · "),
   ]);
 
   await mkdir(OUT, { recursive: true });
@@ -316,6 +388,7 @@ async function main() {
     sources: {
       permit: { api: APIS.permit.path, total: permit.total, received: permit.items.length, keys: permitKeys },
       easy: { api: APIS.easy.path, ok: easyOk, total: easy.total, received: easy.items.length, keys: easyKeys },
+      ingredients: ingrInfo,
     },
     otcCount: list.length,
     skippedNonOtc: skippedEtc,
