@@ -1,6 +1,24 @@
 {
-  "updatedAt": "2026-11-17T05:51:48.519Z",
-  "items": {},
+  "updatedAt": "2026-11-17T06:28:35.087Z",
+  "items": {
+    "202107495": {
+      "id": "202107495",
+      "itemSeq": "202107495",
+      "name": "게보린브이정(아세트아미노펜)",
+      "company": "삼진제약(주)",
+      "ingredients": "아세트아미노펜",
+      "permitDate": "2021-11-16",
+      "foundInfo": "관리자가 직접 추가한 후보",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202107495"
+        }
+      ],
+      "firstSeen": "2026-11-17",
+      "status": "pending"
+    }
+  },
   "deleted": {
     "202500588": "2026-11-17T05:51:48.519Z"
   }
