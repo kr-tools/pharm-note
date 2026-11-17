@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>즐겨찾기 · PHARM NOTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -11,13 +13,26 @@
   <main class="page">
     <header class="subhead">
       <a class="back" href="../index.html" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
-      <h1 class="page-title">즐겨찾기 · 최근 본 제품</h1>
+      <h1 class="page-title">나의 보관함</h1>
     </header>
-    <div class="placeholder">
-      <strong>4단계에서 완성돼요</strong>
-      <p>저장한 제품과 최근 확인한 제품을 모아 보는 화면입니다.</p>
+
+    <div class="tabs2" id="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="favorites" aria-selected="true">즐겨찾기 <span class="cnt" id="count-favorites">0</span></button>
+      <button type="button" role="tab" data-tab="recent" aria-selected="false">최근 본 제품 <span class="cnt" id="count-recent">0</span></button>
     </div>
+
+    <ul class="saved-list" id="list"></ul>
+    <div class="empty" id="empty" hidden></div>
+
+    <div id="clear-area" hidden>
+      <button class="more-btn" id="clear-recent" type="button">최근 기록 전체 삭제</button>
+    </div>
+
+    <p class="foot-info">
+      즐겨찾기와 최근 기록은 이 기기의 브라우저에만 저장돼요. 다른 기기나 다른 브라우저에서는 따로 관리됩니다.
+    </p>
   </main>
+
   <nav class="tabbar" aria-label="주요 메뉴">
     <div class="tabbar-inner">
       <a class="tab" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>홈</a>
@@ -26,5 +41,8 @@
       <a class="tab" href="favorites.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>즐겨찾기</a>
     </div>
   </nav>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/favorites.js"></script>
 </body>
 </html>
