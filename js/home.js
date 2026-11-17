@@ -58,6 +58,19 @@
       <a class="btn-primary" href="pages/briefing.html">지난 브리핑 보기 →</a>`;
   }
 
+  // 이번 달 출시 확인 제품 수 (출시일 기준)
+  function renderMonthly(list) {
+    const now = new Date();
+    const ym = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+    const ids = new Set();
+    list.forEach((b) => (b.items || []).forEach((it) => {
+      if (String(it.launchDate || "").startsWith(ym)) ids.add(it.id);
+    }));
+    $("monthly-title").textContent = `${now.getMonth() + 1}월 신제품 요약`;
+    $("monthly-count").textContent = `${ids.size}개 →`;
+    $("monthly-card").href = `pages/briefing.html#month-${ym}`;
+  }
+
   function renderError(msg) {
     card.innerHTML = `
       <div class="notice error" style="margin-top:12px">
@@ -73,11 +86,11 @@
       const data = await PN.loadData("weekly-briefings.json");
       $("updated-at").textContent = PN.formatUpdated(data.updatedAt);
       const list = Array.isArray(data.briefings) ? data.briefings : [];
-      // 가장 최근 주차 브리핑을 찾음
-      const latest = list
-        .slice()
-        .sort((a, b) => String(b.periodStart).localeCompare(String(a.periodStart)))[0];
-      latest ? renderBriefing(latest) : renderEmpty();
+      // 지난주(월~일) 브리핑을 보여줌. 없으면 0개로 표시
+      const { start } = PN.lastWeekRange();
+      const target = list.find((b) => PN.parseDate(b.periodStart).getTime() === start.getTime());
+      target ? renderBriefing(target) : renderEmpty();
+      renderMonthly(list);
     } catch (err) {
       renderError(err.message || "브리핑 데이터를 불러오지 못했어요.");
     }

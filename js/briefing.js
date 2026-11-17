@@ -55,10 +55,90 @@
       analysis = {};
     }
 
-    if (!briefings.length) return showNoBriefing();
-    renderWeekPicker();
     const fromHash = decodeURIComponent(location.hash.slice(1));
-    showWeek(briefings.find((b) => b.id === fromHash) || briefings[0]);
+    if (fromHash.startsWith("month-")) return setMode("month", fromHash.slice(6));
+    if (!briefings.length) return showNoBriefing();
+    setMode("week", fromHash);
+  }
+
+  /* ---------- 주간 / 월간 전환 ---------- */
+
+  function setMode(mode, key) {
+    $("week-area").hidden = false;
+    document.querySelectorAll("[data-mode]").forEach((b) => b.setAttribute("aria-selected", b.dataset.mode === mode));
+    if (mode === "month") {
+      renderMonthPicker();
+      showMonth(key && /^\d{4}-\d{2}$/.test(key) ? key : thisMonth());
+    } else {
+      if (!briefings.length) return showNoBriefing();
+      renderWeekPicker();
+      showWeek(briefings.find((b) => b.id === key) || briefings[0]);
+    }
+  }
+
+  const thisMonth = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+  };
+
+  // 출시일 기준으로 모든 브리핑 제품을 월별로 모음 (같은 제품은 한 번만)
+  function itemsByMonth() {
+    const map = {};
+    briefings.forEach((b) => (b.items || []).forEach((it) => {
+      const ym = String(it.launchDate || "").slice(0, 7);
+      if (!/^\d{4}-\d{2}$/.test(ym)) return;
+      map[ym] ||= new Map();
+      map[ym].set(it.id, { ...it, weekId: b.id });
+    }));
+    return map;
+  }
+
+  function renderMonthPicker() {
+    const map = itemsByMonth();
+    const months = [...new Set([thisMonth(), ...Object.keys(map)])].sort().reverse();
+    $("week-select").innerHTML = months
+      .map((m) => `<option value="${m}">${m === thisMonth() ? "이번 달 · " : ""}${m.slice(0, 4)}년 ${Number(m.slice(5))}월 (${map[m]?.size || 0}개)</option>`)
+      .join("");
+    $("week-select").onchange = (e) => showMonth(e.target.value);
+  }
+
+  async function showMonth(ym) {
+    $("week-select").value = ym;
+    try { history.replaceState(null, "", `#month-${ym}`); } catch (e) {}
+    const list = [...(itemsByMonth()[ym]?.values() || [])].sort((a, b) => String(a.launchDate).localeCompare(String(b.launchDate)));
+    const month = Number(ym.slice(5));
+
+    $("content").innerHTML = `
+      <section class="month-head">
+        <span class="eyebrow small"><span class="dot"></span>Monthly Briefing</span>
+        <h1 class="month-title">${ym.slice(0, 4)}년 ${month}월 신제품 요약</h1>
+        <p class="month-sub">${month}월에 출시가 확인된 제품 <b>${list.length}</b>개</p>
+      </section>
+      <div id="items"></div>`;
+
+    if (!list.length) {
+      $("items").innerHTML = `<div class="empty"><strong>${month}월에 출시가 확인된 신제품이 아직 없어요</strong>
+        <p>출시 근거가 확인된 제품만 집계돼요.</p></div>`;
+      return;
+    }
+    const details = await loadDetails(list.map((it) => it.id));
+    $("items").innerHTML = `<ul class="month-list">${list
+      .map((it) => {
+        const p = details[it.id];
+        const name = p?.name || it.name || "이름 미확인";
+        const ingr = (p?.ingredients?.length ? p.ingredients : it.ingredients || []).slice(0, 3).join(" · ");
+        return `<li>
+          <a href="${p ? `detail.html?id=${encodeURIComponent(it.id)}` : `#${encodeURIComponent(it.weekId)}`}">
+            <span class="m-date">${esc(String(it.launchDate).slice(5).replace("-", "."))}</span>
+            <span class="m-body">
+              <strong>${esc(name)}</strong>
+              <span>${esc(p?.company || it.company || "")}${ingr ? ` · ${esc(ingr)}` : ""}</span>
+            </span>
+          </a>
+        </li>`;
+      })
+      .join("")}</ul>
+      <p class="sec-note">제품을 누르면 상세 정보로 이동해요. 주차별 자세한 브리핑은 위에서 ‘주간’을 선택하세요.</p>`;
   }
 
   /* ---------- 주차 선택 (과거 브리핑 보관) ---------- */
@@ -70,7 +150,6 @@
   }
 
   function renderWeekPicker() {
-    $("week-area").hidden = false;
     $("week-select").innerHTML = briefings
       .map((b, i) => {
         const n = (b.items || []).length;
@@ -200,6 +279,7 @@
   /* ---------- 상태 화면 ---------- */
 
   function showNoBriefing() {
+    $("week-select").innerHTML = `<option>발행된 주간 브리핑 없음</option>`;
     const { start, end } = PN.lastWeekRange();
     $("content").innerHTML = `
       <div class="empty">
@@ -217,6 +297,16 @@
       </div>`;
     $("retry").onclick = load;
   }
+
+  $("mode").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-mode]");
+    if (b) setMode(b.dataset.mode);
+  });
+  window.addEventListener("hashchange", () => {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (h.startsWith("month-")) setMode("month", h.slice(6));
+    else if (briefings.some((b) => b.id === h)) setMode("week", h);
+  });
 
   load();
 })();
