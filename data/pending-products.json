@@ -1,28 +1,6 @@
 {
-  "updatedAt": "2026-11-18T09:52:39.794Z",
+  "updatedAt": "2026-11-18T09:55:48.923Z",
   "items": {
-    "201507585": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201507585",
-      "itemSeq": "201507585",
-      "name": "마그스연질캡슐",
-      "company": "조아제약(주)",
-      "ingredients": "산화마그네슘 · 토코페롤아세테이트 · 피리독신염산염 · 티아민질산염 · 니코틴아마이드",
-      "permitDate": "2015-11-05",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
-          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201507585"
-        }
-      ]
-    },
     "201508281": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -603,6 +581,7 @@
   },
   "deleted": {
     "197700008": "2026-11-18T09:05:55.262Z",
+    "201507585": "2026-11-18T09:55:48.923Z",
     "202500588": "2026-11-17T05:51:48.519Z"
   }
 }
