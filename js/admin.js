@@ -377,7 +377,7 @@
     if (otcIndex) return otcIndex;
     const d = await PN.loadData("otc-products.json");
     const ci = (c) => d.columns.indexOf(c);
-    otcIndex = d.rows.map((r) => ({
+    otcIndex = d.rows.filter((r) => !PN.isExportOnly(r[ci("name")])).map((r) => ({
       id: r[ci("id")], name: r[ci("name")], company: r[ci("company")],
       permitDate: r[ci("permitDate")], status: r[ci("status")], form: r[ci("form")],
       key: String(r[ci("name")]).replace(/\s/g, "").toLowerCase(),

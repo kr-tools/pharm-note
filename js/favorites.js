@@ -33,7 +33,7 @@
     return `
       <li class="saved-item">
         <a class="saved-link" href="detail.html?id=${encodeURIComponent(item.id)}">
-          <strong>${esc(item.name)}</strong>
+          <strong>${esc(PN.displayName(item.name))}</strong>
           <span>${esc(item.company || "")}${item.company ? " · " : ""}${when}</span>
         </a>
         <button class="saved-action" type="button" data-remove="${esc(item.id)}" aria-label="${actionLabel}" title="${actionLabel}">${icon}</button>

@@ -125,7 +125,7 @@
     $("items").innerHTML = `<ul class="month-list">${list
       .map((it) => {
         const p = details[it.id];
-        const name = p?.name || it.name || "이름 미확인";
+        const name = PN.displayName(p?.name || it.name || "이름 미확인");
         const ingr = (p?.ingredients?.length ? p.ingredients : it.ingredients || []).slice(0, 3).join(" · ");
         return `<li>
           <a href="${p ? `detail.html?id=${encodeURIComponent(it.id)}` : `#${encodeURIComponent(it.weekId)}`}">
@@ -226,7 +226,7 @@
   }
 
   function itemHTML(it, p) {
-    const name = p?.name || it.name || "이름 미확인";
+    const name = PN.displayName(p?.name || it.name || "이름 미확인");
     const company = p?.company || it.company || "";
     const efficacy = p?.easy?.efficacy || it.efficacy || "";
     const a = analysis[it.id];

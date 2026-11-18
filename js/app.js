@@ -119,7 +119,29 @@ const PN = (() => {
     writeStore(KEYS.recent, list.slice(0, 30));
   }
 
+  /* ---------- 제품명 도우미 ---------- */
+  // '(수출용)' 제품은 수출 전용이라 국내 화면에서 숨김
+  const isExportOnly = (name) => /수출용|수출전용/.test(String(name || ""));
+  // '(수출명:○○)' 표기는 국내 판매 제품의 수출 이름 → 목록에서는 떼고 보여줌
+  function displayName(name) {
+    let s = String(name || "");
+    for (let guard = 0; guard < 3; guard++) {
+      const m = s.match(/\s*\((수출명|수출,\s*군납명)/);
+      if (!m) break;
+      // 괄호 짝을 맞춰 '(수출명 … )' 전체를 제거 (안에 괄호가 또 있어도 처리)
+      let depth = 0, end = -1;
+      for (let i = m.index + m[0].indexOf("("); i < s.length; i++) {
+        if (s[i] === "(") depth++;
+        else if (s[i] === ")" && --depth === 0) { end = i; break; }
+      }
+      if (end < 0) break;
+      s = s.slice(0, m.index) + s.slice(end + 1);
+    }
+    return s.trim() || String(name || "");
+  }
+
   return {
+    isExportOnly, displayName,
     getFavorites, isFavorite, toggleFavorite, addRecent,
     KEYS, ROOT, readStore, writeStore, loadData,
     formatLongDate, formatShortDate, parseDate, lastWeekRange, formatRange,

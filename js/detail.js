@@ -45,7 +45,7 @@
     ]);
 
     if (list?.demo) $("demo-banner").hidden = false;
-    document.title = `${product.name} · PHARM NOTE`;
+    document.title = `${PN.displayName(product.name)} · PHARM NOTE`;
 
     const approved = analysis?.items?.[id];
     render(product, {
@@ -67,7 +67,7 @@
     const cols = list.columns;
     const ci = (c) => cols.indexOf(c);
     return list.rows
-      .filter((r) => r[ci("id")] !== p.id && key(String(r[ci("ingredients")] || "").split(" · ").filter(Boolean)) === target)
+      .filter((r) => r[ci("id")] !== p.id && !PN.isExportOnly(r[ci("name")]) && key(String(r[ci("ingredients")] || "").split(" · ").filter(Boolean)) === target)
       .map((r) => ({
         id: r[ci("id")], name: r[ci("name")], company: r[ci("company")],
         form: r[ci("form")], status: r[ci("status")], supply: r[ci("supply")],
@@ -97,7 +97,7 @@
           ${p.supply === 1 ? `<span class="badge supply">공급실적 있음</span>` : ""}
           ${extra.launch ? `<span class="badge launch">출시 확인</span>` : ""}
         </div>
-        <h1 class="product-name">${esc(p.name)}</h1>
+        <h1 class="product-name">${esc(PN.displayName(p.name))}</h1>
         <p class="product-company">${esc(p.company || "")}${p.manufacturer ? ` · 제조 ${esc(p.manufacturer)}` : ""}</p>
       </section>
 
@@ -224,7 +224,7 @@
       <ul class="mini-list">
         ${shown.map((x) => `
           <li><a href="detail.html?id=${encodeURIComponent(x.id)}">
-            <span class="mini-name">${esc(x.name)}</span>
+            <span class="mini-name">${esc(PN.displayName(x.name))}</span>
             <span class="mini-meta">${esc(x.company || "")}${x.form ? ` · ${esc(x.form)}` : ""}${x.status !== "정상" ? ` · ${esc(x.status)}` : ""}</span>
           </a></li>`).join("")}
       </ul>

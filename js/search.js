@@ -40,7 +40,7 @@
       const data = await PN.loadData("otc-products.json");
       const cols = data.columns || [];
       state.meta = data;
-      state.products = (data.rows || []).map((row) => {
+      state.products = (data.rows || []).filter((row) => !PN.isExportOnly(row[cols.indexOf("name")])).map((row) => {
         const p = {};
         cols.forEach((c, i) => (p[c] = row[i]));
         p._n = {
@@ -143,7 +143,7 @@
       <li>
         <a class="result" href="detail.html?id=${encodeURIComponent(p.id)}">
           <div class="result-top">
-            <strong class="result-name">${PN.escapeHTML(p.name)}</strong>
+            <strong class="result-name">${PN.escapeHTML(PN.displayName(p.name))}</strong>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
           </div>
           ${company ? `<div class="result-company">${PN.escapeHTML(company)}</div>` : ""}
