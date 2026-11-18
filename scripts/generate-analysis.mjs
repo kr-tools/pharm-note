@@ -127,7 +127,8 @@ async function callAI(payload, model) {
 
   const body = JSON.stringify({
     model,
-    max_tokens: 2000,
+    // 모델이 답하기 전에 '생각'하는 데도 토큰을 쓰므로 여유 있게 (실제 사용량만 과금)
+    max_tokens: 8000,
     system: SYSTEM,
     messages: [{ role: "user", content: `다음 공식 데이터로 약사 실무 분석 초안을 JSON으로 작성하세요.\n\n${JSON.stringify(payload, null, 1)}` }],
   });
@@ -147,9 +148,19 @@ async function callAI(payload, model) {
 
   const json = JSON.parse(text);
   const out = (json.content || []).filter((c) => c.type === "text").map((c) => c.text).join("");
-  const m = out.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error("AI 응답에서 결과(JSON)를 찾지 못했어요.");
-  const r = JSON.parse(m[0]);
+  const usage = json.usage ? ` (입력 ${json.usage.input_tokens} / 출력 ${json.usage.output_tokens} 토큰)` : "";
+  const start = out.indexOf("{");
+  const end = out.lastIndexOf("}");
+  if (start < 0 || end <= start) {
+    const why = json.stop_reason === "max_tokens" ? "답이 길이 제한에서 끊겼어요" : `종료 사유: ${json.stop_reason || "알 수 없음"}`;
+    throw new Error(`AI 응답에서 결과(JSON)를 찾지 못했어요 — ${why}${usage}. 응답 앞부분: ${out.slice(0, 120) || "(글 없음)"}`);
+  }
+  let r;
+  try {
+    r = JSON.parse(out.slice(start, end + 1));
+  } catch (e) {
+    throw new Error(`AI 응답의 결과(JSON) 형식이 깨졌어요${usage}. 앞부분: ${out.slice(start, start + 120)}`);
+  }
   const pick = (k) => String(r[k] || "").trim().slice(0, 3000);
   return { differences: pick("differences"), formNotes: pick("formNotes"), counseling: pick("counseling"), practicePoints: pick("practicePoints"), model: json.model || model };
 }
