@@ -1,0 +1,61 @@
+# 자동 수집 후보 한 번에 정리 (수동 실행)
+# 실행: Actions → '후보 한 번에 정리' → Run workflow → 범위 선택
+# '확인 대기' 상태인 자동 수집 후보만 지워요. 확인 완료·확인 불가·직접 추가 후보는 그대로예요.
+# 정리 후 '다시 수집'을 체크하면 이어서 주간 수집을 새 규칙으로 바로 다시 돌려요.
+
+name: 후보 한 번에 정리
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "정리 범위"
+        type: choice
+        options:
+          - news
+          - auto
+        default: news
+      recollect:
+        description: "정리 후 바로 다시 수집 (식약처 DB 업데이트는 건너뜀)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: 확인 대기 후보 정리
+        run: node scripts/reset-candidates.mjs
+        env:
+          MODE: ${{ inputs.mode }}
+
+      - name: 새 규칙으로 다시 수집
+        if: inputs.recollect
+        run: node scripts/collect-candidates.mjs
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+
+      - name: 저장(커밋)
+        run: |
+          git config user.name "pharm-note-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "후보 정리 (${{ inputs.mode }})"
+            git pull --rebase
+            git push
+          fi
