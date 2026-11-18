@@ -86,8 +86,8 @@ async function collectOfficialData(dataDir, itemSeq) {
     similar = rows.filter((r) => setKey(r[ci("ingredients")]).split("|").includes(first));
     basis = `주성분(${p.ingredients[0]})을 함께 가진 제품`;
   }
-  // 공급실적 있는 제품을 우선, 최대 8개
-  similar = similar.sort((a, b) => (b[ci("supply")] || 0) - (a[ci("supply")] || 0)).slice(0, 8);
+  // 공급실적 있는 제품을 우선, 최대 4개 (비용 절약)
+  similar = similar.sort((a, b) => (b[ci("supply")] || 0) - (a[ci("supply")] || 0)).slice(0, 4);
 
   const compared = [];
   for (const r of similar) {
@@ -98,7 +98,7 @@ async function collectOfficialData(dataDir, itemSeq) {
       업체: r[ci("company")],
       제형_제품명기준: r[ci("form")],
       성분및함량: d ? ingredientRows(d) : String(r[ci("ingredients")] || "").split(" · "),
-      용법용량: short(d?.easy?.useMethod, 200),
+      용법용량: short(d?.easy?.useMethod, 150),
     });
   }
   return { target, compared, basis };
@@ -125,13 +125,17 @@ async function callAI(payload, model) {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) throw new Error("AI API 키(ANTHROPIC_API_KEY)가 설정되지 않았어요.");
 
-  const body = JSON.stringify({
+  const base = {
     model,
-    // 모델이 답하기 전에 '생각'하는 데도 토큰을 쓰므로 여유 있게 (실제 사용량만 과금)
-    max_tokens: 8000,
+    max_tokens: 4000, // 실제로 쓴 만큼만 과금됨. 혹시 길어져도 끊기지 않도록 여유
     system: SYSTEM,
-    messages: [{ role: "user", content: `다음 공식 데이터로 약사 실무 분석 초안을 JSON으로 작성하세요.\n\n${JSON.stringify(payload, null, 1)}` }],
-  });
+    messages: [{ role: "user", content: `다음 공식 데이터로 약사 실무 분석 초안을 JSON으로 작성하세요.\n\n${JSON.stringify(payload)}` }],
+  };
+  // Sonnet 5.5: '미리 생각하기'를 끄고(between_tools) 노력 수준을 medium으로 → 토큰·비용 절약
+  const saving = /^claude-sonnet-5-5/.test(model)
+    ? { thinking: { type: "between_tools" }, output_config: { effort: "medium" } }
+    : {};
+  let body = JSON.stringify({ ...base, ...saving });
 
   const send = (auth) =>
     fetch(API_URL, {
@@ -143,7 +147,13 @@ async function callAI(payload, model) {
 
   let res = await send({ "x-api-key": key });
   if (res.status === 401) res = await send({ authorization: `Bearer ${key}` });
-  const text = await res.text();
+  let text = await res.text();
+  // 절약 설정을 모델이 받아주지 않으면(400) 기본 설정으로 한 번 더
+  if (res.status === 400 && /thinking|effort|output_config/i.test(text) && Object.keys(saving).length) {
+    body = JSON.stringify(base);
+    res = await send({ "x-api-key": key });
+    text = await res.text();
+  }
   if (!res.ok) throw new Error(`AI API 오류 (${res.status}): ${text.slice(0, 300)}`);
 
   const json = JSON.parse(text);
