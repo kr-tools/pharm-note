@@ -994,3 +994,56 @@ body.admin { background: #fafbfa; }
   .briefing-col { margin-bottom: 0; }
   .home-grid .briefing-card { min-height: 228px; }
 }
+
+/* 관리자 화면 버튼 다듬기 (v7) */
+.tabs3 button, .tabs2 button { -webkit-appearance: none; appearance: none; font-family: inherit; cursor: pointer; transition: background .15s ease, color .15s ease; }
+.tabs3 button:not([aria-selected="true"]):hover { color: var(--ink-soft); }
+.a-actions .btn-primary { height: 50px; font-size: 15px; }
+.a-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn-ghost {
+  -webkit-appearance: none; appearance: none; font-family: inherit; cursor: pointer;
+  height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink-soft); font-size: 13.5px; font-weight: 600; transition: background .15s ease, border-color .15s ease;
+}
+.btn-ghost:hover { background: #eef1ef; border-color: #d9e1dc; }
+.btn-ghost.danger { background: #fff7f7; border-color: #f3d6d6; color: var(--error-ink); }
+.btn-ghost.danger:hover { background: var(--error-bg); }
+.btn-ghost.ai { background: #f3f0fb; border-color: #ddd5f3; color: #5a4a96; }
+.btn-ghost.ai:hover { background: #ebe6f8; }
+.a-form summary, .a-add summary { list-style: none; display: flex; align-items: center; gap: 6px; }
+.a-form summary::-webkit-details-marker, .a-add summary::-webkit-details-marker { display: none; }
+.a-form summary::before, .a-add summary::before {
+  content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg); transition: transform .15s ease; margin-right: 4px;
+}
+.a-form[open] summary::before, .a-add[open] summary::before { transform: rotate(45deg); }
+.badge { display: inline-block; }
+
+/* 관리자 — AI 분석 초안 영역 */
+.a-ai {
+  margin-top: 14px; padding: 12px 14px; border-radius: 12px;
+  background: #faf8fe; border: 1.5px dashed #cfc6ea;
+}
+.a-ai summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.a-ai summary::-webkit-details-marker { display: none; }
+.a-ai-label { font-size: 13px; font-weight: 700; color: #5a4a96; }
+.a-ai-state { font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: #efebfa; color: #6f6795; }
+.a-ai-state.approved { background: #5a4a96; color: #fff; }
+.a-ai-field { display: block; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: #5a4a96; }
+.a-ai-field textarea {
+  display: block; width: 100%; margin-top: 5px; padding: 9px 11px; border-radius: 10px;
+  border: 1px solid #ddd5f3; background: #fff; font: inherit; font-size: 13.5px; font-weight: 400; line-height: 1.6; color: var(--ink);
+}
+
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  padding: 0 12px calc(12px + env(safe-area-inset-bottom, 0px));
+}
+.sheet-inner {
+  max-width: 540px; margin: 0 auto; padding: 16px 18px; border-radius: 18px;
+  background: var(--ink); color: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.2);
+}
+.sheet-inner strong { display: block; font-size: 15px; margin-bottom: 6px; }
+.sheet-inner p { margin: 0; font-size: 13.5px; line-height: 1.6; color: #dfe7e2; }
+.sheet-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.sheet-btns .btn-ghost { display: grid; place-items: center; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; }
