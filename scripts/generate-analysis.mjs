@@ -47,11 +47,26 @@ function ingredientRows(p) {
     });
 }
 
+// 비교할 때 같은 묶음으로 보는 제형
+function formGroup(form) {
+  const f = String(form || "");
+  if (/정제|캡슐/.test(f)) return "정제·캡슐";
+  if (/시럽|액제/.test(f)) return "시럽·액제";
+  if (/산·과립/.test(f)) return "산·과립제";
+  if (/외용/.test(f)) return "외용제";
+  if (/첩부/.test(f)) return "첩부제(파스)";
+  if (/점안/.test(f)) return "점안·점비제";
+  if (/트로키/.test(f)) return "트로키·껌·필름";
+  if (/좌제/.test(f)) return "좌제·질정";
+  if (/환·고/.test(f)) return "환·고·엑스제";
+  return "기타";
+}
+
 const short = (s, n) => (s && s.length > n ? s.slice(0, n) + "…" : s || "");
 
 /* ---------- ① 공식 데이터 모으기 ---------- */
 
-async function collectOfficialData(dataDir, itemSeq) {
+async function collectOfficialData(dataDir, itemSeq, compareIds = []) {
   const cache = {};
   const p = await loadDetail(dataDir, itemSeq, cache);
   if (!p) throw new Error("식약처 DB에서 이 제품의 상세 정보를 찾지 못했어요. (품목기준코드 확인 필요)");
@@ -73,21 +88,57 @@ async function collectOfficialData(dataDir, itemSeq) {
     보관법: p.easy?.storage || "",
   };
 
-  // 비교 대상: 유효성분 구성이 같은 제품 → 없으면 주성분 하나를 공유하는 제품
+  // 비교 대상 고르기
+  // ① 유효성분 구성이 같은 제품 (없으면 주성분 하나를 공유하는 제품)
+  // ② 그중 '같은 제형 묶음'만 (정·캡슐끼리, 시럽·액끼리 …)
+  // ③ 공급실적 있는 제품 → 허가가 오래된(오래 쓰여 온) 순으로 최대 4개
   const otc = await readJSON(path.join(dataDir, "otc-products.json"), { columns: [], rows: [] });
   const ci = (c) => otc.columns.indexOf(c);
   const setKey = (s) => String(s || "").split(" · ").map((x) => x.replace(/\s/g, "")).filter(Boolean).sort().join("|");
   const myKey = setKey(p.ingredients.join(" · "));
   const first = (p.ingredients[0] || "").replace(/\s/g, "");
+  const myGroup = formGroup(p.form);
   const rows = otc.rows.filter((r) => r[ci("id")] !== p.id && r[ci("status")] === "정상");
-  let similar = rows.filter((r) => setKey(r[ci("ingredients")]) === myKey);
-  let basis = "유효성분 구성이 같은 제품";
-  if (!similar.length && first) {
-    similar = rows.filter((r) => setKey(r[ci("ingredients")]).split("|").includes(first));
-    basis = `주성분(${p.ingredients[0]})을 함께 가진 제품`;
+
+  const baseName = (n) => String(n || "").replace(/\(.*$/, "").replace(/\s/g, "");
+  const myBase = baseName(p.name);
+
+  // 같은 제형 우선 → 공급실적 → 허가가 오래된 순, 한 회사당 1개, 같은 제품(수출명 등) 제외
+  function choose(pool) {
+    const same = pool.filter((r) => formGroup(r[ci("form")]) === myGroup);
+    const usePool = same.length ? same : pool;
+    const used = new Set([p.company]);
+    const out = [];
+    for (const r of usePool.slice().sort((x, y) =>
+      (y[ci("supply")] || 0) - (x[ci("supply")] || 0) ||
+      String(x[ci("permitDate")] || "9999").localeCompare(String(y[ci("permitDate")] || "9999")))) {
+      if (baseName(r[ci("name")]) === myBase || used.has(r[ci("company")])) continue;
+      used.add(r[ci("company")]);
+      out.push(r);
+      if (out.length >= 4) break;
+    }
+    return { out, sameForm: same.length > 0 };
   }
-  // 공급실적 있는 제품을 우선, 최대 4개 (비용 절약)
-  similar = similar.sort((a, b) => (b[ci("supply")] || 0) - (a[ci("supply")] || 0)).slice(0, 4);
+
+  let basis = "유효성분 구성이 같은";
+  let pick = choose(rows.filter((r) => setKey(r[ci("ingredients")]) === myKey));
+  if (!pick.out.length && first) {
+    basis = `주성분(${p.ingredients[0]})을 함께 가진`;
+    pick = choose(rows.filter((r) => setKey(r[ci("ingredients")]).split("|").includes(first)));
+  }
+  let similar = pick.out;
+  basis = !similar.length
+    ? "비교할 만한 제품을 찾지 못함"
+    : pick.sameForm
+      ? `${basis} ${myGroup} 제품 (허가가 오래된 순)`
+      : `${basis} 제품 — 같은 제형(${myGroup})이 없어 다른 제형과 비교`;
+
+  // 관리자가 비교 제품을 직접 골랐으면 그것을 우선 사용
+  const picked = (compareIds || []).map((id) => otc.rows.find((r) => r[ci("id")] === id)).filter(Boolean).slice(0, 4);
+  if (picked.length) {
+    similar = picked;
+    basis = "관리자가 직접 고른 비교 제품";
+  }
 
   const compared = [];
   for (const r of similar) {
@@ -97,6 +148,7 @@ async function collectOfficialData(dataDir, itemSeq) {
       제품명: r[ci("name")],
       업체: r[ci("company")],
       제형_제품명기준: r[ci("form")],
+      허가일: r[ci("permitDate")],
       성분및함량: d ? ingredientRows(d) : String(r[ci("ingredients")] || "").split(" · "),
       용법용량: short(d?.easy?.useMethod, 150),
     });
@@ -178,7 +230,7 @@ async function callAI(payload, model) {
 /* ---------- ③ 저장 ---------- */
 
 // 한 제품의 초안 만들기 (관리자 요청 처리에서도 사용)
-export async function generateFor(itemSeq, { dataDir = "data" } = {}) {
+export async function generateFor(itemSeq, { dataDir = "data", compareIds = [] } = {}) {
   const file = path.join(dataDir, "pharmacist-analysis.json");
   const store = await readJSON(file, { updatedAt: null, items: {} });
   store.items ||= {};
@@ -186,7 +238,7 @@ export async function generateFor(itemSeq, { dataDir = "data" } = {}) {
   const now = new Date().toISOString();
 
   try {
-    const { target, compared, basis } = await collectOfficialData(dataDir, itemSeq);
+    const { target, compared, basis } = await collectOfficialData(dataDir, itemSeq, compareIds);
     const ai = await callAI({ 분석대상: target, 비교기준: basis, 비교제품: compared }, model);
     store.items[itemSeq] = {
       status: "draft",

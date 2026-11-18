@@ -205,7 +205,9 @@ async function main() {
       const itemSeq = cand.itemSeq;
       if (!itemSeq) throw new UserError("품목기준코드가 연결된 후보만 AI 초안을 만들 수 있어요.");
       const { generateFor } = await import("./generate-analysis.mjs");
-      const r = await generateFor(itemSeq, { dataDir: DATA });
+      const compareIds = (Array.isArray(req.compareIds) ? req.compareIds : [])
+        .map((x) => clean(x, 20)).filter((x) => /^\d+$/.test(x) && x !== itemSeq).slice(0, 4);
+      const r = await generateFor(itemSeq, { dataDir: DATA, compareIds });
       if (!r.ok) throw new UserError(`AI 초안을 만들지 못했어요 — ${r.error} (공식 정보와 다른 기능은 정상이에요)`);
       result = `🤖 **${cand.name}** AI 분석 초안을 만들었어요. 관리자 화면에서 검토 후 승인해 주세요.`;
     } else if (action === "analysis_approve") {
