@@ -142,6 +142,49 @@
     ["practicePoints", "약국 실무 포인트"],
   ];
 
+  // 카드별로 고른 비교 제품 (최대 4개)
+  const picks = new Map();
+
+  function pickerHTML(c) {
+    const chosen = picks.get(c.id) || [];
+    return `
+      <details class="a-cmp" ${chosen.length ? "open" : ""}>
+        <summary>비교 제품 직접 고르기 <span class="opt">선택 · 최대 4개 · 안 고르면 같은 제형에서 자동 선택</span></summary>
+        <div class="cmp-chosen">${chosen
+          .map((x) => `<span class="cmp-chip">${esc(x.name)}<button type="button" data-cmp-del="${esc(x.id)}" aria-label="빼기">✕</button></span>`)
+          .join("") || `<span class="sec-note" style="margin:0">아직 고른 제품이 없어요</span>`}</div>
+        <input type="search" class="cmp-q" placeholder="제품명으로 찾기 (예: 타이레놀)" autocomplete="off">
+        <div class="cmp-results"></div>
+      </details>`;
+  }
+
+  async function searchCompare(card, q) {
+    const box = card.querySelector(".cmp-results");
+    if (q.length < 2) { box.innerHTML = ""; return; }
+    try { await ensureIndex(); } catch (e) { box.innerHTML = `<p class="a-error">${esc(e.message)}</p>`; return; }
+    const k = q.replace(/\s/g, "").toLowerCase();
+    const chosen = new Set((picks.get(card.dataset.id) || []).map((x) => x.id));
+    const found = otcIndex.filter((p) => p.status === "정상" && p.key.includes(k)).slice(0, 6);
+    box.innerHTML = found.length
+      ? found.map((p) => `<div class="add-row">
+          <span><span class="mini-name">${esc(p.name)}</span><span class="mini-meta">${esc(p.company)} · ${esc(p.form || "")}</span></span>
+          ${chosen.has(p.id) ? `<span class="badge plain">선택됨</span>` : `<button type="button" class="btn-ghost" data-cmp-add="${esc(p.id)}" data-name="${esc(p.name)}">고르기</button>`}
+        </div>`).join("")
+      : `<p class="sec-note">찾는 제품이 없어요.</p>`;
+  }
+
+  function rerenderPicker(card) {
+    const c = items.find((i) => i.id === card.dataset.id);
+    const old = card.querySelector(".a-cmp");
+    if (!c || !old) return;
+    const q = old.querySelector(".cmp-q").value;
+    old.outerHTML = pickerHTML(c);
+    const input = card.querySelector(".cmp-q");
+    input.value = q;
+    card.querySelector(".a-cmp").open = true;
+    if (q) searchCompare(card, q);
+  }
+
   function aiHTML(c) {
     const key = c.itemSeq || c.id;
     const a = analysis[key];
@@ -164,11 +207,13 @@
             <label class="a-ai-field">${label}
               <textarea name="ai-${k}" rows="4">${esc(a[k] || "")}</textarea>
             </label>`).join("")}
+          ${pickerHTML(c)}
           <div class="a-sub" style="margin-top:12px">
             <button type="button" class="btn-ghost ai" data-act="analysis_approve">${a.status === "approved" ? "수정 내용 다시 승인" : "검토 완료 · 공개 승인"}</button>
             <button type="button" class="btn-ghost" data-act="analyze">AI 초안 다시 만들기</button>
           </div>`
         : `<p class="sec-note">아직 초안이 없어요. 버튼을 누르면 식약처 공식 데이터로 초안을 만들어요. (1~2분)</p>
+          ${pickerHTML(c)}
           <button type="button" class="btn-ghost ai" data-act="analyze" style="width:100%;margin-top:8px">AI 초안 만들기</button>`}
       </details>`;
   }
@@ -287,7 +332,10 @@
       }
       return openIssue({ v: 1, action: "analysis_approve", id: c.id, ...fields }, c.name);
     }
-    if (act === "analyze") return openIssue({ v: 1, action: "analyze", id: c.id }, c.name);
+    if (act === "analyze") {
+      const compareIds = (picks.get(c.id) || []).map((x) => x.id);
+      return openIssue({ v: 1, action: "analyze", id: c.id, ...(compareIds.length ? { compareIds } : {}) }, c.name);
+    }
 
     if (act === "delete" && btn.dataset.armed !== "1") {
       // 실수 방지: 두 번 눌러야 삭제 요청
@@ -301,19 +349,25 @@
 
   /* ---------- 후보 직접 추가 (식약처 DB에서 찾기) ---------- */
 
+  async function ensureIndex() {
+    if (otcIndex) return otcIndex;
+    const d = await PN.loadData("otc-products.json");
+    const ci = (c) => d.columns.indexOf(c);
+    otcIndex = d.rows.map((r) => ({
+      id: r[ci("id")], name: r[ci("name")], company: r[ci("company")],
+      permitDate: r[ci("permitDate")], status: r[ci("status")], form: r[ci("form")],
+      key: String(r[ci("name")]).replace(/\s/g, "").toLowerCase(),
+    }));
+    return otcIndex;
+  }
+
   async function searchDB(q) {
     const box = $("add-results");
     if (q.length < 2) { box.innerHTML = ""; return; }
     if (!otcIndex) {
       box.innerHTML = `<p class="sec-note">의약품 데이터를 불러오는 중…</p>`;
       try {
-        const d = await PN.loadData("otc-products.json");
-        const ci = (c) => d.columns.indexOf(c);
-        otcIndex = d.rows.map((r) => ({
-          id: r[ci("id")], name: r[ci("name")], company: r[ci("company")],
-          permitDate: r[ci("permitDate")], status: r[ci("status")],
-          key: String(r[ci("name")]).replace(/\s/g, "").toLowerCase(),
-        }));
+        await ensureIndex();
       } catch (e) {
         box.innerHTML = `<p class="notice error">${esc(e.message)}</p>`;
         return;
@@ -356,9 +410,31 @@
     render();
   });
   $("list").addEventListener("click", (e) => {
+    const add = e.target.closest("[data-cmp-add]");
+    const del = e.target.closest("[data-cmp-del]");
+    if (add || del) {
+      const card = (add || del).closest(".a-card");
+      let list = picks.get(card.dataset.id) || [];
+      if (add) {
+        if (list.length >= 4) return toast("비교 제품은 최대 4개까지 고를 수 있어요");
+        list = [...list, { id: add.dataset.cmpAdd, name: add.dataset.name }];
+      } else {
+        list = list.filter((x) => x.id !== del.dataset.cmpDel);
+      }
+      picks.set(card.dataset.id, list);
+      return rerenderPicker(card);
+    }
     const btn = e.target.closest("[data-act]");
     if (btn) handleAction(btn.closest(".a-card"), btn.dataset.act, btn);
   });
+  let ct;
+  $("list").addEventListener("input", (e) => {
+    if (!e.target.classList.contains("cmp-q")) return;
+    clearTimeout(ct);
+    const card = e.target.closest(".a-card");
+    ct = setTimeout(() => searchCompare(card, e.target.value.trim()), 250);
+  });
+
   let t;
   $("add-q").addEventListener("input", (e) => {
     clearTimeout(t);
