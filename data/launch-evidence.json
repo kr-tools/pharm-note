@@ -1,5 +1,18 @@
 {
-  "updatedAt": "2026-11-18T08:20:01.197Z",
+  "updatedAt": "2026-11-18T08:22:08.197Z",
   "note": "관리자가 출시를 확인한 제품의 실제 출시일과 공식 근거 URL입니다.",
-  "items": {}
+  "items": {
+    "202107495": {
+      "launchDate": "2026-11-16",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://m.dailypharm.com/user/news/65246"
+        }
+      ],
+      "seller": "",
+      "confirmedAt": "2026-11-18T08:22:08.197Z",
+      "candidateId": "202107495"
+    }
+  }
 }
