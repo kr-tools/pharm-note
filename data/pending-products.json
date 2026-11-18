@@ -1,28 +1,6 @@
 {
-  "updatedAt": "2026-11-18T09:03:37.961Z",
+  "updatedAt": "2026-11-18T09:05:55.262Z",
   "items": {
-    "197700008": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "197700008",
-      "itemSeq": "197700008",
-      "name": "인사돌정(수출명:하이돌정,펠이돌정)",
-      "company": "동국제약(주)",
-      "ingredients": "옥수수불검화정량추출물",
-      "permitDate": "1977-10-06",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] [주목 e-수출] 글로벌 H&B 도약 '동국제약'…\"센텔리안24 앞세워 사업 대...",
-          "url": "http://www.economytalk.kr/news/articleView.html?idxno=425281"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197700008"
-        }
-      ]
-    },
     "197900277": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -1602,6 +1580,7 @@
     }
   },
   "deleted": {
+    "197700008": "2026-11-18T09:05:55.262Z",
     "202500588": "2026-11-17T05:51:48.519Z"
   }
 }
