@@ -1,0 +1,47 @@
+# AI 약사 실무 분석 초안 만들기 (수동 실행)
+# 실행: Actions → 'AI 분석 초안 생성' → Run workflow
+# 품목기준코드를 비워두면 '초안이 없는 후보 전체'를 처리합니다. (한 번에 최대 30개)
+# 만들어진 초안은 관리자가 검토·승인하기 전에는 공개되지 않습니다.
+
+name: AI 분석 초안 생성
+
+on:
+  workflow_dispatch:
+    inputs:
+      item_seq:
+        description: "특정 제품만 만들 때 품목기준코드 (비워두면 전체)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: AI 초안 생성
+        run: node scripts/generate-analysis.mjs "$ITEM_SEQ"
+        env:
+          ITEM_SEQ: ${{ inputs.item_seq }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+      - name: 저장(커밋)
+        run: |
+          git config user.name "pharm-note-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pharmacist-analysis.json
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "AI 분석 초안 생성"
+            git pull --rebase
+            git push
+          fi

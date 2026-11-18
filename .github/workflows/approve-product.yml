@@ -23,7 +23,7 @@ jobs:
       startsWith(github.event.issue.title, '[PHARM NOTE]') &&
       github.event.issue.user.login == github.repository_owner
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: 저장소 내려받기
         uses: actions/checkout@v5
@@ -40,6 +40,8 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           RESULT_FILE: ${{ runner.temp }}/result.md
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
 
       - name: 변경된 데이터 저장(커밋)
         if: steps.apply.outcome == 'success'
