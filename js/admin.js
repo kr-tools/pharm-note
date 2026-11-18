@@ -28,6 +28,7 @@
   };
 
   let items = [];
+  let analysis = {};
   let tab = ["pending", "confirmed", "unconfirmable"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "pending";
   let otcIndex = null;
 
@@ -38,6 +39,11 @@
     try {
       const data = await PN.loadData("pending-products.json");
       items = Object.values(data.items || {});
+      try {
+        analysis = (await PN.loadData("pharmacist-analysis.json")).items || {};
+      } catch (e) {
+        analysis = {}; // AI 분석 파일이 없어도 출시 검토는 정상 작동
+      }
       $("updated-at").textContent = PN.formatUpdated(data.updatedAt);
       render();
     } catch (e) {
@@ -95,6 +101,8 @@
           ${c.memo ? `<div class="kv"><dt>검토 메모</dt><dd>${esc(c.memo)}</dd></div>` : ""}
         </dl>
 
+        ${aiHTML(c)}
+
         <details class="a-form" ${c.status === "pending" ? "open" : ""}>
           <summary>${confirmed ? "출시일·근거 수정 / 상태 변경" : "검토하기"}</summary>
           <label>실제 출시일 <span class="req">승인 시 필수</span>
@@ -125,6 +133,46 @@
       </article>`;
   }
 
+  /* ---------- AI 분석 초안 영역 ---------- */
+
+  const AI_FIELDS = [
+    ["differences", "기존 제품과의 차이점"],
+    ["formNotes", "제형상의 특징"],
+    ["counseling", "복약지도 시 주의할 점"],
+    ["practicePoints", "약국 실무 포인트"],
+  ];
+
+  function aiHTML(c) {
+    const key = c.itemSeq || c.id;
+    const a = analysis[key];
+    const has = a && ["draft", "approved"].includes(a.status);
+    const state = !has ? "초안 없음" : a.status === "approved" ? "검토 완료 · 공개 중" : "검토 전 · 비공개";
+    const err = a?.lastError ? `<p class="a-error">최근 생성 실패: ${esc(a.lastError)}</p>` : "";
+    if (!c.itemSeq) {
+      return `<div class="a-ai"><div class="a-ai-label">AI 분석 초안</div>
+        <p class="sec-note" style="margin:0">품목기준코드가 연결되면 AI 초안을 만들 수 있어요. (아래 ‘검토하기’에서 연결)</p></div>`;
+    }
+    return `
+      <details class="a-ai" ${has && a.status === "draft" ? "open" : ""}>
+        <summary><span class="a-ai-label">AI 분석 초안</span><span class="a-ai-state ${has ? a.status : ""}">${state}</span></summary>
+        ${err}
+        ${has ? `
+          <p class="sec-note">공식 허가사항·성분 정보만으로 작성된 초안이에요. 내용을 확인하고 필요하면 고친 뒤 승인하세요.
+            ${a.generatedAt ? `<br>생성: ${esc(a.generatedAt.slice(0, 10))}${a.model ? ` · ${esc(a.model)}` : ""}` : ""}
+            ${a.basedOn?.comparedBasis ? ` · 비교: ${esc(a.basedOn.comparedBasis)} ${a.basedOn.comparedIds?.length || 0}개` : ""}</p>
+          ${AI_FIELDS.map(([k, label]) => `
+            <label class="a-ai-field">${label}
+              <textarea name="ai-${k}" rows="4">${esc(a[k] || "")}</textarea>
+            </label>`).join("")}
+          <div class="a-sub" style="margin-top:12px">
+            <button type="button" class="btn-ghost ai" data-act="analysis_approve">${a.status === "approved" ? "수정 내용 다시 승인" : "검토 완료 · 공개 승인"}</button>
+            <button type="button" class="btn-ghost" data-act="analyze">AI 초안 다시 만들기</button>
+          </div>`
+        : `<p class="sec-note">아직 초안이 없어요. 버튼을 누르면 식약처 공식 데이터로 초안을 만들어요. (1~2분)</p>
+          <button type="button" class="btn-ghost ai" data-act="analyze" style="width:100%;margin-top:8px">AI 초안 만들기</button>`}
+      </details>`;
+  }
+
   function todayISO() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -143,7 +191,10 @@
       });
   }
 
-  const ACT_LABEL = { confirm: "출시 확인 승인", unconfirmable: "확인 불가 처리", delete: "후보 삭제", add: "후보 직접 추가" };
+  const ACT_LABEL = {
+    confirm: "출시 확인 승인", unconfirmable: "확인 불가 처리", delete: "후보 삭제", add: "후보 직접 추가",
+    analyze: "AI 초안 만들기", analysis_approve: "AI 분석 검토 승인",
+  };
 
   function openIssue(req, name) {
     const lines = [
@@ -161,9 +212,42 @@
       "```",
     ].filter((l) => l !== "");
     const title = `[PHARM NOTE] ${ACT_LABEL[req.action]}: ${name}`.slice(0, 200);
-    const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(lines.join("\n"))}`;
-    window.open(url, "_blank", "noopener");
-    toast("GitHub 창에서 제출하면 1~2분 뒤 반영돼요");
+    const body = lines.join("\n");
+    const base = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}`;
+    const full = `${base}&body=${encodeURIComponent(body)}`;
+
+    // 주소가 너무 길면(AI 분석 본문 등) GitHub가 받아주지 않으므로 복사-붙여넣기 방식
+    if (full.length > 6000) {
+      const paste = () => {
+        const w = window.open(`${base}&body=${encodeURIComponent("(여기를 모두 지우고 붙여넣기 하세요)")}`, "_blank");
+        if (w) w.opener = null;
+        showSheet(true, base);
+      };
+      navigator.clipboard?.writeText(body).then(paste, () => showSheet(true, base, body));
+      return;
+    }
+    const w = window.open(full, "_blank");
+    if (w) w.opener = null;
+    showSheet(false, full);
+  }
+
+  // 다음에 할 일 안내 (새 창이 막혔을 때 쓸 링크 포함)
+  function showSheet(needPaste, url, bodyForManualCopy) {
+    const sheet = $("sheet");
+    sheet.innerHTML = `
+      <div class="sheet-inner">
+        <strong>${needPaste ? "본문을 복사했어요" : "GitHub 창이 열렸어요"}</strong>
+        <p>${needPaste
+          ? "내용이 길어서 붙여넣기 방식으로 진행해요. GitHub 창의 본문 칸을 <b>모두 지우고 붙여넣기</b>(Ctrl+V / 길게 눌러 붙여넣기)한 뒤 Create를 눌러주세요."
+          : "GitHub 창에서 내용을 고치지 말고 <b>Create</b>를 눌러주세요. 1~2분 뒤 반영되고, 이슈에 결과 댓글이 달려요."}</p>
+        ${bodyForManualCopy ? `<textarea readonly rows="5" style="width:100%">${esc(bodyForManualCopy)}</textarea>` : ""}
+        <div class="sheet-btns">
+          <a class="btn-ghost" href="${esc(url)}" target="_blank" rel="noopener">창이 안 열렸다면 여기</a>
+          <button type="button" class="btn-ghost" id="sheet-close">닫기</button>
+        </div>
+      </div>`;
+    sheet.hidden = false;
+    $("sheet-close").onclick = () => (sheet.hidden = true);
   }
 
   function handleAction(card, act, btn) {
@@ -193,6 +277,17 @@
         c.name
       );
     }
+
+    if (act === "analysis_approve") {
+      const fields = Object.fromEntries(AI_FIELDS.map(([k]) => [k, val(`ai-${k}`)]));
+      if (!Object.values(fields).some(Boolean)) {
+        err.textContent = "분석 내용이 비어 있어요.";
+        err.hidden = false;
+        return;
+      }
+      return openIssue({ v: 1, action: "analysis_approve", id: c.id, ...fields }, c.name);
+    }
+    if (act === "analyze") return openIssue({ v: 1, action: "analyze", id: c.id }, c.name);
 
     if (act === "delete" && btn.dataset.armed !== "1") {
       // 실수 방지: 두 번 눌러야 삭제 요청
