@@ -87,6 +87,8 @@ function parseRequest(body) {
   return req;
 }
 
+// 줄바꿈은 살리고 나머지 제어문자만 제거 (AI 분석 본문용)
+const cleanText = (s, max = 3000) => String(s ?? "").replace(/\r/g, "").replace(/[\u0000-\u0009\u000b-\u001f]/g, " ").trim().slice(0, max);
 const clean = (s, max = 500) => String(s ?? "").replace(/[\u0000-\u001f]/g, " ").trim().slice(0, max);
 
 function cleanEvidence(list) {
@@ -198,6 +200,37 @@ async function main() {
         evidence,
       });
       result = `✅ **${cand.name}** 출시 확인 완료 — 출시일 ${launchDate}, **${w.title}**에 등록했어요.`;
+    } else if (action === "analyze") {
+      // AI 초안 만들기 (공식 데이터 → AI → '검토 전' 상태로 저장)
+      const itemSeq = cand.itemSeq;
+      if (!itemSeq) throw new UserError("품목기준코드가 연결된 후보만 AI 초안을 만들 수 있어요.");
+      const { generateFor } = await import("./generate-analysis.mjs");
+      const r = await generateFor(itemSeq, { dataDir: DATA });
+      if (!r.ok) throw new UserError(`AI 초안을 만들지 못했어요 — ${r.error} (공식 정보와 다른 기능은 정상이에요)`);
+      result = `🤖 **${cand.name}** AI 분석 초안을 만들었어요. 관리자 화면에서 검토 후 승인해 주세요.`;
+    } else if (action === "analysis_approve") {
+      // 관리자가 검토(수정)한 AI 분석을 공개 승인
+      const file = path.join(DATA, "pharmacist-analysis.json");
+      const store = await readJSON(file, { updatedAt: null, items: {} });
+      store.items ||= {};
+      const key = cand.itemSeq || id;
+      const prev = store.items[key];
+      if (!prev || !["draft", "approved"].includes(prev.status)) throw new UserError("승인할 AI 초안이 없어요. 먼저 초안을 만들어 주세요.");
+      const fields = ["differences", "formNotes", "counseling", "practicePoints"];
+      const edited = Object.fromEntries(fields.map((f) => [f, cleanText(req[f])]));
+      if (!fields.some((f) => edited[f])) throw new UserError("분석 내용이 비어 있어요.");
+      store.items[key] = {
+        ...prev,
+        ...edited,
+        status: "approved",
+        reviewedAt: todayKST(),
+        editedByAdmin: fields.some((f) => edited[f] !== (prev[f] || "")),
+      };
+      delete store.items[key].lastError;
+      delete store.items[key].lastErrorAt;
+      store.updatedAt = now;
+      await writeJSON(file, store);
+      result = `🟣 **${cand.name}** AI 분석을 검토 완료로 승인했어요. 이제 상세 페이지와 브리핑에 ‘AI 분석 · 관리자 검토 완료’로 표시돼요.`;
     } else if (action === "unconfirmable") {
       const key = cand.itemSeq || id;
       Object.assign(cand, { status: "unconfirmable", memo: clean(req.memo, 1000), reviewedAt: now });
