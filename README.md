@@ -10,7 +10,7 @@
 - [x] 5단계: 주간 브리핑
 - [x] 6단계: 관리자 검토 시스템
 - [x] 7단계: AI 분석 초안 생성
-- [ ] 8단계: GitHub Actions 자동화
+- [x] 8단계: GitHub Actions 자동화
 - [ ] 9단계: GitHub Pages 배포 및 테스트
 
 ## 폴더 구조
