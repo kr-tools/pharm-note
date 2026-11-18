@@ -262,10 +262,10 @@ export async function generateFor(itemSeq, { dataDir = "data", compareIds = [] }
 
 async function main() {
   const dataDir = process.env.DATA_DIR || "data";
-  const only = process.argv[2];
+  const only = process.argv.slice(2).join(" ").split(/\s+/).filter((x) => /^\d+$/.test(x));
   let ids;
-  if (only) {
-    ids = [only];
+  if (only.length) {
+    ids = only;
   } else {
     // 후보(확인 대기·확인 완료) 중 품목기준코드가 있고 초안이 아직 없는 제품
     const pending = await readJSON(path.join(dataDir, "pending-products.json"), { items: {} });
