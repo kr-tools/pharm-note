@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-18T09:38:29.746Z",
+  "runAt": "2026-11-18T09:52:30.508Z",
   "period": {
     "start": "2026-11-09",
     "end": "2026-11-15"
@@ -13,10 +13,19 @@
     "articles": 157,
     "launchArticles": 37,
     "matched": 24,
-    "added": 0,
-    "unmatchedAdded": 0,
-    "sourceAppended": 15
+    "added": 6,
+    "unmatchedAdded": 2,
+    "sourceAppended": 18
   },
-  "addedIds": [],
+  "addedIds": [
+    "news-87aa6a85aa",
+    "202601715",
+    "news-fbded07247",
+    "202602326",
+    "201508281",
+    "202000147",
+    "201507585",
+    "202601260"
+  ],
   "warnings": []
 }

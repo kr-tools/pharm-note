@@ -1,164 +1,6 @@
 {
-  "updatedAt": "2026-11-18T09:38:39.441Z",
+  "updatedAt": "2026-11-18T09:52:39.794Z",
   "items": {
-    "197900277": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "197900277",
-      "itemSeq": "197900277",
-      "name": "게보린정(수출명:돌로린정)",
-      "company": "삼진제약(주)",
-      "ingredients": "아세트아미노펜 · 카페인무수물 · 이소프로필안티피린",
-      "permitDate": "1979-03-15",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-15)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] '게보린'으로 명성 쌓은 58년...삼진제약, 2세 체제 본격화 속 신약 '승...",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=229804"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197900277"
-        }
-      ]
-    },
-    "199501541": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "199501541",
-      "itemSeq": "199501541",
-      "name": "씨씨엘연질캡슐(수출명:Tonimax,Phamory,Biosdomin)(수출용)",
-      "company": "대화제약(주)",
-      "ingredients": "은행엽엑스 · 마늘유 · 서양산사자건조엑스 · 멜리사엽건조엑스",
-      "permitDate": "1995-05-16",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-13)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] [제약·바이오 NOW!] HLB제약·GC녹십자·대웅제약·유한양행·지씨씨엘...",
-          "url": "http://www.kdfnews.com/news/articleView.html?idxno=190912"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199501541"
-        }
-      ]
-    },
-    "199800470": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "199800470",
-      "itemSeq": "199800470",
-      "name": "세노바액(세티리진염산염)",
-      "company": "일동제약(주)",
-      "ingredients": "세티리진염산염",
-      "permitDate": "1998-07-23",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-10) · 이름이 같거나 비슷한 제품 2개 중 하나로 연결 — 다른 제품인지 확인 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] SK바이오팜 세노바메이트 쟁탈전… 中 복제약도 가세",
-          "url": "http://www.the-biz.co.kr/news/articleView.html?idxno=731059"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199800470"
-        }
-      ]
-    },
-    "200102705": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "200102705",
-      "itemSeq": "200102705",
-      "name": "광동우황청심원(사향대체물질영묘향함유)",
-      "company": "광동제약(주)",
-      "ingredients": "산약 · 황금 · 당귀 · 방풍 · 백출 · 시호 · 길경 · 행인 · 복령 · 천궁 · 우황 · 감초 · 아교 · 영양각 · 영묘향 · 용뇌 · 백렴 · 건강 · 인삼 · 포황 · 신곡 · 대두황권 · 육계 · 작약 · 맥문동",
-      "permitDate": "2001-09-20",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-13) · 이름이 같거나 비슷한 제품 3개 중 하나로 연결 — 다른 제품인지 확인 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] 수능 엿새 앞두고 다시 뜨는 '우황청심원' … 광동제약 52년 브랜드의 승...",
-          "url": "https://biz.newdaily.co.kr/site/data/html/2026/11/13/2026111300080.html"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200102705"
-        }
-      ]
-    },
-    "200608046": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "200608046",
-      "itemSeq": "200608046",
-      "name": "아젤리아크림(아젤라산(미분화))",
-      "company": "레오파마(유)",
-      "ingredients": "아젤라산(미분화)",
-      "permitDate": "2006-11-24",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-14)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-14] 타이레놀, 아젤리아 제치고 1위 탈환…감기약·점안액 강세",
-          "url": "https://www.dailypharm.com/user/news/344556?REFERER=NP"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200608046"
-        }
-      ]
-    },
-    "200700547": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "200700547",
-      "itemSeq": "200700547",
-      "name": "판피린큐액",
-      "company": "동아제약(주)",
-      "ingredients": "티페피딘시트르산염 · 구아이페네신 · dl-메틸에페드린염산염 · 클로르페니라민말레산염 · 카페인무수물 · 아세트아미노펜",
-      "permitDate": "2007-01-15",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-15) · 이름이 같거나 비슷한 제품 2개 중 하나로 연결 — 다른 제품인지 확인 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] 일반약도 '어떻게 쓰느냐' 경쟁…제약업계, 제형 차별화 속도",
-          "url": "https://www.news1.kr/bio/pharmaceutical-bio/6354469"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200700547"
-        },
-        {
-          "title": "[뉴스 2026-11-15] \"약효는 기본, 복용 편의가 경쟁력\"…일반약 '제형 다변화' 속도",
-          "url": "http://www.metroseoul.co.kr/article/20261115500216"
-        }
-      ]
-    },
-    "201206997": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201206997",
-      "itemSeq": "201206997",
-      "name": "삐콤씨정",
-      "company": "(주)유한양행",
-      "ingredients": "티아민질산염 · 리보플라빈 · 피리독신염산염 · 시아노코발라민100배산 · 아스코르브산과립97% · 판토텐산칼슘 · 니코틴산아미드 · 토코페롤아세테이트 2배산 · 셀레늄함유건조효모",
-      "permitDate": "2012-09-28",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-15)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] [제약사 브랜드 전략] ㊤ \"아빠에겐 추억, 자녀에겐 신상”…장수 브랜...",
-          "url": "https://www.asiatime.co.kr/article/20261112500394"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201206997"
-        }
-      ]
-    },
     "201507585": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -169,31 +11,15 @@
       "ingredients": "산화마그네슘 · 토코페롤아세테이트 · 피리독신염산염 · 티아민질산염 · 니코틴아마이드",
       "permitDate": "2015-11-05",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-11] <신제품·신기술>조아제약, 액상 마그네슘제 ‘마그스부스트업액’",
-          "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
+          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201507585"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, '마그스부스트업'...\"국내 최고 함량 액상 마그네슘 충전\"",
-          "url": "http://www.metroseoul.co.kr/article/20261111500123"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 출시",
-          "url": "https://www.pharmnews.com/news/articleView.html?idxno=307809"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 선봬",
-          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1423890"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
-          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
         }
       ]
     },
@@ -207,101 +33,19 @@
       "ingredients": "벤포티아민 · 아스코르브산97%과립 · 콜레칼시페롤과립 · 토코페롤아세테이트 2배산 · 우르소데옥시콜산 · γ-오리자놀 · 유비데카레논 · 산화아연 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염 · 판토텐산칼슘 · 비오틴 · 이노시톨 · 폴산 · 시아노코발라민1%",
       "permitDate": "2015-12-15",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
-          "url": "https://www.etnews.com/20261111000062"
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 ‘벤포벨알파’ 출시",
+          "url": "https://www.inthenews.co.kr/news/article.html?no=94330"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201508281"
         },
         {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 ‘벤포벨알파’ 출시",
-          "url": "https://www.inthenews.co.kr/news/article.html?no=94330"
-        }
-      ]
-    },
-    "201601514": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201601514",
-      "itemSeq": "201601514",
-      "name": "하나로겔(헤파리노이드)",
-      "company": "신일제약(주)",
-      "ingredients": "헤파리노이드",
-      "permitDate": "2016-03-15",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-10)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] “성수 일대 동선 하나로 잇는다”…무신사 100번째 매장 ‘무신사 뷰티...",
-          "url": "https://www.segye.com/newsView/20261110505462?OutUrl=naver"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201601514"
-        }
-      ]
-    },
-    "201902857": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201902857",
-      "itemSeq": "201902857",
-      "name": "삐콤씨파워정",
-      "company": "(주)유한양행",
-      "ingredients": "벤포티아민 · 리보플라빈부티레이트 · 피리독살포스페이트수화물 · 시아노코발라민 100배산 · 아스코르브산과립97% · 농축콜레칼시페롤 산 · 토코페롤아세테이트 2배산",
-      "permitDate": "2019-05-02",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-15)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] [제약사 브랜드 전략] ㊤ \"아빠에겐 추억, 자녀에겐 신상”…장수 브랜...",
-          "url": "https://www.asiatime.co.kr/article/20261112500394"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201902857"
-        }
-      ]
-    },
-    "201905072": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201905072",
-      "itemSeq": "201905072",
-      "name": "벤포벨지정",
-      "company": "(주)종근당",
-      "ingredients": "벤포티아민 · 아스코르브산97%과립 · 콜레칼시페롤 과립 · 토코페롤아세테이트 2배산 · 우르소데옥시콜산 · 유비데카레논 · 산화아연 · 산화마그네슘 · 셀레늄함유건조효모 · 리보플라빈 · 니코틴산아미드 · 판토텐산칼슘 · 피리독신염산염 · d-비오틴 · 폴산 · 시아노코발라민1% · 이노시톨",
-      "permitDate": "2019-07-19",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] [제약건기식종근당, 중장년 겨냥 활성비타민 '벤포벨알파정' 출시 外 JW...",
-          "url": "https://www.getnews.co.kr/news/articleView.html?idxno=886840"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201905072"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 50대 이상 맞춤 '벤포벨알파정'으로 라인업 완성",
-          "url": "https://www.ngetnews.com/news/articleView.html?idxno=555790"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 연령별 비타민 시장 공략 나섰다",
-          "url": "http://www.issuenbiz.com/news/articleView.html?idxno=81461"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시 … 중장년층 공략",
-          "url": "http://www.worktoday.co.kr/news/articleView.html?idxno=91833"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 벤포벨 최상위 라인 '벤포벨알파정' 출시",
-          "url": "https://www.medipana.com/news/articleView.html?idxno=421486"
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
+          "url": "https://www.etnews.com/20261111000062"
         }
       ]
     },
@@ -315,45 +59,15 @@
       "ingredients": "수산화마그네슘 · 우르소데옥시콜산",
       "permitDate": "2020-01-09",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-11] [제약건기식]GC녹십자, 협력사와 지속가능 상생형 공급망 구축 外 일동...",
-          "url": "https://www.getnews.co.kr/news/articleView.html?idxno=886836"
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
+          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202000147"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, '마그스부스트업'...\"국내 최고 함량 액상 마그네슘 충전\"",
-          "url": "http://www.metroseoul.co.kr/article/20261111500123"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
-          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
-        }
-      ]
-    },
-    "202101213": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202101213",
-      "itemSeq": "202101213",
-      "name": "마데카솔겔(센텔라정량추출물)",
-      "company": "동국제약(주)",
-      "ingredients": "센텔라정량추출물",
-      "permitDate": "2021-02-09",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] [주목 e-수출] 글로벌 H&B 도약 '동국제약'…\"센텔리안24 앞세워 사업 대...",
-          "url": "http://www.economytalk.kr/news/articleView.html?idxno=425281"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202101213"
         }
       ]
     },
@@ -384,170 +98,6 @@
       "memo": "",
       "reviewedAt": "2026-11-18T08:22:08.197Z"
     },
-    "202201059": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202201059",
-      "itemSeq": "202201059",
-      "name": "벤포벨에스정",
-      "company": "(주)종근당",
-      "ingredients": "벤포티아민 · 콜린타르타르산염 · 농축콜레칼시페롤과립 · 산화아연 · 산화마그네슘 · 타우린 · DL-메티오닌 · 우르소데옥시콜산 · 판토텐산칼슘 · d-비오틴 · 폴산 · 메코발라민 · 비스벤티아민 · 이노시톨 · 리보플라빈 · 피리독신염산염 · 오로트산수화물",
-      "permitDate": "2022-03-15",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] [제약건기식종근당, 중장년 겨냥 활성비타민 '벤포벨알파정' 출시 外 JW...",
-          "url": "https://www.getnews.co.kr/news/articleView.html?idxno=886840"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202201059"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 50대 이상 맞춤 '벤포벨알파정'으로 라인업 완성",
-          "url": "https://www.ngetnews.com/news/articleView.html?idxno=555790"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 연령별 비타민 시장 공략 나섰다",
-          "url": "http://www.issuenbiz.com/news/articleView.html?idxno=81461"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시 … 중장년층 공략",
-          "url": "http://www.worktoday.co.kr/news/articleView.html?idxno=91833"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 벤포벨 최상위 라인 '벤포벨알파정' 출시",
-          "url": "https://www.medipana.com/news/articleView.html?idxno=421486"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
-          "url": "https://www.etnews.com/20261111000062"
-        }
-      ]
-    },
-    "202204148": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202204148",
-      "itemSeq": "202204148",
-      "name": "광동치올페이스트(히노키티올)",
-      "company": "광동제약(주)",
-      "ingredients": "히노키티올",
-      "permitDate": "2022-11-18",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 광동제약, '광동치올페이스트' 시장 공략 나선다…내년 광고 캠페인 추...",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=447083"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202204148"
-        }
-      ]
-    },
-    "202300973": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202300973",
-      "itemSeq": "202300973",
-      "name": "엑스코프연질캡슐",
-      "company": "코오롱제약(주)",
-      "ingredients": "덱스트로메토르판브롬화수소산염수화물 · 트리메토퀴놀염산염수화물 · 구아이페네신 · 클로르페니라민말레산염",
-      "permitDate": "2023-03-20",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-10)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] SK바이오팜 세노바메이트 쟁탈전… 中 복제약도 가세",
-          "url": "http://www.the-biz.co.kr/news/articleView.html?idxno=731059"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202300973"
-        }
-      ]
-    },
-    "202500141": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202500141",
-      "itemSeq": "202500141",
-      "name": "마그스더블액션연질캡슐",
-      "company": "조아제약(주)",
-      "ingredients": "토코페롤아세테이트 · 산화마그네슘 · 피리독신염산염 · 벤포티아민 · 리보플라빈 · 감마-오리자놀 · 시아노코발라민",
-      "permitDate": "2025-01-17",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-11)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
-          "url": "http://www.bokuennews.com/news/article.html?no=286931"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500141"
-        },
-        {
-          "title": "[뉴스 2026-11-11] <신제품·신기술>조아제약, 액상 마그네슘제 ‘마그스부스트업액’",
-          "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 출시",
-          "url": "https://www.pharmnews.com/news/articleView.html?idxno=307809"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 선봬",
-          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1423890"
-        }
-      ]
-    },
-    "202502294": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202502294",
-      "itemSeq": "202502294",
-      "name": "에더마정",
-      "company": "보란파마",
-      "ingredients": "결정트립신 · 브로멜라인",
-      "permitDate": "2025-09-02",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-10)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] 메디톡스, 3분기 영업이익 155억원.. 전년 대비 74.5% 급증",
-          "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=280897"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202502294"
-        }
-      ]
-    },
-    "202502804": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202502804",
-      "itemSeq": "202502804",
-      "name": "코프리정",
-      "company": "(주)에이프로젠바이오로직스",
-      "ingredients": "메퀴타진 · 벨라돈나총알칼로이드 · 글리시리진산이칼륨 · 슈도에페드린염산염 · 카페인무수물",
-      "permitDate": "2025-10-30",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-10)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] SK바이오팜 세노바메이트 쟁탈전… 中 복제약도 가세",
-          "url": "http://www.the-biz.co.kr/news/articleView.html?idxno=731059"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202502804"
-        }
-      ]
-    },
     "202601260": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -558,39 +108,23 @@
       "ingredients": "글리세로인산마그네슘 · 피리독신염산염 · 니코틴산아미드 · 리보플라빈포스페이트나트륨",
       "permitDate": "2026-04-28",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-12] [제약·바이오트렌드] 디메드, 성남에 650억 원 투자…바이오 제조·연구...",
-          "url": "https://www.ibabynews.com/news/articleView.html?idxno=156844"
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
+          "url": "http://www.bokuennews.com/news/article.html?no=286931"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601260"
         },
         {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 마그네슘제 출시…'마그스' 제품군 늘려",
-          "url": "http://www.press9.kr/news/articleView.html?idxno=86006"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
-          "url": "http://www.bokuennews.com/news/article.html?no=286931"
-        },
-        {
           "title": "[뉴스 2026-11-11] <신제품·신기술>조아제약, 액상 마그네슘제 ‘마그스부스트업액’",
           "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
         },
         {
-          "title": "[뉴스 2026-11-11] 조아제약, '마그스부스트업'...\"국내 최고 함량 액상 마그네슘 충전\"",
-          "url": "http://www.metroseoul.co.kr/article/20261111500123"
-        },
-        {
           "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 출시",
           "url": "https://www.pharmnews.com/news/articleView.html?idxno=307809"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 선봬",
-          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1423890"
         }
       ]
     },
@@ -604,7 +138,7 @@
       "ingredients": "이노시톨 · 피리독살포스페이트수화물 · 농축콜레칼시페롤 과립 · 토코페롤아세테이트 2배산 · 산화마그네슘 · 우르소데옥시콜산 · 감마-오리자놀 · 콜린타르타르산염 · 판토텐산칼슘 · 리보플라빈부티레이트 · 폴산 · 메코발라민 · 코바마미드 · 벤포티아민 · 비스벤티아민 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염",
       "permitDate": "2026-06-17",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-14)",
+      "foundInfo": "출시 기사 발견 (2026-11-14, 기사 요약(최근 12개월 내 허가 제품)에서 제품명 확인)",
       "sources": [
         {
           "title": "[뉴스 2026-11-14] [리테일 위클리] 식품·생활용품 신상품 출시 봇물…저당 식품부터 이색...",
@@ -615,18 +149,6 @@
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601715"
         },
         {
-          "title": "[뉴스 2026-11-12] \"2030 잡고 중장년층까지\"…종근당, 벤포벨 브랜드 영토 확대",
-          "url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065595994276588"
-        },
-        {
-          "title": "[뉴스 2026-11-12] 종근당, 50대 이상 중장년층 겨냥 고함량 활성비타민 '벤포벨알파정' 출...",
-          "url": "http://www.popcornnews.net/news/articleView.html?idxno=139763"
-        },
-        {
-          "title": "[뉴스 2026-11-12] 종근당, 고함량 활성비타민 담은 '벤포벨알파정' 선봬",
-          "url": "http://www.bizwnews.com/news/articleView.html?idxno=151615"
-        },
-        {
           "title": "[뉴스 2026-11-11] [제약건기식종근당, 중장년 겨냥 활성비타민 '벤포벨알파정' 출시 外 JW...",
           "url": "https://www.getnews.co.kr/news/articleView.html?idxno=886840"
         },
@@ -635,34 +157,20 @@
           "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362343"
         },
         {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유한 고함량 비타민 '벤포벨알파정' 선봬",
-          "url": "http://www.thefirstmedia.net/news/articleView.html?idxno=213374"
-        }
-      ]
-    },
-    "202601775": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202601775",
-      "itemSeq": "202601775",
-      "name": "마이핏캡슐",
-      "company": "메딕스제약(주)",
-      "ingredients": "사카로마이세스보울라르디균 · 디메티콘",
-      "permitDate": "2026-06-23",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] [주목 e-수출] 글로벌 H&B 도약 '동국제약'…\"센텔리안24 앞세워 사업 대...",
-          "url": "http://www.economytalk.kr/news/articleView.html?idxno=425281"
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시…생애주기 라인업 완...",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=121906"
         },
         {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601775"
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 '벤포벨알파정' 출시…중장년층 공략",
+          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548640"
         },
         {
-          "title": "[뉴스 2026-11-11] [EZ 진단] K-뷰티 편승 동국제약, 제약 떼고 뷰티 입나…신약 성과는 언...",
-          "url": "https://www.ezyeconomy.com/news/articleView.html?idxno=241756"
+          "title": "[뉴스 2026-11-11] 종근당, 중장년층 겨냥 '벤포벨알파정' 출시…제품군 확대",
+          "url": "http://www.kdfnews.com/news/articleView.html?idxno=190764"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시…\"중장년층 건강 수...",
+          "url": "http://www.consumernews.co.kr/news/articleView.html?idxno=768018"
         }
       ]
     },
@@ -676,49 +184,19 @@
       "ingredients": "디멘히드리네이트 · 카페인무수물 · 니코틴산아미드",
       "permitDate": "2026-08-10",
       "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-12] 동화약품·종근당·연세사랑병원, 찬 바람 부는 철 건강 관리 돕는다",
-          "url": "http://www.dailypop.kr/news/articleView.html?idxno=104481"
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시",
+          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362347"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202602326"
         },
         {
-          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시",
-          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362347"
-        },
-        {
           "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 ‘판롱액’ 출시",
           "url": "https://www.lawissue.co.kr/view.php?ud=202611111845332785f4ab64559d_12"
-        },
-        {
-          "title": "[뉴스 2026-11-11] '일반약 라인업 확대' 동화약품, 액상형 멀미약 '판롱액' 선봬",
-          "url": "https://www.catchnews.kr/news/articleView.html?idxno=130350"
-        }
-      ]
-    },
-    "202603398": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202603398",
-      "itemSeq": "202603398",
-      "name": "동아제약비스카르현탁액",
-      "company": "동아제약(주)",
-      "ingredients": "비스무트차살리실산염 · DL-카르니틴염산염",
-      "permitDate": "2026-11-05",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 발견 (2026-11-12)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 포타겔 빠진 어린이 지사제 시장…동아제약 '만 1세' 제품 허가",
-          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548772"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603398"
         }
       ]
     },
@@ -1086,60 +564,6 @@
         }
       ]
     },
-    "news-e7f6e7500d": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-e7f6e7500d",
-      "itemSeq": "",
-      "name": "\"K뷰티 쇼핑 다음 목적지는 약국\"…바로팜, 4대 성장전략 공개",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-15) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] \"K뷰티 쇼핑 다음 목적지는 약국\"…바로팜, 4대 성장전략 공개",
-          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548970"
-        }
-      ]
-    },
-    "news-54a05b6e99": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-54a05b6e99",
-      "itemSeq": "",
-      "name": "[제약사 브랜드 전략] ㊦ 익숙한 얼굴 대신 아이돌…\"팬덤 잡고 브랜드...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-15) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] [제약사 브랜드 전략] ㊦ 익숙한 얼굴 대신 아이돌…\"팬덤 잡고 브랜드...",
-          "url": "https://www.asiatime.co.kr/article/20261113500274"
-        }
-      ]
-    },
-    "news-c5d022a3eb": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-c5d022a3eb",
-      "itemSeq": "",
-      "name": "“마약 원료 악용”…약국서 구입하던 ‘코감기약’, 의사 처방 받아야...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-15) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-15] “마약 원료 악용”…약국서 구입하던 ‘코감기약’, 의사 처방 받아야...",
-          "url": "https://www.nongmin.com/article/20261110500430"
-        }
-      ]
-    },
     "news-87aa6a85aa": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -1158,132 +582,6 @@
         }
       ]
     },
-    "news-b0fff2058c": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-b0fff2058c",
-      "itemSeq": "",
-      "name": "대원제약, 3분기 누적 영업이익 흑자전환… 매출 4502억원 기록",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] 대원제약, 3분기 누적 영업이익 흑자전환… 매출 4502억원 기록",
-          "url": "http://www.ttlnews.com/news/articleView.html?idxno=3162305"
-        }
-      ]
-    },
-    "news-22e001bb47": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-22e001bb47",
-      "itemSeq": "",
-      "name": "대원제약, 3분기 영업손실 41억원… 전년比 적자폭 축소",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] 대원제약, 3분기 영업손실 41억원… 전년比 적자폭 축소",
-          "url": "https://it.chosun.com/news/articleView.html?idxno=3000000001023"
-        }
-      ]
-    },
-    "news-a9b14c751c": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-a9b14c751c",
-      "itemSeq": "",
-      "name": "K-뷰티 하이드로겔 수요 잡는다… 선진뷰티사이언스 OTCM, '하이드로겔 ...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] K-뷰티 하이드로겔 수요 잡는다… 선진뷰티사이언스 OTCM, '하이드로겔 ...",
-          "url": "https://kr.aving.net/news/articleView.html?idxno=1816977"
-        }
-      ]
-    },
-    "news-0bc0be2098": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-0bc0be2098",
-      "itemSeq": "",
-      "name": "선진뷰티사이언스, 하이드로겔 전용 생산시설 구축… ODM 시장 공략 본격...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] 선진뷰티사이언스, 하이드로겔 전용 생산시설 구축… ODM 시장 공략 본격...",
-          "url": "https://www.sportsseoul.com/news/read/1649529?ref=naver"
-        }
-      ]
-    },
-    "news-d73bee3ca0": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-d73bee3ca0",
-      "itemSeq": "",
-      "name": "(내일의 거인들)이성호 선진뷰티사이언스 대표 \"원료 기술력으로 완제품...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] (내일의 거인들)이성호 선진뷰티사이언스 대표 \"원료 기술력으로 완제품...",
-          "url": "http://www.newstomato.com/ReadNews.aspx?no=1320214&inflow=N"
-        }
-      ]
-    },
-    "news-5f9d7ead9c": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-5f9d7ead9c",
-      "itemSeq": "",
-      "name": "[호.기.심] 입안에 뿌리는 니코틴대체제 등장…'니코레트 퀵미스트' 금...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] [호.기.심] 입안에 뿌리는 니코틴대체제 등장…'니코레트 퀵미스트' 금...",
-          "url": "https://www.medicopharma.co.kr/news/articleView.html?idxno=70390"
-        }
-      ]
-    },
-    "news-5b0484bb5b": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-5b0484bb5b",
-      "itemSeq": "",
-      "name": "감기약 100정 시대 '숨은 그림자'...약국의 경고",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-13) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-13] 감기약 100정 시대 '숨은 그림자'...약국의 경고",
-          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548842"
-        }
-      ]
-    },
     "news-fbded07247": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -1299,294 +597,6 @@
         {
           "title": "[뉴스 2026-11-12] 씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
           "url": "https://www.news1.kr/bio/pharmaceutical-bio/6352247"
-        }
-      ]
-    },
-    "news-cd43021d4f": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-cd43021d4f",
-      "itemSeq": "",
-      "name": "제약업계, 일반약도 제형 경쟁...복용 편의성으로 차별화",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 제약업계, 일반약도 제형 경쟁...복용 편의성으로 차별화",
-          "url": "https://www.fnnews.com/news/202611120920316274"
-        }
-      ]
-    },
-    "news-0ebfda22d9": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-0ebfda22d9",
-      "itemSeq": "",
-      "name": "유한양행, 진통제는 덜어내고 감기약은 채웠다",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 유한양행, 진통제는 덜어내고 감기약은 채웠다",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=503435"
-        }
-      ]
-    },
-    "news-7d765f3084": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-7d765f3084",
-      "itemSeq": "",
-      "name": "제약업종 수급 공방 치열…신약 파이프라인 보유 기업 주목을",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 제약업종 수급 공방 치열…신약 파이프라인 보유 기업 주목을",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=503417"
-        }
-      ]
-    },
-    "news-9069604d98": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-9069604d98",
-      "itemSeq": "",
-      "name": "2026년 UAE 의료바이오산업 정보",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 2026년 UAE 의료바이오산업 정보",
-          "url": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=200&CONTENTS_NO=1&bbsGbn=403&bbsSn=403&pNttSn=245017"
-        }
-      ]
-    },
-    "news-ed0c12ba48": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-ed0c12ba48",
-      "itemSeq": "",
-      "name": "비만약 통관 후엔 깜깜이⋯해외 처방약 관리대책 ‘물음표’",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 비만약 통관 후엔 깜깜이⋯해외 처방약 관리대책 ‘물음표’",
-          "url": "https://www.etoday.co.kr/news/view/2647405"
-        }
-      ]
-    },
-    "news-d17b68a1f7": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-d17b68a1f7",
-      "itemSeq": "",
-      "name": "일동제약 60년 브랜드의 힘…'아로나민' 지키고 '동전파스' 더했다",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 일동제약 60년 브랜드의 힘…'아로나민' 지키고 '동전파스' 더했다",
-          "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=80704"
-        }
-      ]
-    },
-    "news-118807d812": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-118807d812",
-      "itemSeq": "",
-      "name": "'어떻게 쓰냐'도 경쟁력…일반약 제형 다양화",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] '어떻게 쓰냐'도 경쟁력…일반약 제형 다양화",
-          "url": "http://www.newsprime.co.kr/news/article.html?no=754635"
-        }
-      ]
-    },
-    "news-6386e61a63": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-6386e61a63",
-      "itemSeq": "",
-      "name": "제약업계, 일반약 제형 차별화 경쟁…편의성 높여 소비자 공략",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 제약업계, 일반약 제형 차별화 경쟁…편의성 높여 소비자 공략",
-          "url": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=335101"
-        }
-      ]
-    },
-    "news-4b05249167": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-4b05249167",
-      "itemSeq": "",
-      "name": "약국 상담 AI 활용 확산세…'오답'에는 유의해야",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 약국 상담 AI 활용 확산세…'오답'에는 유의해야",
-          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548705"
-        }
-      ]
-    },
-    "news-f6051ead47": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-f6051ead47",
-      "itemSeq": "",
-      "name": "박카스 넘어 '일반약·더마'로…동아제약 성장축 다변화",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-11) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 박카스 넘어 '일반약·더마'로…동아제약 성장축 다변화",
-          "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=300042"
-        }
-      ]
-    },
-    "news-873a36fb08": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-873a36fb08",
-      "itemSeq": "",
-      "name": "약사회, 슈도에페드린 사건 대응 착수…일반약 관리 강화 추진",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-10) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] 약사회, 슈도에페드린 사건 대응 착수…일반약 관리 강화 추진",
-          "url": "https://www.medipana.com/news/articleView.html?idxno=421381"
-        }
-      ]
-    },
-    "news-aeff50a762": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-aeff50a762",
-      "itemSeq": "",
-      "name": "연고→겔제, 파스→습포제…일반약 제형 스위칭 길 열렸다",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-09) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-09] 연고→겔제, 파스→습포제…일반약 제형 스위칭 길 열렸다",
-          "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=80586"
-        }
-      ]
-    },
-    "news-91b31eba28": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-91b31eba28",
-      "itemSeq": "",
-      "name": "[제약업계 소식] 11월 11일",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-11) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] [제약업계 소식] 11월 11일",
-          "url": "http://www.doctorstimes.com/news/articleView.html?idxno=241017"
-        }
-      ]
-    },
-    "news-e6e9dc25b6": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-e6e9dc25b6",
-      "itemSeq": "",
-      "name": "[바이오 나우] '새로운 도약' 동아제약, 글로벌 헬스케어 기업 '정조준'",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-10) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] [바이오 나우] '새로운 도약' 동아제약, 글로벌 헬스케어 기업 '정조준'",
-          "url": "https://www.econovill.com/news/articleView.html?idxno=756556"
-        }
-      ]
-    },
-    "news-218467c5eb": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-218467c5eb",
-      "itemSeq": "",
-      "name": "[현장] 무신사 100번째 신규 매장은 '뷰티'…성수서 교차 구매 실험",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-10) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] [현장] 무신사 100번째 신규 매장은 '뷰티'…성수서 교차 구매 실험",
-          "url": "http://www.ftoday.co.kr/news/articleView.html?idxno=369328"
-        }
-      ]
-    },
-    "news-810ad6c789": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-810ad6c789",
-      "itemSeq": "",
-      "name": "[현장] 홍대 이어 성수까지 '뷰티 전쟁'…무신사, 700개 브랜드·1만개 ...",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-10) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-10] [현장] 홍대 이어 성수까지 '뷰티 전쟁'…무신사, 700개 브랜드·1만개 ...",
-          "url": "http://www.consumernews.co.kr/news/articleView.html?idxno=767933"
         }
       ]
     }
