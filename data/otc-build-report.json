@@ -1,10 +1,10 @@
 {
-  "builtAt": "2026-11-17T04:13:44.729Z",
+  "builtAt": "2026-11-18T09:03:28.668Z",
   "sources": {
     "permit": {
       "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtPrmsnInq08",
-      "total": 10787,
-      "received": 10787,
+      "total": 10788,
+      "received": 10788,
       "keys": [
         "ITEM_SEQ",
         "ITEM_NAME",
@@ -54,7 +54,7 @@
     "ingredients": {
       "found": true,
       "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq08",
-      "total": 125604,
+      "total": 125609,
       "keys": [
         "ENTRPS_PRMISN_NO",
         "ENTRPS",
@@ -87,10 +87,10 @@
       }
     }
   },
-  "otcCount": 10787,
+  "otcCount": 10788,
   "skippedNonOtc": 0,
   "statusCounts": {
-    "정상": 8576,
+    "정상": 8577,
     "취소": 3,
     "취하": 783,
     "폐업": 64,
@@ -104,7 +104,7 @@
     "액제": 1050,
     "캡슐제": 2396,
     "시럽제": 388,
-    "외용제(연고·크림·액)": 1033,
+    "외용제(연고·크림·액)": 1034,
     "트로키·껌·필름": 35,
     "산·과립제": 941,
     "점안·점비제": 287,
@@ -112,13 +112,13 @@
     "좌제·질정": 9
   },
   "fieldCoverage": {
-    "ingredients": 10731,
-    "ingredientsKorean": 10731,
-    "class": 10763,
+    "ingredients": 10732,
+    "ingredientsKorean": 10732,
+    "class": 10764,
     "manufacturer": 0,
-    "permitDate": 10787,
-    "status": 10787,
-    "efficacy": 4716
+    "permitDate": 10788,
+    "status": 10788,
+    "efficacy": 4717
   },
   "warnings": []
 }
