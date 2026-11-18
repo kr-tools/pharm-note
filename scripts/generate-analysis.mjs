@@ -98,7 +98,8 @@ async function collectOfficialData(dataDir, itemSeq, compareIds = []) {
   const myKey = setKey(p.ingredients.join(" · "));
   const first = (p.ingredients[0] || "").replace(/\s/g, "");
   const myGroup = formGroup(p.form);
-  const rows = otc.rows.filter((r) => r[ci("id")] !== p.id && r[ci("status")] === "정상");
+  // '(수출용)' 제품은 국내 비교 대상에서 제외
+  const rows = otc.rows.filter((r) => r[ci("id")] !== p.id && r[ci("status")] === "정상" && !/수출용|수출전용/.test(r[ci("name")]));
 
   const baseName = (n) => String(n || "").replace(/\(.*$/, "").replace(/\s/g, "");
   const myBase = baseName(p.name);

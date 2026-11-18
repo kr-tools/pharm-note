@@ -99,11 +99,17 @@ async function searchNews(query) {
 async function main() {
   const win = lastWeekKST(process.env.NOW ? new Date(process.env.NOW) : new Date());
   log(`대상 기간: ${win.start} ~ ${win.end}`);
+  // 기사 요약에만 이름이 나온 제품은 '최근 12개월 안에 허가된 제품'만 후보로
+  const recentSince = (() => {
+    const d = new Date(`${win.today}T00:00:00Z`);
+    d.setUTCFullYear(d.getUTCFullYear() - 1);
+    return d.toISOString().slice(0, 10);
+  })();
 
   const otc = await readJSON(path.join(DATA, "otc-products.json"), null);
   if (!otc?.rows?.length) throw new Error("의약품 DB(otc-products.json)가 비어 있어요.");
   const ci = (c) => otc.columns.indexOf(c);
-  const products = otc.rows.map((r) => ({
+  const products = otc.rows.filter((r) => !/수출용|수출전용/.test(r[ci("name")])).map((r) => ({
     id: r[ci("id")], name: r[ci("name")], company: r[ci("company")], ingredients: r[ci("ingredients")],
     permitDate: r[ci("permitDate")], status: r[ci("status")],
   }));
@@ -180,40 +186,47 @@ async function main() {
     }
     report.news.articles = articles.size;
 
-    for (const a of articles.values()) {
-      const text = `${a.title} ${a.desc}`;
-      if (!/출시|선보|발매|론칭|런칭|새롭게 내놓/.test(text)) continue; // 출시 기사만
-      report.news.launchArticles++;
-      const flat = text.replace(/\s/g, "");
-
-      // 긴 이름부터 맞춰보기: 정확한 이름 → 제형을 뺀 이름
-      // 같은 이름 제품이 여러 개면 하나만: 수출용 이름이 아닌 것 → 가장 최근 허가
-      const isExport = (p) => /수출|[A-Za-z]{4,}/.test(p.name);
-      const best = (list) =>
-        list.slice().sort((x, y) => isExport(x) - isExport(y) || String(y.permitDate).localeCompare(String(x.permitDate)))[0];
+    // 제품명 찾기: 정확한 이름 → (없으면) 제형 글자를 뺀 이름. 같은 이름이 여럿이면 하나만
+    const isExport = (p) => /수출|[A-Za-z]{4,}/.test(p.name);
+    const best = (list) =>
+      list.slice().sort((x, y) => isExport(x) - isExport(y) || String(y.permitDate).localeCompare(String(x.permitDate)))[0];
+    function findProducts(text, filter = () => true) {
+      const flat = String(text || "").replace(/\s/g, "");
       const hits = new Map();
-      for (const k of baseKeys) {
-        if (!flat.includes(k)) continue;
-        const list = byBase.get(k);
-        const p = best(list);
-        hits.set(p.id, { p, how: list.length > 1 ? `similar:${list.length}` : "exact", key: k });
-        if (hits.size >= 3) break;
-      }
-      if (!hits.size) {
-        for (const k of coreKeys) {
+      for (const [keys, dict, kind] of [[baseKeys, byBase, "exact"], [coreKeys, byCore, "core"]]) {
+        for (const k of keys) {
           if (!flat.includes(k)) continue;
-          const list = byCore.get(k);
+          const list = dict.get(k).filter(filter);
+          if (!list.length) continue;
           const p = best(list);
-          hits.set(p.id, { p, how: list.length > 1 ? `similar:${list.length}` : "core", key: k });
+          if (!hits.has(p.id)) hits.set(p.id, { p, how: list.length > 1 ? `similar:${list.length}` : kind });
           if (hits.size >= 3) break;
         }
+        if (hits.size) break;
+      }
+      return hits;
+    }
+
+    for (const a of articles.values()) {
+      // 규칙 ① 제목에 '신제품' 또는 '출시'가 있는 기사만
+      if (!/신제품|출시/.test(a.title)) continue;
+      report.news.launchArticles++;
+      const text = `${a.title} ${a.desc}`;
+
+      // 규칙 ② 제목에 나온 제품 → 후보
+      let hits = findProducts(a.title);
+      let where = "제목";
+      // 규칙 ③ 제목에 없고 요약에만 나온 제품 → 최근 12개월 안에 허가된 제품만
+      if (!hits.size) {
+        hits = findProducts(a.desc, (p) => String(p.permitDate) >= recentSince);
+        where = "기사 요약(최근 12개월 내 허가 제품)";
       }
 
       const source = { title: `[뉴스 ${a.date}] ${a.title}`.slice(0, 200), url: a.url };
 
       if (!hits.size) {
         // DB에 없는 제품명: '일반의약품'이 언급된 출시 기사만 이름 미확인 후보로
-        if (!/일반의약품|일반약|OTC/i.test(text)) continue;
+        if (!/일반의약품|일반약|OTC/i.test(text)) continue; // 건강기능식품 등 제외
         const id = "news-" + createHash("sha1").update(a.url).digest("hex").slice(0, 10);
         if (known(id)) continue;
         addCandidate({
@@ -244,7 +257,7 @@ async function main() {
         addCandidate({
           id: p.id, itemSeq: p.id, name: p.name, company: p.company, ingredients: p.ingredients, permitDate: p.permitDate,
           origin: "news",
-          foundInfo: `출시 관련 기사 발견 (${a.date})${note}`,
+          foundInfo: `출시 기사 발견 (${a.date}, ${where}에서 제품명 확인)${note}`,
           sources: [source, { title: "식약처 의약품안전나라", url: nedrug(p.id) }],
         });
         report.news.added++;
