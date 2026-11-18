@@ -1,0 +1,78 @@
+# 매주 월요일 자동 업데이트
+# 실행 시각: 매주 월요일 오전 8시(한국 시간) = 일요일 23:00(UTC)
+#   ※ GitHub 사정으로 수 분~수십 분 늦게 시작될 수 있어요.
+# 수동 실행: Actions → '주간 자동 업데이트' → Run workflow
+#
+# 순서
+# 1. 전체 OTC 허가정보 업데이트 (식약처)
+# 2. 신규 허가 후보 + 출시 뉴스 후보 탐색 → 중복 제거 → '확인 대기'로 저장
+# 3. (설정된 경우) 새 후보의 AI 분석 초안 생성 — 관리자 승인 전에는 비공개
+# 4. 저장(커밋)
+# 실패하면 이 화면에 빨간 X가 표시되고, GitHub이 저장소 주인에게 메일을 보내요.
+
+name: 주간 자동 업데이트
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v5
+
+      - name: Node.js 준비
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: 1) 전체 OTC 허가정보 업데이트
+        id: db
+        continue-on-error: true   # 식약처 API 장애여도 기존 DB로 후보 수집은 계속
+        run: node scripts/build-otc-db.mjs
+        env:
+          MFDS_API_KEY: ${{ secrets.MFDS_API_KEY }}
+
+      - name: 2) 신제품 후보 수집 (신규 허가 + 출시 뉴스)
+        id: collect
+        run: node scripts/collect-candidates.mjs
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+
+      - name: 3) AI 분석 초안 자동 생성 (AUTO_AI 변수가 on일 때만)
+        if: vars.AUTO_AI == 'on' && steps.collect.outputs.new_ids != ''
+        continue-on-error: true   # AI 오류가 나도 나머지는 저장
+        run: node scripts/generate-analysis.mjs ${{ steps.collect.outputs.new_ids }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+
+      - name: 4) 저장(커밋)
+        run: |
+          git config user.name "pharm-note-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "변경 사항 없음"
+          else
+            git commit -m "주간 자동 업데이트 ($(TZ=Asia/Seoul date +'%Y-%m-%d') KST)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: 식약처 DB 업데이트 실패 알림
+        if: steps.db.outcome == 'failure'
+        run: |
+          echo "::warning::식약처 허가정보 업데이트에 실패해 기존 DB로 후보를 수집했어요. 'OTC DB 업데이트'를 나중에 다시 실행해 보세요."
