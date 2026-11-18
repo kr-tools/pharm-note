@@ -46,9 +46,30 @@
       }
       $("updated-at").textContent = PN.formatUpdated(data.updatedAt);
       render();
+      loadCollectReport();
     } catch (e) {
       $("list").innerHTML = `<div class="notice error">${esc(e.message)}<br><button class="link-btn" id="retry" type="button">다시 시도</button></div>`;
       $("retry").onclick = load;
+    }
+  }
+
+  /* ---------- 지난 자동 수집 요약 ---------- */
+
+  async function loadCollectReport() {
+    const box = $("collect-report");
+    try {
+      const r = await PN.loadData("collect-report.json");
+      const pd = (d) => String(d || "").slice(5).replace("-", ".");
+      const news = r.news?.enabled
+        ? `출시 기사 ${r.news.launchArticles}건 → 새 후보 ${r.news.added + r.news.unmatchedAdded}건`
+        : `뉴스 탐색 꺼짐 (네이버 키 없음)`;
+      box.innerHTML = `
+        <strong>지난 자동 수집</strong> ${esc(PN.formatUpdated(r.runAt))} · 대상 ${pd(r.period?.start)}–${pd(r.period?.end)}<br>
+        신규 허가 ${r.permits?.found ?? 0}건 → 새 후보 ${r.permits?.added ?? 0}건 · ${news}
+        ${(r.warnings || []).length ? `<br><span class="warn-text">⚠️ ${r.warnings.map(esc).join("<br>⚠️ ")}</span>` : ""}`;
+      box.hidden = false;
+    } catch (e) {
+      box.hidden = true; // 아직 자동 수집이 한 번도 실행되지 않음
     }
   }
 
@@ -84,7 +105,10 @@
     return `
       <article class="a-card" data-id="${esc(c.id)}">
         <div class="a-top">
-          <span class="badge ${confirmed ? "launch" : c.status === "pending" ? "supply" : "off"}">${STATUS[c.status]?.label || c.status}</span>
+          <span>
+            <span class="badge ${confirmed ? "launch" : c.status === "pending" ? "supply" : "off"}">${STATUS[c.status]?.label || c.status}</span>
+            ${c.origin === "permit" ? `<span class="badge plain">신규 허가</span>` : c.origin === "news" ? `<span class="badge plain">뉴스</span>` : ""}
+          </span>
           <span class="a-seen">최초 수집 ${esc(c.firstSeen || "-")}</span>
         </div>
         <h2 class="a-name">${esc(c.name)}</h2>
