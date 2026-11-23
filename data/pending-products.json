@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-11-18T09:56:29.963Z",
+  "updatedAt": "2026-11-23T03:57:04.792Z",
   "items": {
+    "200002316": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "200002316",
+      "itemSeq": "200002316",
+      "name": "나이스과립",
+      "company": "오스틴제약(주)",
+      "ingredients": "차전자피 · 센나열매",
+      "permitDate": "2000-12-18",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-22, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-22] [Weekly 이모저모] 청호나이스 '알러지케어 하이브리드 매트리스' 출시 ...",
+          "url": "https://www.startuptoday.co.kr/news/articleView.html?idxno=819543"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200002316"
+        }
+      ]
+    },
     "201508281": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -24,6 +46,28 @@
         {
           "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
           "url": "https://www.etnews.com/20261111000062"
+        }
+      ]
+    },
+    "202001913": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202001913",
+      "itemSeq": "202001913",
+      "name": "뉴베인액(트록세루틴)",
+      "company": "대원제약(주)",
+      "ingredients": "트록세루틴",
+      "permitDate": "2020-03-19",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-18, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-18] 대원제약, 먹는 ‘뉴베인’ 이어 바르는 ‘뉴베라인’ 출시…붓기 관리...",
+          "url": "https://www.edaily.co.kr/News/Read?newsId=02214006645647032&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202001913"
         }
       ]
     },
@@ -520,6 +564,114 @@
         }
       ]
     },
+    "202603499": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603499",
+      "itemSeq": "202603499",
+      "name": "알부골드브이정",
+      "company": "(주)에이프로젠바이오로직스",
+      "ingredients": "로얄젤리 · 토코페롤아세테이트 2배산 · 제피아스코르브산 · 티아민질산염 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염 · 시아노코발라민",
+      "permitDate": "2026-11-16",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-16) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603499"
+        }
+      ]
+    },
+    "202603507": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603507",
+      "itemSeq": "202603507",
+      "name": "애클리논크림",
+      "company": "메딕스제약(주)",
+      "ingredients": "이부프로펜피코놀 · 이소프로필메틸페놀",
+      "permitDate": "2026-11-16",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-16) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603507"
+        }
+      ]
+    },
+    "202603516": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603516",
+      "itemSeq": "202603516",
+      "name": "리뉴블리크림(폴리데옥시리보뉴클레오티드나트륨)",
+      "company": "(주)유한양행",
+      "ingredients": "폴리데옥시리보뉴클레오티드나트륨",
+      "permitDate": "2026-11-17",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-17) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603516"
+        }
+      ]
+    },
+    "202603532": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603532",
+      "itemSeq": "202603532",
+      "name": "마더시카겔(센텔라정량추출물)",
+      "company": "(주)마더스제약",
+      "ingredients": "센텔라정량추출물",
+      "permitDate": "2026-11-18",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-18) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603532"
+        }
+      ]
+    },
+    "202603548": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603548",
+      "itemSeq": "202603548",
+      "name": "필리버연질캡슐350밀리그램(밀크시슬열매건조엑스)",
+      "company": "(주)필인터내셔널",
+      "ingredients": "밀크시슬열매건조엑스",
+      "permitDate": "2026-11-19",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-19) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603548"
+        }
+      ]
+    },
+    "202603550": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "202603550",
+      "itemSeq": "202603550",
+      "name": "스티모겔(소맥추출수성액(1→108))",
+      "company": "신일제약(주)",
+      "ingredients": "소맥추출수성액(1→108)",
+      "permitDate": "2026-11-19",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-19) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603550"
+        }
+      ]
+    },
     "news-87aa6a85aa": {
       "status": "pending",
       "firstSeen": "2026-11-18",
@@ -553,6 +705,42 @@
         {
           "title": "[뉴스 2026-11-12] 씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
           "url": "https://www.news1.kr/bio/pharmaceutical-bio/6352247"
+        }
+      ]
+    },
+    "news-ff7a7cc0f9": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "news-ff7a7cc0f9",
+      "itemSeq": "",
+      "name": "동아제약, 이부프로펜 감기약 3종 출시…증상별 제품 구성",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-20) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-20] 동아제약, 이부프로펜 감기약 3종 출시…증상별 제품 구성",
+          "url": "http://www.medisobizanews.com/news/articleView.html?idxno=144600"
+        }
+      ]
+    },
+    "news-694eeba8c5": {
+      "status": "pending",
+      "firstSeen": "2026-11-23",
+      "id": "news-694eeba8c5",
+      "itemSeq": "",
+      "name": "[제약건기식]유한양행, 국내 최초 잇몸 건강 유산균 출시 外 동아제약·...",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-16) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-16] [제약건기식]유한양행, 국내 최초 잇몸 건강 유산균 출시 外 동아제약·...",
+          "url": "https://www.getnews.co.kr/news/articleView.html?idxno=887364"
         }
       ]
     }

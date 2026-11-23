@@ -1,10 +1,10 @@
 {
-  "builtAt": "2026-11-18T09:38:29.379Z",
+  "builtAt": "2026-11-23T03:56:46.360Z",
   "sources": {
     "permit": {
       "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtPrmsnInq08",
-      "total": 10788,
-      "received": 10788,
+      "total": 10783,
+      "received": 10783,
       "keys": [
         "ITEM_SEQ",
         "ITEM_NAME",
@@ -32,8 +32,8 @@
     "easy": {
       "api": "DrbEasyDrugInfoService/getDrbEasyDrugList",
       "ok": true,
-      "total": 4746,
-      "received": 4746,
+      "total": 4745,
+      "received": 4745,
       "keys": [
         "entpName",
         "itemName",
@@ -54,7 +54,7 @@
     "ingredients": {
       "found": true,
       "api": "DrugPrdtPrmsnInfoService08/getDrugPrdtMcpnDtlInq08",
-      "total": 125609,
+      "total": 125570,
       "keys": [
         "ENTRPS_PRMISN_NO",
         "ENTRPS",
@@ -87,38 +87,38 @@
       }
     }
   },
-  "otcCount": 10788,
+  "otcCount": 10783,
   "skippedNonOtc": 0,
   "statusCounts": {
-    "정상": 8577,
+    "정상": 8578,
     "취소": 3,
-    "취하": 783,
+    "취하": 781,
     "폐업": 64,
     "행정(취소)": 7,
-    "유효기간만료": 1354
+    "유효기간만료": 1350
   },
   "formCounts": {
     "기타": 255,
     "환·고·엑스제(한방 등)": 452,
-    "정제": 3577,
+    "정제": 3576,
     "액제": 1050,
-    "캡슐제": 2396,
-    "시럽제": 388,
-    "외용제(연고·크림·액)": 1034,
+    "캡슐제": 2392,
+    "시럽제": 387,
+    "외용제(연고·크림·액)": 1036,
     "트로키·껌·필름": 35,
     "산·과립제": 941,
-    "점안·점비제": 287,
+    "점안·점비제": 286,
     "첩부제(파스)": 364,
     "좌제·질정": 9
   },
   "fieldCoverage": {
-    "ingredients": 10732,
-    "ingredientsKorean": 10732,
-    "class": 10764,
+    "ingredients": 10727,
+    "ingredientsKorean": 10727,
+    "class": 10759,
     "manufacturer": 0,
-    "permitDate": 10788,
-    "status": 10788,
-    "efficacy": 4717
+    "permitDate": 10783,
+    "status": 10783,
+    "efficacy": 4716
   },
   "warnings": []
 }

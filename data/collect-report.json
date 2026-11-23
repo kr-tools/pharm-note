@@ -1,31 +1,33 @@
 {
-  "runAt": "2026-11-18T09:52:30.508Z",
+  "runAt": "2026-11-23T03:56:46.716Z",
   "period": {
-    "start": "2026-11-09",
-    "end": "2026-11-15"
+    "start": "2026-11-16",
+    "end": "2026-11-22"
   },
   "permits": {
-    "found": 20,
-    "added": 0
+    "found": 6,
+    "added": 6
   },
   "news": {
     "enabled": true,
-    "articles": 157,
-    "launchArticles": 37,
-    "matched": 24,
-    "added": 6,
+    "articles": 109,
+    "launchArticles": 21,
+    "matched": 3,
+    "added": 2,
     "unmatchedAdded": 2,
-    "sourceAppended": 18
+    "sourceAppended": 1
   },
   "addedIds": [
-    "news-87aa6a85aa",
-    "202601715",
-    "news-fbded07247",
-    "202602326",
-    "201508281",
-    "202000147",
-    "201507585",
-    "202601260"
+    "202603516",
+    "202603532",
+    "202603550",
+    "202603499",
+    "202603507",
+    "202603548",
+    "200002316",
+    "news-ff7a7cc0f9",
+    "202001913",
+    "news-694eeba8c5"
   ],
   "warnings": []
 }
