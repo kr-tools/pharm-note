@@ -64,7 +64,7 @@
         ? `출시 기사 ${r.news.launchArticles}건 → 새 후보 ${r.news.added + r.news.unmatchedAdded}건`
         : `뉴스 탐색 꺼짐 (네이버 키 없음)`;
       box.innerHTML = `
-        <strong>지난 자동 수집</strong> ${esc(PN.formatUpdated(r.runAt))} · 대상 ${pd(r.period?.start)}–${pd(r.period?.end)}<br>
+        <strong>${r.kind === "manual" ? "지난 기간 검색" : "지난 자동 수집"}</strong> ${esc(PN.formatUpdated(r.runAt))} · 대상 ${pd(r.period?.start)}–${pd(r.period?.end)}<br>
         신규 허가 ${r.permits?.found ?? 0}건 → 새 후보 ${r.permits?.added ?? 0}건 · ${news}
         ${(r.warnings || []).length ? `<br><span class="warn-text">⚠️ ${r.warnings.map(esc).join("<br>⚠️ ")}</span>` : ""}`;
       box.hidden = false;
@@ -262,7 +262,7 @@
 
   const ACT_LABEL = {
     confirm: "출시 확인 승인", unconfirmable: "확인 불가 처리", delete: "후보 삭제", add: "후보 직접 추가",
-    analyze: "AI 초안 만들기", analysis_approve: "AI 분석 검토 승인",
+    analyze: "AI 초안 만들기", analysis_approve: "AI 분석 검토 승인", search: "기간 검색",
   };
 
   function openIssue(req, name) {
@@ -467,6 +467,41 @@
   $("add-results").addEventListener("click", (e) => {
     const b = e.target.closest("[data-add]");
     if (b) openIssue({ v: 1, action: "add", id: b.dataset.add }, b.dataset.name);
+  });
+
+  /* ---------- 기간 정해서 찾기 ---------- */
+
+  const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  function setRange(kind) {
+    const now = new Date();
+    let s, e = now;
+    if (kind === "month") s = new Date(now.getFullYear(), now.getMonth(), 1);
+    if (kind === "lastmonth") {
+      s = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+      e = new Date(now.getFullYear(), now.getMonth(), 0);
+    }
+    if (kind === "3months") { s = new Date(now); s.setDate(now.getDate() - 89); }
+    $("ps-start").value = ymd(s);
+    $("ps-end").value = ymd(e);
+  }
+  setRange("month");
+  $("ps-start").max = $("ps-end").max = todayISO();
+  $("period-search").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-range]");
+    if (b) setRange(b.dataset.range);
+  });
+  $("ps-go").addEventListener("click", () => {
+    const start = $("ps-start").value, end = $("ps-end").value;
+    const err = $("ps-error");
+    const days = (new Date(end) - new Date(start)) / 864e5;
+    const problem = !start || !end ? "시작일과 종료일을 모두 정해 주세요."
+      : start > end ? "시작일이 종료일보다 늦어요."
+      : days > 92 ? "기간은 최대 3개월(92일)까지예요."
+      : "";
+    err.textContent = problem;
+    err.hidden = !problem;
+    if (problem) return;
+    openIssue({ v: 1, action: "search", id: "search", start, end }, `${start} ~ ${end}`);
   });
 
   load();
