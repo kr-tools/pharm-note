@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T03:48:50.215Z",
+  "updatedAt": "2026-11-27T03:49:27.070Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -754,7 +754,7 @@
       "reviewedAt": "2026-11-27T03:48:50.215Z"
     },
     "202603462": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-18",
       "id": "202603462",
       "itemSeq": "202603462",
@@ -773,10 +773,12 @@
           "title": "[뉴스 2026-11-13] 겔 형태 70억 마데카솔 시장, 후발주자 잇따라 도전장",
           "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548834"
         }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:49:26.995Z"
     },
     "202603468": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-18",
       "id": "202603468",
       "itemSeq": "202603468",
@@ -791,10 +793,12 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603468"
         }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:49:27.035Z"
     },
     "202603475": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-18",
       "id": "202603475",
       "itemSeq": "202603475",
@@ -809,7 +813,9 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603475"
         }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:49:27.070Z"
     },
     "202603479": {
       "status": "pending",
