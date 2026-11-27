@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="../styles/style.css?v=10">
+  <link rel="stylesheet" href="../styles/style.css?v=11">
 </head>
 <body class="admin">
   <main class="page">
@@ -25,6 +25,23 @@
     </div>
 
     <div class="collect-report" id="collect-report" hidden></div>
+
+    <details class="a-add" id="period-search">
+      <summary>🔎 기간 정해서 신제품 찾기</summary>
+      <p class="sec-note" style="margin-top:8px">정한 기간의 <b>신규 허가 제품</b>과 <b>출시 뉴스</b>를 찾아 ‘확인 대기’에 추가해요.
+        이미 확인 완료·확인 불가·삭제한 제품은 다시 불러오지 않아요. (최대 3개월)</p>
+      <div class="ps-quick">
+        <button type="button" class="btn-ghost" data-range="month">이번 달</button>
+        <button type="button" class="btn-ghost" data-range="lastmonth">지난달</button>
+        <button type="button" class="btn-ghost" data-range="3months">최근 3개월</button>
+      </div>
+      <div class="ps-dates">
+        <label>시작일<input type="date" id="ps-start"></label>
+        <label>종료일<input type="date" id="ps-end"></label>
+      </div>
+      <p class="a-error" id="ps-error" hidden></p>
+      <button type="button" class="btn-primary" id="ps-go" style="margin-top:12px">이 기간으로 찾기 요청</button>
+    </details>
 
     <details class="a-add">
       <summary>＋ 후보 직접 추가 (식약처 DB에서 찾기)</summary>
@@ -53,7 +70,7 @@
   <div class="toast" id="toast" role="status"></div>
   <div class="sheet" id="sheet" role="dialog" aria-live="polite" hidden></div>
 
-  <script src="../js/app.js?v=10"></script>
-  <script src="../js/admin.js?v=10"></script>
+  <script src="../js/app.js?v=11"></script>
+  <script src="../js/admin.js?v=11"></script>
 </body>
 </html>
