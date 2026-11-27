@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:39:36.414Z",
+  "updatedAt": "2026-11-27T01:40:54.470Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1140,24 +1140,6 @@
           "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=80428"
         }
       ]
-    },
-    "news-7df5e188e1": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-7df5e188e1",
-      "itemSeq": "",
-      "name": "둘코락스, 연질캡슐 제형 변비 치료제 ‘둘코 리퀴젤’ 출시",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-02) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-02] 둘코락스, 연질캡슐 제형 변비 치료제 ‘둘코 리퀴젤’ 출시",
-          "url": "https://www.sportsseoul.com/news/read/1646103?ref=naver"
-        }
-      ]
     }
   },
   "deleted": {
@@ -1174,6 +1156,7 @@
     "202603348": "2026-11-27T01:37:27.677Z",
     "news-ff7a7cc0f9": "2026-11-27T00:53:22.250Z",
     "news-694eeba8c5": "2026-11-27T00:53:37.688Z",
-    "news-76394b6291": "2026-11-27T01:39:36.414Z"
+    "news-76394b6291": "2026-11-27T01:39:36.414Z",
+    "news-7df5e188e1": "2026-11-27T01:40:54.470Z"
   }
 }
