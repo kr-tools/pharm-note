@@ -1,31 +1,26 @@
 {
-  "runAt": "2026-11-23T03:56:46.716Z",
+  "runAt": "2026-11-27T00:21:40.109Z",
   "period": {
     "start": "2026-11-16",
     "end": "2026-11-22"
   },
   "permits": {
     "found": 6,
-    "added": 6
+    "added": 0
   },
   "news": {
     "enabled": true,
-    "articles": 109,
+    "articles": 98,
     "launchArticles": 21,
     "matched": 3,
-    "added": 2,
+    "added": 3,
     "unmatchedAdded": 2,
-    "sourceAppended": 1
+    "sourceAppended": 0
   },
   "addedIds": [
-    "202603516",
-    "202603532",
-    "202603550",
-    "202603499",
-    "202603507",
-    "202603548",
     "200002316",
     "news-ff7a7cc0f9",
+    "202601715",
     "202001913",
     "news-694eeba8c5"
   ],

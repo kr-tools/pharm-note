@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-23T03:57:04.792Z",
+  "updatedAt": "2026-11-27T00:21:48.557Z",
   "items": {
     "200002316": {
       "status": "pending",
-      "firstSeen": "2026-11-23",
+      "firstSeen": "2026-11-27",
       "id": "200002316",
       "itemSeq": "200002316",
       "name": "나이스과립",
@@ -23,35 +23,9 @@
         }
       ]
     },
-    "201508281": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "201508281",
-      "itemSeq": "201508281",
-      "name": "벤포벨정",
-      "company": "(주)종근당",
-      "ingredients": "벤포티아민 · 아스코르브산97%과립 · 콜레칼시페롤과립 · 토코페롤아세테이트 2배산 · 우르소데옥시콜산 · γ-오리자놀 · 유비데카레논 · 산화아연 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염 · 판토텐산칼슘 · 비오틴 · 이노시톨 · 폴산 · 시아노코발라민1%",
-      "permitDate": "2015-12-15",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 ‘벤포벨알파’ 출시",
-          "url": "https://www.inthenews.co.kr/news/article.html?no=94330"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201508281"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
-          "url": "https://www.etnews.com/20261111000062"
-        }
-      ]
-    },
     "202001913": {
       "status": "pending",
-      "firstSeen": "2026-11-23",
+      "firstSeen": "2026-11-27",
       "id": "202001913",
       "itemSeq": "202001913",
       "name": "뉴베인액(트록세루틴)",
@@ -98,39 +72,9 @@
       "memo": "",
       "reviewedAt": "2026-11-18T08:22:08.197Z"
     },
-    "202601260": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202601260",
-      "itemSeq": "202601260",
-      "name": "마그스부스트업액",
-      "company": "조아제약(주)",
-      "ingredients": "글리세로인산마그네슘 · 피리독신염산염 · 니코틴산아미드 · 리보플라빈포스페이트나트륨",
-      "permitDate": "2026-04-28",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
-          "url": "http://www.bokuennews.com/news/article.html?no=286931"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601260"
-        },
-        {
-          "title": "[뉴스 2026-11-11] <신제품·신기술>조아제약, 액상 마그네슘제 ‘마그스부스트업액’",
-          "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 출시",
-          "url": "https://www.pharmnews.com/news/articleView.html?idxno=307809"
-        }
-      ]
-    },
     "202601715": {
       "status": "pending",
-      "firstSeen": "2026-11-18",
+      "firstSeen": "2026-11-27",
       "id": "202601715",
       "itemSeq": "202601715",
       "name": "벤포벨알파정",
@@ -138,65 +82,15 @@
       "ingredients": "이노시톨 · 피리독살포스페이트수화물 · 농축콜레칼시페롤 과립 · 토코페롤아세테이트 2배산 · 산화마그네슘 · 우르소데옥시콜산 · 감마-오리자놀 · 콜린타르타르산염 · 판토텐산칼슘 · 리보플라빈부티레이트 · 폴산 · 메코발라민 · 코바마미드 · 벤포티아민 · 비스벤티아민 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염",
       "permitDate": "2026-06-17",
       "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-14, 기사 요약(최근 12개월 내 허가 제품)에서 제품명 확인)",
+      "foundInfo": "출시 기사 발견 (2026-11-18, 제목에서 제품명 확인)",
       "sources": [
         {
-          "title": "[뉴스 2026-11-14] [리테일 위클리] 식품·생활용품 신상품 출시 봇물…저당 식품부터 이색...",
-          "url": "https://www.seoultimes.news/news/article.html?no=2000102168"
+          "title": "[뉴스 2026-11-18] 종근당, 활성비타민 7종 함유 벤포벨알파정 출시",
+          "url": "https://www.dailypharm.com/user/news/344743?REFERER=NP"
         },
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601715"
-        },
-        {
-          "title": "[뉴스 2026-11-11] [제약건기식종근당, 중장년 겨냥 활성비타민 '벤포벨알파정' 출시 外 JW...",
-          "url": "https://www.getnews.co.kr/news/articleView.html?idxno=886840"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 '벤포벨알파정' 출시",
-          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362343"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시…생애주기 라인업 완...",
-          "url": "http://www.newsdream.kr/news/articleView.html?idxno=121906"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 '벤포벨알파정' 출시…중장년층 공략",
-          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=548640"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 중장년층 겨냥 '벤포벨알파정' 출시…제품군 확대",
-          "url": "http://www.kdfnews.com/news/articleView.html?idxno=190764"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파정' 출시…\"중장년층 건강 수...",
-          "url": "http://www.consumernews.co.kr/news/articleView.html?idxno=768018"
-        }
-      ]
-    },
-    "202602326": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "202602326",
-      "itemSeq": "202602326",
-      "name": "판롱액",
-      "company": "동화약품(주)",
-      "ingredients": "디멘히드리네이트 · 카페인무수물 · 니코틴산아미드",
-      "permitDate": "2026-08-10",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시",
-          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362347"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202602326"
-        },
-        {
-          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 ‘판롱액’ 출시",
-          "url": "https://www.lawissue.co.kr/view.php?ud=202611111845332785f4ab64559d_12"
         }
       ]
     },
@@ -672,45 +566,9 @@
         }
       ]
     },
-    "news-87aa6a85aa": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-87aa6a85aa",
-      "itemSeq": "",
-      "name": "이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-14) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-14] 이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026111312154512234"
-        }
-      ]
-    },
-    "news-fbded07247": {
-      "status": "pending",
-      "firstSeen": "2026-11-18",
-      "id": "news-fbded07247",
-      "itemSeq": "",
-      "name": "씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
-          "url": "https://www.news1.kr/bio/pharmaceutical-bio/6352247"
-        }
-      ]
-    },
     "news-ff7a7cc0f9": {
       "status": "pending",
-      "firstSeen": "2026-11-23",
+      "firstSeen": "2026-11-27",
       "id": "news-ff7a7cc0f9",
       "itemSeq": "",
       "name": "동아제약, 이부프로펜 감기약 3종 출시…증상별 제품 구성",
@@ -728,7 +586,7 @@
     },
     "news-694eeba8c5": {
       "status": "pending",
-      "firstSeen": "2026-11-23",
+      "firstSeen": "2026-11-27",
       "id": "news-694eeba8c5",
       "itemSeq": "",
       "name": "[제약건기식]유한양행, 국내 최초 잇몸 건강 유산균 출시 外 동아제약·...",
