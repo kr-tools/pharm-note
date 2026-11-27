@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T00:51:58.653Z",
+  "updatedAt": "2026-11-27T00:52:49.151Z",
   "items": {
     "202107495": {
       "id": "202107495",
@@ -29,7 +29,7 @@
       "reviewedAt": "2026-11-18T08:22:08.197Z"
     },
     "202601715": {
-      "status": "pending",
+      "status": "confirmed",
       "firstSeen": "2026-11-27",
       "id": "202601715",
       "itemSeq": "202601715",
@@ -48,7 +48,17 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601715"
         }
-      ]
+      ],
+      "launchDate": "2026-11-11",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://www.dailypharm.com/user/news/344743?REFERER=NP"
+        }
+      ],
+      "seller": "",
+      "memo": "",
+      "reviewedAt": "2026-11-27T00:52:49.151Z"
     },
     "202603424": {
       "status": "pending",

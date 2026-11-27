@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T00:51:58.653Z",
+  "updatedAt": "2026-11-27T00:52:49.151Z",
   "note": "관리자가 출시를 확인한 제품의 실제 출시일과 공식 근거 URL입니다.",
   "items": {
     "202107495": {
@@ -13,6 +13,18 @@
       "seller": "",
       "confirmedAt": "2026-11-18T08:22:08.197Z",
       "candidateId": "202107495"
+    },
+    "202601715": {
+      "launchDate": "2026-11-11",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://www.dailypharm.com/user/news/344743?REFERER=NP"
+        }
+      ],
+      "seller": "",
+      "confirmedAt": "2026-11-27T00:52:49.151Z",
+      "candidateId": "202601715"
     }
   }
 }
