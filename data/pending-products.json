@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:29:40.679Z",
+  "updatedAt": "2026-11-27T01:33:09.055Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -220,52 +220,6 @@
         {
           "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시…일반의약품 라인업 확대",
           "url": "https://www.ziksir.com/news/articleView.html?idxno=152861"
-        }
-      ]
-    },
-    "202602668": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "202602668",
-      "itemSeq": "202602668",
-      "name": "아젤클린크림(아젤라산)",
-      "company": "한미약품(주)",
-      "ingredients": "아젤라산",
-      "permitDate": "2026-09-08",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-06, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-06] <신제품·신기술>한미약품, 여드름·색소침착 치료 ‘아젤클린크림’",
-          "url": "https://biz.heraldcorp.com/article/10928291?ref=naver"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202602668"
-        },
-        {
-          "title": "[뉴스 2026-11-04] 한미약품, 아젤라산 성분 여드름 치료제 '아젤클린크림' 출시",
-          "url": "http://www.bizwnews.com/news/articleView.html?idxno=150766"
-        },
-        {
-          "title": "[뉴스 2026-11-03] 한미약품, 좁쌀여드름부터 염증성 여드름까지…‘아젤클린크림’ 출시",
-          "url": "https://www.sportsseoul.com/news/read/1646573?ref=naver"
-        },
-        {
-          "title": "[뉴스 2026-11-03] 한미약품, 여드름부터 색소침착 고민까지 잡은 ‘아젤클린크림’ 출시",
-          "url": "https://www.betanews.net/article/view/beta202611030110"
-        },
-        {
-          "title": "[뉴스 2026-11-03] 한미약품, 아젤라산 성분 여드름 치료제 ‘아젤클린크림’ 출시",
-          "url": "https://www.swtvnews.com/news/newsview.php?ncode=1065593931192786"
-        },
-        {
-          "title": "[뉴스 2026-11-03] 한미약품, 여드름부터 색소침착 고민까지 ‘아젤클린크림’ 출시",
-          "url": "https://hbnpress.com/news/view/1065592980414576"
-        },
-        {
-          "title": "[뉴스 2026-11-03] 한미약품, '아젤클린크림' 출시…아젤라산 경쟁 합류",
-          "url": "https://www.ngetnews.com/news/articleView.html?idxno=555463"
         }
       ]
     },
@@ -1242,6 +1196,7 @@
     "202001913": "2026-11-27T00:30:39.807Z",
     "202107495": "2026-11-27T01:04:10.842Z",
     "202500588": "2026-11-17T05:51:48.519Z",
+    "202602668": "2026-11-27T01:33:09.055Z",
     "news-ff7a7cc0f9": "2026-11-27T00:53:22.250Z",
     "news-694eeba8c5": "2026-11-27T00:53:37.688Z"
   }
