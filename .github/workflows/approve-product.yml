@@ -1,5 +1,9 @@
-# 관리자 승인 반영
-# 관리자 화면 → '승인 요청' → GitHub 이슈 제출 시 자동 실행됩니다.
+# 관리자 요청 반영
+# 관리자 화면 → 버튼 → GitHub 이슈 제출 시 자동 실행됩니다.
+# 실행될 때마다 '열려 있는 요청 이슈'를 오래된 순으로 모두 처리해요.
+#   (요청을 연달아 보내 일부 실행이 취소돼도, 다음 실행에서 함께 처리됨)
+# 혹시 남은 요청이 있을 때를 대비해 1시간마다 한 번 확인하고,
+# Actions 탭에서 'Run workflow'로 직접 돌릴 수도 있어요.
 # 저장소 주인(본인)이 만든 이슈만 처리하고, 다른 사람의 이슈는 무시합니다.
 
 name: 관리자 승인 반영
@@ -7,6 +11,9 @@ name: 관리자 승인 반영
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
 
 permissions:
   contents: write
@@ -18,12 +25,19 @@ concurrency:
 
 jobs:
   apply:
-    # ① 제목 표시 확인 ② 작성자가 저장소 주인인지 확인
     if: >-
-      startsWith(github.event.issue.title, '[PHARM NOTE]') &&
-      github.event.issue.user.login == github.repository_owner
+      github.event_name != 'issues' || (
+        startsWith(github.event.issue.title, '[PHARM NOTE]') &&
+        github.event.issue.user.login == github.repository_owner
+      )
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      OWNER: ${{ github.repository_owner }}
+      RESULTS_FILE: ${{ runner.temp }}/requests.json
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - name: 저장소 내려받기
         uses: actions/checkout@v5
@@ -33,20 +47,15 @@ jobs:
         with:
           node-version: 22
 
-      - name: 요청 내용 반영
-        id: apply
-        continue-on-error: true
-        run: node scripts/apply-decision.mjs
+      - name: 열린 요청 모두 반영
+        run: node scripts/process-requests.mjs apply
         env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          RESULT_FILE: ${{ runner.temp }}/result.md
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AI_MODEL: ${{ vars.AI_MODEL }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
 
       - name: 변경된 데이터 저장(커밋)
-        if: steps.apply.outcome == 'success'
         run: |
           git config user.name "pharm-note-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -54,28 +63,12 @@ jobs:
           if git diff --cached --quiet; then
             echo "변경 사항 없음"
           else
-            git commit -m "관리자 결정 반영 (#${{ github.event.issue.number }})"
+            NUMS=$(node -e "try{const r=require(process.env.RESULTS_FILE);console.log(r.map(x=>'#'+x.number).join(' '))}catch(e){}")
+            git commit -m "관리자 요청 반영 ${NUMS}"
             git pull --rebase
             git push
           fi
 
-      - name: 결과를 이슈에 남기기
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          NUM: ${{ github.event.issue.number }}
-        run: |
-          RESULT="${{ runner.temp }}/result.md"
-          [ -f "$RESULT" ] || echo "❌ 처리 결과를 만들지 못했어요. Actions 로그를 확인해 주세요." > "$RESULT"
-          echo "" >> "$RESULT"
-          echo "반영된 내용은 1~2분 뒤 사이트에 나타나요. (실행 기록: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$RESULT"
-          gh issue comment "$NUM" --repo "${{ github.repository }}" --body-file "$RESULT"
-          if [ "${{ steps.apply.outcome }}" = "success" ]; then
-            gh issue close "$NUM" --repo "${{ github.repository }}"
-          fi
-
-      - name: 실패 표시
-        if: steps.apply.outcome != 'success'
-        run: |
-          echo "요청이 반영되지 않았어요. 이슈에 남긴 이유를 확인하세요."
-          exit 1
+      # 저장에 성공한 뒤에만 댓글을 남기고 이슈를 닫음 (저장 실패 시 다음 실행에서 다시 처리)
+      - name: 결과를 이슈에 남기고 닫기
+        run: node scripts/process-requests.mjs report
