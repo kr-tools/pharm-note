@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:33:09.055Z",
+  "updatedAt": "2026-11-27T01:37:01.972Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -178,7 +178,7 @@
       "reviewedAt": "2026-11-27T00:52:49.151Z"
     },
     "202602326": {
-      "status": "pending",
+      "status": "confirmed",
       "firstSeen": "2026-11-27",
       "id": "202602326",
       "itemSeq": "202602326",
@@ -221,7 +221,17 @@
           "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시…일반의약품 라인업 확대",
           "url": "https://www.ziksir.com/news/articleView.html?idxno=152861"
         }
-      ]
+      ],
+      "launchDate": "2026-11-11",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://www.newsthevoice.com/news/articleView.html?idxno=47725"
+        }
+      ],
+      "seller": "",
+      "memo": "",
+      "reviewedAt": "2026-11-27T01:37:01.972Z"
     },
     "202603348": {
       "status": "pending",

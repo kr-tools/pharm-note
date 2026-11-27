@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:33:09.055Z",
+  "updatedAt": "2026-11-27T01:37:01.972Z",
   "note": "관리자가 출시를 확인한 제품의 실제 출시일과 공식 근거 URL입니다.",
   "items": {
     "202503036": {
@@ -49,6 +49,18 @@
       "seller": "",
       "confirmedAt": "2026-11-27T00:52:49.151Z",
       "candidateId": "202601715"
+    },
+    "202602326": {
+      "launchDate": "2026-11-11",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://www.newsthevoice.com/news/articleView.html?idxno=47725"
+        }
+      ],
+      "seller": "",
+      "confirmedAt": "2026-11-27T01:37:01.972Z",
+      "candidateId": "202602326"
     }
   }
 }

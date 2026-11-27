@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:33:09.055Z",
+  "updatedAt": "2026-11-27T01:37:01.972Z",
   "briefings": [
     {
       "id": "2026-W48",
@@ -82,6 +82,24 @@
             {
               "title": "",
               "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
+            }
+          ]
+        },
+        {
+          "id": "202602326",
+          "name": "판롱액",
+          "company": "동화약품(주)",
+          "seller": "",
+          "ingredients": [
+            "디멘히드리네이트",
+            "카페인무수물",
+            "니코틴산아미드"
+          ],
+          "launchDate": "2026-11-11",
+          "evidence": [
+            {
+              "title": "",
+              "url": "https://www.newsthevoice.com/news/articleView.html?idxno=47725"
             }
           ]
         }
