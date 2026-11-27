@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T02:03:43.455Z",
+  "updatedAt": "2026-11-27T02:06:06.403Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -979,24 +979,6 @@
         }
       ]
     },
-    "news-7fe46ed890": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-7fe46ed890",
-      "itemSeq": "",
-      "name": "동화약품, 주력 OTC 수익성 회복…신제품·글로벌로 성장축 확장",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-23) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-23] 동화약품, 주력 OTC 수익성 회복…신제품·글로벌로 성장축 확장",
-          "url": "http://www.ftoday.co.kr/news/articleView.html?idxno=370339"
-        }
-      ]
-    },
     "news-87aa6a85aa": {
       "status": "pending",
       "firstSeen": "2026-11-27",
@@ -1090,6 +1072,7 @@
     "news-999c775cc5": "2026-11-27T01:41:53.890Z",
     "news-5134f9540c": "2026-11-27T01:42:12.787Z",
     "news-b8ee8f6452": "2026-11-27T01:42:56.687Z",
-    "news-9fb343e141": "2026-11-27T01:45:38.519Z"
+    "news-9fb343e141": "2026-11-27T01:45:38.519Z",
+    "news-7fe46ed890": "2026-11-27T02:06:06.403Z"
   }
 }
