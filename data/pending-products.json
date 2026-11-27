@@ -1,6 +1,184 @@
 {
-  "updatedAt": "2026-11-27T01:04:10.842Z",
+  "updatedAt": "2026-11-27T01:16:34.163Z",
   "items": {
+    "200200502": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "200200502",
+      "itemSeq": "200200502",
+      "name": "프로틴정(니자티딘)",
+      "company": "(주)바이넥스",
+      "ingredients": "니자티딘",
+      "permitDate": "2002-03-15",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-06, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-06] 비비드몽타주, 파우치형 프로틴 쉐이크→둘코락스, '둘코 리퀴젤' 출시",
+          "url": "https://www.slist.kr/news/articleView.html?idxno=779547"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200200502"
+        }
+      ]
+    },
+    "201508281": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "201508281",
+      "itemSeq": "201508281",
+      "name": "벤포벨정",
+      "company": "(주)종근당",
+      "ingredients": "벤포티아민 · 아스코르브산97%과립 · 콜레칼시페롤과립 · 토코페롤아세테이트 2배산 · 우르소데옥시콜산 · γ-오리자놀 · 유비데카레논 · 산화아연 · 리보플라빈 · 니코틴산아미드 · 피리독신염산염 · 판토텐산칼슘 · 비오틴 · 이노시톨 · 폴산 · 시아노코발라민1%",
+      "permitDate": "2015-12-15",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-11] 종근당, 중장년층 맞춤 고함량 활성비타민 '벤포벨알파'정 출시",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=727498"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201508281"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 함유 ‘벤포벨알파’ 출시",
+          "url": "https://www.inthenews.co.kr/news/article.html?no=94330"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 담은 '벤포벨알파' 출시",
+          "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=280986"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 종근당, '벤포벨알파'정 출시…활성비타민 7종 함유",
+          "url": "http://www.newscape.co.kr/news/articleView.html?idxno=125727"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 종근당, 활성비타민 7종 품은 '벤포벨알파' 출시",
+          "url": "https://www.etnews.com/20261111000062"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 50대 이상 겨냥…종근당, 활성비타민 7종 벤포벨알파 출시",
+          "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1171753&ref=naverpc"
+        }
+      ]
+    },
+    "202503036": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202503036",
+      "itemSeq": "202503036",
+      "name": "톡비타씨오디프스산",
+      "company": "(주)코아팜바이오",
+      "ingredients": "제피아스코르브산과립 97.5% · 리보플라빈",
+      "permitDate": "2025-11-20",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-02, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-02] 코아팜바이오, 물 없이 녹여 먹는 비타민C '톡비타씨오디프스산' 출시",
+          "url": "https://www.pharmnews.com/news/articleView.html?idxno=307390"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202503036"
+        }
+      ]
+    },
+    "202601260": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202601260",
+      "itemSeq": "202601260",
+      "name": "마그스부스트업액",
+      "company": "조아제약(주)",
+      "ingredients": "글리세로인산마그네슘 · 피리독신염산염 · 니코틴산아미드 · 리보플라빈포스페이트나트륨",
+      "permitDate": "2026-04-28",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-11] <신제품·신기술>조아제약, 액상 마그네슘제 ‘마그스부스트업액’",
+          "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601260"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, 액상형 마그네슘제 '마그스부스트업액' 출시",
+          "url": "https://www.pharmnews.com/news/articleView.html?idxno=307809"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, '마그스부스트업액' 출시…마그스 제품군 5종 확대",
+          "url": "https://www.medipana.com/news/articleView.html?idxno=421483"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
+          "url": "http://www.bokuennews.com/news/article.html?no=286931"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상형 마그네슘제 '마그스부스트업액' 출시",
+          "url": "https://www.pointdaily.co.kr/news/articleView.html?idxno=325508"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상형 마그네슘제 ‘마그스부스트업액’ 출시",
+          "url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611110905211050507"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 조아제약, 고함량 액상 마그네슘 '마그스부스트업액' 출시",
+          "url": "http://www.medisobizanews.com/news/articleView.html?idxno=144206"
+        }
+      ]
+    },
+    "202601351": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202601351",
+      "itemSeq": "202601351",
+      "name": "일양파모티딘정",
+      "company": "일양약품(주)",
+      "ingredients": "파모티딘",
+      "permitDate": "2026-05-08",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-23, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-23] ﻿일양약품, 위산분비 억제제 '일양파모티딘정' 출시",
+          "url": "https://www.pointdaily.co.kr/news/articleView.html?idxno=327050"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601351"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품, 속쓰림 완화 '일양파모티딘정' 출시",
+          "url": "http://www.press9.kr/news/articleView.html?idxno=86813"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품, 위산 과다 증상 완화제 '일양파모티딘정' 출시",
+          "url": "https://www.medipana.com/news/articleView.html?idxno=422376"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품, 속쓰림 개선제 '일양파모티딘정’ 출시",
+          "url": "http://www.whosaeng.com/175530"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품, 위산억제제 일반약 '일양파모티딘' 출시",
+          "url": "https://dailypharm.com/user/news/344881?REFERER=NP"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품, 위산 과다 증상 완화제 '일양파모티딘정' 출시",
+          "url": "https://www.mdtoday.co.kr/news/articleView.html?idxno=626944"
+        },
+        {
+          "title": "[뉴스 2026-11-23] 일양약품 속쓰림·신트림 완화제 '일양파모티딘정' 출시",
+          "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1172055&ref=naverpc"
+        }
+      ]
+    },
     "202601715": {
       "status": "confirmed",
       "firstSeen": "2026-11-27",
@@ -32,6 +210,368 @@
       "seller": "",
       "memo": "",
       "reviewedAt": "2026-11-27T00:52:49.151Z"
+    },
+    "202602326": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202602326",
+      "itemSeq": "202602326",
+      "name": "판롱액",
+      "company": "동화약품(주)",
+      "ingredients": "디멘히드리네이트 · 카페인무수물 · 니코틴산아미드",
+      "permitDate": "2026-08-10",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-11, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시",
+          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=362347"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202602326"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 ‘판롱액’ 출시",
+          "url": "https://www.lawissue.co.kr/view.php?ud=202611111845332785f4ab64559d_12"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시",
+          "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2491318"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 ‘판롱액’ 출시",
+          "url": "https://www.dt.co.kr/article/12094637?ref=naver"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 출시…여행·장거리 이동 수요 공략",
+          "url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=882259"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시… 복용 편의성 높여",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=121915"
+        },
+        {
+          "title": "[뉴스 2026-11-11] 동화약품, 마시는 멀미약 '판롱액' 출시…일반의약품 라인업 확대",
+          "url": "https://www.ziksir.com/news/articleView.html?idxno=152861"
+        }
+      ]
+    },
+    "202602668": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202602668",
+      "itemSeq": "202602668",
+      "name": "아젤클린크림(아젤라산)",
+      "company": "한미약품(주)",
+      "ingredients": "아젤라산",
+      "permitDate": "2026-09-08",
+      "origin": "news",
+      "foundInfo": "출시 기사 발견 (2026-11-06, 제목에서 제품명 확인)",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-06] <신제품·신기술>한미약품, 여드름·색소침착 치료 ‘아젤클린크림’",
+          "url": "https://biz.heraldcorp.com/article/10928291?ref=naver"
+        },
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202602668"
+        },
+        {
+          "title": "[뉴스 2026-11-04] 한미약품, 아젤라산 성분 여드름 치료제 '아젤클린크림' 출시",
+          "url": "http://www.bizwnews.com/news/articleView.html?idxno=150766"
+        },
+        {
+          "title": "[뉴스 2026-11-03] 한미약품, 좁쌀여드름부터 염증성 여드름까지…‘아젤클린크림’ 출시",
+          "url": "https://www.sportsseoul.com/news/read/1646573?ref=naver"
+        },
+        {
+          "title": "[뉴스 2026-11-03] 한미약품, 여드름부터 색소침착 고민까지 잡은 ‘아젤클린크림’ 출시",
+          "url": "https://www.betanews.net/article/view/beta202611030110"
+        },
+        {
+          "title": "[뉴스 2026-11-03] 한미약품, 아젤라산 성분 여드름 치료제 ‘아젤클린크림’ 출시",
+          "url": "https://www.swtvnews.com/news/newsview.php?ncode=1065593931192786"
+        },
+        {
+          "title": "[뉴스 2026-11-03] 한미약품, 여드름부터 색소침착 고민까지 ‘아젤클린크림’ 출시",
+          "url": "https://hbnpress.com/news/view/1065592980414576"
+        },
+        {
+          "title": "[뉴스 2026-11-03] 한미약품, '아젤클린크림' 출시…아젤라산 경쟁 합류",
+          "url": "https://www.ngetnews.com/news/articleView.html?idxno=555463"
+        }
+      ]
+    },
+    "202603348": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603348",
+      "itemSeq": "202603348",
+      "name": "아크젤라크림(아젤라산)",
+      "company": "주식회사제뉴원사이언스",
+      "ingredients": "아젤라산",
+      "permitDate": "2026-11-02",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-02) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603348"
+        }
+      ]
+    },
+    "202603349": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603349",
+      "itemSeq": "202603349",
+      "name": "카르마정350밀리그램(밀크시슬열매건조엑스)",
+      "company": "한국프라임제약(주)",
+      "ingredients": "밀크시슬열매건조엑스",
+      "permitDate": "2026-11-02",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-02) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603349"
+        }
+      ]
+    },
+    "202603350": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603350",
+      "itemSeq": "202603350",
+      "name": "카르마정175밀리그램(밀크시슬열매건조엑스)",
+      "company": "한국프라임제약(주)",
+      "ingredients": "밀크시슬열매건조엑스",
+      "permitDate": "2026-11-02",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-02) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603350"
+        }
+      ]
+    },
+    "202603351": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603351",
+      "itemSeq": "202603351",
+      "name": "리쥬플러스크림(폴리데옥시리보뉴클레오티드나트륨)",
+      "company": "태극제약(주)",
+      "ingredients": "폴리데옥시리보뉴클레오티드나트륨",
+      "permitDate": "2026-11-02",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-02) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603351"
+        }
+      ]
+    },
+    "202603355": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603355",
+      "itemSeq": "202603355",
+      "name": "판디자임정",
+      "company": "(주)동구바이오제약",
+      "ingredients": "판크레아틴 · 셀룰라제 · 우담즙건조엑스 · 디메티콘",
+      "permitDate": "2026-11-03",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-03) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603355"
+        }
+      ]
+    },
+    "202603356": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603356",
+      "itemSeq": "202603356",
+      "name": "람노젠캡슐(락토바실루스카제이변종람노수스의동결건조배양물)",
+      "company": "동광제약(주)",
+      "ingredients": "락토바실루스카제이변종람노수스의동결건조배양물",
+      "permitDate": "2026-11-03",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-03) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603356"
+        }
+      ]
+    },
+    "202603364": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603364",
+      "itemSeq": "202603364",
+      "name": "슈퍼라민포커스정",
+      "company": "(주)한풍제약",
+      "ingredients": "푸르설티아민 · 콜린타르타르산염 · 콜레칼시페롤농축분말 · 산화마그네슘 · 감마-오리자놀 · 리보플라빈부티레이트 · 니코틴산아미드 · 판토텐산칼슘 · 피리독살포스페이트수화물 · D-비오틴 · 폴산 · 메코발라민 · 이노시톨",
+      "permitDate": "2026-11-03",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-03) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603364"
+        }
+      ]
+    },
+    "202603367": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603367",
+      "itemSeq": "202603367",
+      "name": "콘티900정",
+      "company": "(주)마더스제약",
+      "ingredients": "콘드로이틴설페이트나트륨 · 우르소데옥시콜산 · 시아노코발라민 1000배산 · 감마-오리자놀 · 리보플라빈부티레이트 · 니코틴산아미드 · 콜린타르타르산염 · 판토텐산칼슘 · 이노시톨 · 피리독신염산염 · 벤포티아민",
+      "permitDate": "2026-11-03",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-03) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603367"
+        }
+      ]
+    },
+    "202603373": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603373",
+      "itemSeq": "202603373",
+      "name": "히디아리뉴겔(히알루론산나트륨)",
+      "company": "동아제약(주)",
+      "ingredients": "히알루론산나트륨",
+      "permitDate": "2026-11-04",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-04) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603373"
+        }
+      ]
+    },
+    "202603386": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603386",
+      "itemSeq": "202603386",
+      "name": "슈퍼라민웰니스정",
+      "company": "(주)한풍제약",
+      "ingredients": "푸르설티아민 · 무수인산수소칼슘 · 폴산 · D-비오틴 · 유비데카레논 · 콜레칼시페롤농축분말 · 산화아연 · 산화마그네슘 · 리보플라빈 · 니코틴산아미드 · 판토텐산칼슘 · 피리독신염산염 · 메코발라민 · 제피아스코르브산 · 토코페롤아세테이트 2배산 · 셀레늄함유건조효모",
+      "permitDate": "2026-11-04",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-04) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603386"
+        }
+      ]
+    },
+    "202603392": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603392",
+      "itemSeq": "202603392",
+      "name": "원광메가콘드로이틴1200경구용겔(콘드로이틴설페이트나트륨)",
+      "company": "원광제약(주)",
+      "ingredients": "콘드로이틴설페이트나트륨",
+      "permitDate": "2026-11-05",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-05) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603392"
+        }
+      ]
+    },
+    "202603398": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603398",
+      "itemSeq": "202603398",
+      "name": "동아제약비스카르현탁액",
+      "company": "동아제약(주)",
+      "ingredients": "비스무트차살리실산염 · DL-카르니틴염산염",
+      "permitDate": "2026-11-05",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-05) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603398"
+        }
+      ]
+    },
+    "202603408": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603408",
+      "itemSeq": "202603408",
+      "name": "람노시스캡슐(락토바실루스카제이변종람노수스의동결건조배양물)",
+      "company": "오스틴제약(주)",
+      "ingredients": "락토바실루스카제이변종람노수스의동결건조배양물",
+      "permitDate": "2026-11-05",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-05) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603408"
+        }
+      ]
+    },
+    "202603409": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603409",
+      "itemSeq": "202603409",
+      "name": "화이투벤키즈노즈시럽",
+      "company": "동화약품(주)",
+      "ingredients": "아세트아미노펜 · 슈도에페드린염산염 · 클로르페니라민말레산염 · DL-메틸에페드린염산염 · 리보플라빈포스페이트나트륨",
+      "permitDate": "2026-11-06",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-06) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603409"
+        }
+      ]
+    },
+    "202603412": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "202603412",
+      "itemSeq": "202603412",
+      "name": "하이드로퀸크림(히드로퀴논)",
+      "company": "(주)에이프로젠바이오로직스",
+      "ingredients": "히드로퀴논",
+      "permitDate": "2026-11-06",
+      "origin": "permit",
+      "foundInfo": "식약처 신규 허가 (2026-11-06) — 실제 출시 여부는 아직 확인되지 않음",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603412"
+        }
+      ]
     },
     "202603424": {
       "status": "pending",
@@ -506,6 +1046,222 @@
         {
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603550"
+        }
+      ]
+    },
+    "news-7fe46ed890": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-7fe46ed890",
+      "itemSeq": "",
+      "name": "동화약품, 주력 OTC 수익성 회복…신제품·글로벌로 성장축 확장",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-23) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-23] 동화약품, 주력 OTC 수익성 회복…신제품·글로벌로 성장축 확장",
+          "url": "http://www.ftoday.co.kr/news/articleView.html?idxno=370339"
+        }
+      ]
+    },
+    "news-87aa6a85aa": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-87aa6a85aa",
+      "itemSeq": "",
+      "name": "이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-14) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-14] 이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026111312154512234"
+        }
+      ]
+    },
+    "news-fbded07247": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-fbded07247",
+      "itemSeq": "",
+      "name": "씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-12] 씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
+          "url": "https://www.news1.kr/bio/pharmaceutical-bio/6352247"
+        }
+      ]
+    },
+    "news-9fb343e141": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-9fb343e141",
+      "itemSeq": "",
+      "name": "스타틴 이후의 선택지 '바세파', 알보젠·비아트리스 손잡고 국내 출시...",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-09) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-09] 스타틴 이후의 선택지 '바세파', 알보젠·비아트리스 손잡고 국내 출시...",
+          "url": "https://www.fnnews.com/news/202611090829344953"
+        }
+      ]
+    },
+    "news-b8ee8f6452": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-b8ee8f6452",
+      "itemSeq": "",
+      "name": "[동국제약=종합] 센텔리안24 해외 유통 확대 ··· 신제품도 출시",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-06) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-06] [동국제약=종합] 센텔리안24 해외 유통 확대 ··· 신제품도 출시",
+          "url": "https://www.datasom.co.kr/news/articleView.html?idxno=210691"
+        }
+      ]
+    },
+    "news-5134f9540c": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-5134f9540c",
+      "itemSeq": "",
+      "name": "동아제약, 시린이·잇몸 동시 관리 치약 출시…2주 임상서 개선 확인",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-06) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-06] 동아제약, 시린이·잇몸 동시 관리 치약 출시…2주 임상서 개선 확인",
+          "url": "https://www.news1.kr/bio/pharmaceutical-bio/6345483"
+        }
+      ]
+    },
+    "news-999c775cc5": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-999c775cc5",
+      "itemSeq": "",
+      "name": "의약품 다변화ㆍ건기식 세분화 … 종근당 신제품 '투 트랙' 전략",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-05) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-05] 의약품 다변화ㆍ건기식 세분화 … 종근당 신제품 '투 트랙' 전략",
+          "url": "http://www.medisobizanews.com/news/articleView.html?idxno=143672"
+        }
+      ]
+    },
+    "news-3659064a59": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-3659064a59",
+      "itemSeq": "",
+      "name": "유한양행, 렉라자 이후는 'R&D 수익화···매년 新항암제 출시 목표",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-05) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-05] 유한양행, 렉라자 이후는 'R&D 수익화···매년 新항암제 출시 목표",
+          "url": "https://www.monews.co.kr/news/articleView.html?idxno=415138"
+        }
+      ]
+    },
+    "news-8c4a554fa1": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-8c4a554fa1",
+      "itemSeq": "",
+      "name": "갈더마코리아, 바르는 탈모 치료제 ‘엘크라넬 알파액 0.025%’ 출시",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-04) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-04] 갈더마코리아, 바르는 탈모 치료제 ‘엘크라넬 알파액 0.025%’ 출시",
+          "url": "https://swtvnews.com/news/newsview.php?ncode=1065587962355193"
+        }
+      ]
+    },
+    "news-1f38527662": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-1f38527662",
+      "itemSeq": "",
+      "name": "오펠라헬스케어코리아, 연질캡슐 제형 둘코락스 '둘코 리퀴젤' 출시",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-02) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-02] 오펠라헬스케어코리아, 연질캡슐 제형 둘코락스 '둘코 리퀴젤' 출시",
+          "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=80428"
+        }
+      ]
+    },
+    "news-7df5e188e1": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-7df5e188e1",
+      "itemSeq": "",
+      "name": "둘코락스, 연질캡슐 제형 변비 치료제 ‘둘코 리퀴젤’ 출시",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-02) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-02] 둘코락스, 연질캡슐 제형 변비 치료제 ‘둘코 리퀴젤’ 출시",
+          "url": "https://www.sportsseoul.com/news/read/1646103?ref=naver"
+        }
+      ]
+    },
+    "news-76394b6291": {
+      "status": "pending",
+      "firstSeen": "2026-11-27",
+      "id": "news-76394b6291",
+      "itemSeq": "",
+      "name": "북경한미 부진에 발목 잡힌 한미약품… 2027년 신제품으로 반전 노린다",
+      "company": "",
+      "ingredients": "",
+      "permitDate": "",
+      "origin": "news",
+      "foundInfo": "출시 관련 기사 (2026-11-01) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
+      "sources": [
+        {
+          "title": "[뉴스 2026-11-01] 북경한미 부진에 발목 잡힌 한미약품… 2027년 신제품으로 반전 노린다",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500278"
         }
       ]
     }

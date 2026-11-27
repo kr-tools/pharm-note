@@ -1,28 +1,58 @@
 {
-  "runAt": "2026-11-27T00:21:40.109Z",
+  "kind": "manual",
+  "runAt": "2026-11-27T01:16:17.264Z",
   "period": {
-    "start": "2026-11-16",
-    "end": "2026-11-22"
+    "start": "2026-11-01",
+    "end": "2026-11-27"
   },
   "permits": {
-    "found": 6,
-    "added": 0
+    "found": 41,
+    "added": 15
   },
   "news": {
     "enabled": true,
-    "articles": 98,
-    "launchArticles": 21,
-    "matched": 3,
-    "added": 3,
-    "unmatchedAdded": 2,
-    "sourceAppended": 0
+    "articles": 569,
+    "launchArticles": 157,
+    "matched": 112,
+    "added": 7,
+    "unmatchedAdded": 12,
+    "sourceAppended": 63
   },
   "addedIds": [
-    "200002316",
-    "news-ff7a7cc0f9",
-    "202601715",
-    "202001913",
-    "news-694eeba8c5"
+    "202603398",
+    "202603408",
+    "202603356",
+    "202603351",
+    "202603386",
+    "202603364",
+    "202603348",
+    "202603392",
+    "202603350",
+    "202603349",
+    "202603367",
+    "202603355",
+    "202603412",
+    "202603409",
+    "202603373",
+    "news-7fe46ed890",
+    "202601351",
+    "news-87aa6a85aa",
+    "news-fbded07247",
+    "202602326",
+    "201508281",
+    "202601260",
+    "news-9fb343e141",
+    "news-b8ee8f6452",
+    "news-5134f9540c",
+    "202602668",
+    "200200502",
+    "news-999c775cc5",
+    "news-3659064a59",
+    "news-8c4a554fa1",
+    "news-1f38527662",
+    "news-7df5e188e1",
+    "202503036",
+    "news-76394b6291"
   ],
   "warnings": []
 }
