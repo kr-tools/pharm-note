@@ -148,7 +148,8 @@ export async function collect({ period, kind = "weekly" } = {}) {
     runAt: new Date().toISOString(),
     period: { start: win.start, end: win.end },
     permits: { found: 0, added: 0 },
-    news: { enabled: Boolean(NAVER_ID && NAVER_SECRET), articles: 0, launchArticles: 0, matched: 0, added: 0, unmatchedAdded: 0, sourceAppended: 0 },
+    news: { enabled: Boolean(NAVER_ID && NAVER_SECRET), articles: 0, launchArticles: 0, matched: 0, added: 0, unmatchedAdded: 0, sourceAppended: 0, revived: 0 },
+    revivedIds: [],
     addedIds: [],
     warnings: [],
   };
@@ -264,10 +265,17 @@ export async function collect({ period, kind = "weekly" } = {}) {
         report.news.matched++;
         const existing = pending.items[p.id];
         if (existing) {
-          // 이미 후보면 출처만 추가 (확인 대기·확인 불가 상태일 때)
-          if (existing.status !== "confirmed" && !(existing.sources || []).some((s) => s.url === source.url)) {
-            existing.sources = [...(existing.sources || []), source].slice(0, 8);
-            report.news.sourceAppended++;
+          const isNewSource = !(existing.sources || []).some((s) => s.url === source.url);
+          if (existing.status === "confirmed" || !isNewSource) continue;
+          existing.sources = [...(existing.sources || []), source].slice(-8);
+          report.news.sourceAppended++;
+          // '확인 불가(지켜보기)'였던 제품에 새 출시 기사가 나오면 → 다시 '확인 대기'로
+          if (existing.status === "unconfirmable") {
+            existing.status = "pending";
+            existing.revivedAt = win.today;
+            existing.foundInfo = `확인 불가였던 제품 — 새 출시 기사 발견 (${a.date}, ${where}에서 제품명 확인)`;
+            report.news.revived++;
+            report.revivedIds.push(p.id);
           }
           continue;
         }
@@ -284,7 +292,7 @@ export async function collect({ period, kind = "weekly" } = {}) {
         report.news.added++;
       }
     }
-    log(`② 뉴스 ${report.news.articles}건 (출시 기사 ${report.news.launchArticles}) → 새 후보 ${report.news.added + report.news.unmatchedAdded}건, 출처 추가 ${report.news.sourceAppended}건`);
+    log(`② 뉴스 ${report.news.articles}건 (출시 기사 ${report.news.launchArticles}) → 새 후보 ${report.news.added + report.news.unmatchedAdded}건, 다시 올라온 후보 ${report.news.revived}건, 출처 추가 ${report.news.sourceAppended}건`);
   }
 
   pending.updatedAt = new Date().toISOString();

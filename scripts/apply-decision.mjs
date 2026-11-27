@@ -142,7 +142,8 @@ async function main() {
       : "뉴스 탐색 꺼짐 (네이버 키 없음)";
     const result = `🔎 **${start} ~ ${r.period.end}** 기간 검색을 마쳤어요.\n\n` +
       `- 신규 허가 ${r.permits.found}건 → 새 후보 ${r.permits.added}건\n- ${newsLine}\n` +
-      `- 이미 처리한 제품(확인 완료·확인 불가·삭제)은 다시 올리지 않았어요.` +
+      (r.news.revived ? `- 확인 불가였던 제품 중 새 출시 기사가 나온 ${r.news.revived}건을 다시 '확인 대기'로 올렸어요.\n` : "") +
+      `- 확인 완료·삭제한 제품은 다시 올리지 않았어요.` +
       (r.warnings.length ? `\n\n⚠️ ${r.warnings.join("\n⚠️ ")}` : "");
     await writeFile(RESULT_FILE, result + "\n");
     console.log(result);
@@ -262,14 +263,14 @@ async function main() {
       Object.assign(cand, { status: "unconfirmable", memo: clean(req.memo, 1000), reviewedAt: now });
       delete launch.items[key];
       removeFromBriefings(weekly, key);
-      result = `⏸️ **${cand.name}** 을(를) '확인 불가'로 처리했어요. 브리핑에는 표시되지 않아요.`;
+      result = `⏸️ **${cand.name}** 을(를) '확인 불가(지켜보기)'로 처리했어요. 브리핑에는 표시되지 않고, 나중에 새 출시 기사가 나오면 다시 '확인 대기'로 올라와요.`;
     } else if (action === "delete") {
       const key = cand.itemSeq || id;
       delete pending.items[id];
       pending.deleted[id] = now; // 자동 수집 때 다시 후보로 올라오지 않도록 기록
       delete launch.items[key];
       removeFromBriefings(weekly, key);
-      result = `🗑️ **${cand.name}** 후보를 삭제했어요. 다음 자동 수집에서도 다시 올라오지 않아요.`;
+      result = `🗑️ **${cand.name}** 후보를 삭제했어요. 앞으로 출시 기사가 나와도 다시 불러오지 않아요. (다시 보고 싶으면 '후보 직접 추가'로 넣을 수 있어요)`;
     } else {
       throw new UserError(`알 수 없는 작업이에요: ${action}`);
     }
