@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:42:12.787Z",
+  "updatedAt": "2026-11-27T01:42:56.687Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1033,24 +1033,6 @@
         }
       ]
     },
-    "news-b8ee8f6452": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-b8ee8f6452",
-      "itemSeq": "",
-      "name": "[동국제약=종합] 센텔리안24 해외 유통 확대 ··· 신제품도 출시",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-06) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-06] [동국제약=종합] 센텔리안24 해외 유통 확대 ··· 신제품도 출시",
-          "url": "https://www.datasom.co.kr/news/articleView.html?idxno=210691"
-        }
-      ]
-    },
     "news-3659064a59": {
       "status": "pending",
       "firstSeen": "2026-11-27",
@@ -1106,6 +1088,7 @@
     "news-7df5e188e1": "2026-11-27T01:40:54.470Z",
     "news-8c4a554fa1": "2026-11-27T01:41:29.886Z",
     "news-999c775cc5": "2026-11-27T01:41:53.890Z",
-    "news-5134f9540c": "2026-11-27T01:42:12.787Z"
+    "news-5134f9540c": "2026-11-27T01:42:12.787Z",
+    "news-b8ee8f6452": "2026-11-27T01:42:56.687Z"
   }
 }
