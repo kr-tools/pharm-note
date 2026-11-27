@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T02:17:28.621Z",
+  "updatedAt": "2026-11-27T02:17:53.771Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1005,24 +1005,6 @@
         }
       ]
     },
-    "news-fbded07247": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-fbded07247",
-      "itemSeq": "",
-      "name": "씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-12) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-12] 씹어먹는 매운맛 비타민C '유판씨 크런치 익스트림' 출시",
-          "url": "https://www.news1.kr/bio/pharmaceutical-bio/6352247"
-        }
-      ]
-    },
     "news-3659064a59": {
       "status": "pending",
       "firstSeen": "2026-11-27",
@@ -1081,6 +1063,7 @@
     "news-5134f9540c": "2026-11-27T01:42:12.787Z",
     "news-b8ee8f6452": "2026-11-27T01:42:56.687Z",
     "news-9fb343e141": "2026-11-27T01:45:38.519Z",
-    "news-7fe46ed890": "2026-11-27T02:06:06.403Z"
+    "news-7fe46ed890": "2026-11-27T02:06:06.403Z",
+    "news-fbded07247": "2026-11-27T02:17:53.771Z"
   }
 }
