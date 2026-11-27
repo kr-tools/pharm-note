@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:25:28.742Z",
+  "updatedAt": "2026-11-27T01:26:25.231Z",
   "note": "관리자가 출시를 확인한 제품의 실제 출시일과 공식 근거 URL입니다.",
   "items": {
     "202503036": {
@@ -13,6 +13,18 @@
       "seller": "",
       "confirmedAt": "2026-11-27T01:25:28.742Z",
       "candidateId": "202503036"
+    },
+    "202601260": {
+      "launchDate": "2026-11-11",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://biz.heraldcorp.com/article/10933666?ref=naver"
+        }
+      ],
+      "seller": "",
+      "confirmedAt": "2026-11-27T01:26:25.231Z",
+      "candidateId": "202601260"
     },
     "202601715": {
       "launchDate": "2026-11-11",
