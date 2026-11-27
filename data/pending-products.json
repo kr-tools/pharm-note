@@ -1,28 +1,6 @@
 {
-  "updatedAt": "2026-11-27T00:26:07.345Z",
+  "updatedAt": "2026-11-27T00:30:39.807Z",
   "items": {
-    "202001913": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "202001913",
-      "itemSeq": "202001913",
-      "name": "뉴베인액(트록세루틴)",
-      "company": "대원제약(주)",
-      "ingredients": "트록세루틴",
-      "permitDate": "2020-03-19",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-18, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-18] 대원제약, 먹는 ‘뉴베인’ 이어 바르는 ‘뉴베라인’ 출시…붓기 관리...",
-          "url": "https://www.edaily.co.kr/News/Read?newsId=02214006645647032&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202001913"
-        }
-      ]
-    },
     "202107495": {
       "id": "202107495",
       "itemSeq": "202107495",
@@ -586,6 +564,7 @@
     "200002316": "2026-11-27T00:26:07.345Z",
     "201507585": "2026-11-18T09:55:48.923Z",
     "202000147": "2026-11-18T09:56:29.963Z",
+    "202001913": "2026-11-27T00:30:39.807Z",
     "202500588": "2026-11-17T05:51:48.519Z"
   }
 }
