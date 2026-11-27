@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:41:29.886Z",
+  "updatedAt": "2026-11-27T01:41:53.890Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1069,24 +1069,6 @@
         }
       ]
     },
-    "news-999c775cc5": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-999c775cc5",
-      "itemSeq": "",
-      "name": "의약품 다변화ㆍ건기식 세분화 … 종근당 신제품 '투 트랙' 전략",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-05) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-05] 의약품 다변화ㆍ건기식 세분화 … 종근당 신제품 '투 트랙' 전략",
-          "url": "http://www.medisobizanews.com/news/articleView.html?idxno=143672"
-        }
-      ]
-    },
     "news-3659064a59": {
       "status": "pending",
       "firstSeen": "2026-11-27",
@@ -1140,6 +1122,7 @@
     "news-694eeba8c5": "2026-11-27T00:53:37.688Z",
     "news-76394b6291": "2026-11-27T01:39:36.414Z",
     "news-7df5e188e1": "2026-11-27T01:40:54.470Z",
-    "news-8c4a554fa1": "2026-11-27T01:41:29.886Z"
+    "news-8c4a554fa1": "2026-11-27T01:41:29.886Z",
+    "news-999c775cc5": "2026-11-27T01:41:53.890Z"
   }
 }
