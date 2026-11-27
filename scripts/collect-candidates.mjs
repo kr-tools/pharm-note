@@ -18,6 +18,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 const DATA = process.env.DATA_DIR || "data";
 const NAVER_ID = process.env.NAVER_CLIENT_ID;
@@ -72,8 +73,22 @@ const stripTags = (s) =>
 
 /* ---------- 네이버 뉴스 검색 ---------- */
 
-async function searchNews(query) {
-  const qs = `query=${encodeURIComponent(query)}&display=100&start=1&sort=date`;
+// 최신순으로 받다가 기간 시작일보다 오래된 기사가 나오면 멈춤 (최대 1,000개)
+async function searchNewsSince(query, startDay) {
+  const all = [];
+  for (let start = 1; start <= 901; start += 100) {
+    const items = await searchNews(query, start);
+    all.push(...items);
+    const last = items[items.length - 1];
+    const lastDay = last ? new Date(new Date(last.pubDate).getTime() + 9 * 3600e3).toISOString().slice(0, 10) : "";
+    if (items.length < 100 || !lastDay || lastDay < startDay) break;
+    await new Promise((r) => setTimeout(r, 150));
+  }
+  return all;
+}
+
+async function searchNews(query, startIndex = 1) {
+  const qs = `query=${encodeURIComponent(query)}&display=100&start=${startIndex}&sort=date`;
   // 1) NAVER API HUB (현재 방식) → 2) 실패(401/403)하면 예전 개발자센터 방식
   const tries = [
     [`${HUB_URL}?${qs}&format=json`, { "X-NCP-APIGW-API-KEY-ID": NAVER_ID, "X-NCP-APIGW-API-KEY": NAVER_SECRET }],
@@ -96,9 +111,14 @@ async function searchNews(query) {
 
 /* ---------- 메인 ---------- */
 
-async function main() {
+// period를 주면 그 기간, 없으면 지난주(월~일)
+export async function collect({ period, kind = "weekly" } = {}) {
   const win = lastWeekKST(process.env.NOW ? new Date(process.env.NOW) : new Date());
-  log(`대상 기간: ${win.start} ~ ${win.end}`);
+  if (period) {
+    win.start = period.start;
+    win.end = period.end < win.today ? period.end : win.today;
+  }
+  log(`대상 기간: ${win.start} ~ ${win.end} (${kind === "manual" ? "관리자 기간 검색" : "주간 자동 수집"})`);
   // 기사 요약에만 이름이 나온 제품은 '최근 12개월 안에 허가된 제품'만 후보로
   const recentSince = (() => {
     const d = new Date(`${win.today}T00:00:00Z`);
@@ -124,6 +144,7 @@ async function main() {
   const nedrug = (id) => `https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=${id}`;
 
   const report = {
+    kind,
     runAt: new Date().toISOString(),
     period: { start: win.start, end: win.end },
     permits: { found: 0, added: 0 },
@@ -172,7 +193,7 @@ async function main() {
     const articles = new Map();
     for (const q of QUERIES) {
       try {
-        for (const it of await searchNews(q)) {
+        for (const it of await searchNewsSince(q, win.start)) {
           const d = new Date(it.pubDate);
           const kstDay = isNaN(d) ? "" : new Date(d.getTime() + 9 * 3600e3).toISOString().slice(0, 10);
           if (!kstDay || kstDay < win.start || kstDay > win.end) continue;
@@ -272,6 +293,12 @@ async function main() {
   for (const w of report.warnings) log("⚠️", w);
   log(`✅ 완료: 새 후보 ${report.addedIds.length}건`);
 
+  return report;
+}
+
+// 직접 실행할 때 (주간 자동 수집 · 후보 정리 후 재수집)
+async function main() {
+  const report = await collect({ kind: "weekly" });
   // 다음 단계(AI 자동 초안)에서 쓸 수 있도록 새 후보 목록을 남김
   if (process.env.GITHUB_OUTPUT) {
     const ids = report.addedIds.filter((id) => /^\d+$/.test(id)).join(" ");
@@ -279,7 +306,9 @@ async function main() {
   }
 }
 
-main().catch((e) => {
-  console.error("❌ 후보 수집 실패:", e.message);
-  process.exit(1);
-});
+if (import.meta.url === pathToFileURL(process.argv[1] || "").href) {
+  main().catch((e) => {
+    console.error("❌ 후보 수집 실패:", e.message);
+    process.exit(1);
+  });
+}

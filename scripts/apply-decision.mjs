@@ -125,6 +125,30 @@ function addToBriefing(weekly, entry) {
 async function main() {
   const req = parseRequest(process.env.ISSUE_BODY);
   const action = clean(req.action, 30);
+
+  // 관리자 기간 검색: 정한 기간의 신규 허가 + 출시 뉴스를 찾아 '확인 대기'에 추가
+  if (action === "search") {
+    const start = clean(req.start, 10);
+    const end = clean(req.end, 10);
+    if (!isValidDate(start) || !isValidDate(end)) throw new UserError("검색 기간이 올바른 날짜가 아니에요.");
+    if (start > end) throw new UserError("시작일이 종료일보다 늦어요.");
+    if (start > todayKST()) throw new UserError("시작일이 오늘 이후예요.");
+    const days = (new Date(end) - new Date(start)) / 864e5;
+    if (days > 92) throw new UserError("검색 기간은 최대 3개월(92일)까지 정할 수 있어요.");
+    const { collect } = await import("./collect-candidates.mjs");
+    const r = await collect({ period: { start, end }, kind: "manual" });
+    const newsLine = r.news.enabled
+      ? `출시 기사 ${r.news.launchArticles}건 → 새 후보 ${r.news.added + r.news.unmatchedAdded}건`
+      : "뉴스 탐색 꺼짐 (네이버 키 없음)";
+    const result = `🔎 **${start} ~ ${r.period.end}** 기간 검색을 마쳤어요.\n\n` +
+      `- 신규 허가 ${r.permits.found}건 → 새 후보 ${r.permits.added}건\n- ${newsLine}\n` +
+      `- 이미 처리한 제품(확인 완료·확인 불가·삭제)은 다시 올리지 않았어요.` +
+      (r.warnings.length ? `\n\n⚠️ ${r.warnings.join("\n⚠️ ")}` : "");
+    await writeFile(RESULT_FILE, result + "\n");
+    console.log(result);
+    return; // 후보 파일은 수집 과정에서 이미 저장됨
+  }
+
   const id = clean(req.id, 80);
   if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new UserError("제품 ID가 올바르지 않아요.");
 
