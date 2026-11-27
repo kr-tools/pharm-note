@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T03:23:41.576Z",
+  "updatedAt": "2026-11-27T03:23:54.502Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -514,7 +514,7 @@
       "reviewedAt": "2026-11-27T03:21:59.405Z"
     },
     "202603424": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-18",
       "id": "202603424",
       "itemSeq": "202603424",
@@ -529,7 +529,9 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603424"
         }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:23:54.502Z"
     },
     "202603426": {
       "status": "pending",
@@ -940,7 +942,7 @@
       "reviewedAt": "2026-11-27T03:23:41.576Z"
     },
     "202603532": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-23",
       "id": "202603532",
       "itemSeq": "202603532",
@@ -955,7 +957,9 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603532"
         }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:23:54.470Z"
     },
     "202603548": {
       "status": "unconfirmable",
