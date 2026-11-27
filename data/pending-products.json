@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:37:27.677Z",
+  "updatedAt": "2026-11-27T01:39:36.414Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1158,24 +1158,6 @@
           "url": "https://www.sportsseoul.com/news/read/1646103?ref=naver"
         }
       ]
-    },
-    "news-76394b6291": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-76394b6291",
-      "itemSeq": "",
-      "name": "북경한미 부진에 발목 잡힌 한미약품… 2027년 신제품으로 반전 노린다",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-01) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-01] 북경한미 부진에 발목 잡힌 한미약품… 2027년 신제품으로 반전 노린다",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500278"
-        }
-      ]
     }
   },
   "deleted": {
@@ -1191,6 +1173,7 @@
     "202602668": "2026-11-27T01:33:09.055Z",
     "202603348": "2026-11-27T01:37:27.677Z",
     "news-ff7a7cc0f9": "2026-11-27T00:53:22.250Z",
-    "news-694eeba8c5": "2026-11-27T00:53:37.688Z"
+    "news-694eeba8c5": "2026-11-27T00:53:37.688Z",
+    "news-76394b6291": "2026-11-27T01:39:36.414Z"
   }
 }
