@@ -1,28 +1,6 @@
 {
-  "updatedAt": "2026-11-27T00:21:48.557Z",
+  "updatedAt": "2026-11-27T00:26:07.345Z",
   "items": {
-    "200002316": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "200002316",
-      "itemSeq": "200002316",
-      "name": "나이스과립",
-      "company": "오스틴제약(주)",
-      "ingredients": "차전자피 · 센나열매",
-      "permitDate": "2000-12-18",
-      "origin": "news",
-      "foundInfo": "출시 기사 발견 (2026-11-22, 제목에서 제품명 확인)",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-22] [Weekly 이모저모] 청호나이스 '알러지케어 하이브리드 매트리스' 출시 ...",
-          "url": "https://www.startuptoday.co.kr/news/articleView.html?idxno=819543"
-        },
-        {
-          "title": "식약처 의약품안전나라",
-          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200002316"
-        }
-      ]
-    },
     "202001913": {
       "status": "pending",
       "firstSeen": "2026-11-27",
@@ -605,6 +583,7 @@
   },
   "deleted": {
     "197700008": "2026-11-18T09:05:55.262Z",
+    "200002316": "2026-11-27T00:26:07.345Z",
     "201507585": "2026-11-18T09:55:48.923Z",
     "202000147": "2026-11-18T09:56:29.963Z",
     "202500588": "2026-11-17T05:51:48.519Z"
