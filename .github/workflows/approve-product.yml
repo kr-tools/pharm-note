@@ -42,6 +42,8 @@ jobs:
           RESULT_FILE: ${{ runner.temp }}/result.md
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AI_MODEL: ${{ vars.AI_MODEL }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
 
       - name: 변경된 데이터 저장(커밋)
         if: steps.apply.outcome == 'success'
