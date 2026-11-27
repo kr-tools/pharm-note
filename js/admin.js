@@ -63,9 +63,10 @@
       const news = r.news?.enabled
         ? `출시 기사 ${r.news.launchArticles}건 → 새 후보 ${r.news.added + r.news.unmatchedAdded}건`
         : `뉴스 탐색 꺼짐 (네이버 키 없음)`;
+      const revived = r.news?.revived ? ` · 확인 불가 → 다시 올라옴 ${r.news.revived}건` : "";
       box.innerHTML = `
         <strong>${r.kind === "manual" ? "지난 기간 검색" : "지난 자동 수집"}</strong> ${esc(PN.formatUpdated(r.runAt))} · 대상 ${pd(r.period?.start)}–${pd(r.period?.end)}<br>
-        신규 허가 ${r.permits?.found ?? 0}건 → 새 후보 ${r.permits?.added ?? 0}건 · ${news}
+        신규 허가 ${r.permits?.found ?? 0}건 → 새 후보 ${r.permits?.added ?? 0}건 · ${news}${revived}
         ${(r.warnings || []).length ? `<br><span class="warn-text">⚠️ ${r.warnings.map(esc).join("<br>⚠️ ")}</span>` : ""}`;
       box.hidden = false;
     } catch (e) {
@@ -84,11 +85,21 @@
       .sort((a, b) => String(b.reviewedAt || b.firstSeen).localeCompare(String(a.reviewedAt || a.firstSeen)));
 
     if (!list.length) {
-      $("list").innerHTML = `<div class="empty"><strong>${STATUS[tab].label} 제품이 없어요</strong>
+      $("list").innerHTML = `${tabHint()}<div class="empty"><strong>${STATUS[tab].label} 제품이 없어요</strong>
         <p>${tab === "pending" ? "매주 월요일 자동 수집 후 이곳에 후보가 올라와요. 위의 ‘후보 직접 추가’로 넣을 수도 있어요." : ""}</p></div>`;
       return;
     }
-    $("list").innerHTML = list.map(cardHTML).join("");
+    $("list").innerHTML = tabHint() + list.map(cardHTML).join("");
+  }
+
+  // 탭별 안내: 확인 불가 = 지켜보기, 삭제 = 다시 안 불러옴
+  function tabHint() {
+    const t = {
+      pending: "허가만 나고 출시 근거가 없는 제품은 <b>확인 불가</b>로 두세요. 나중에 출시 기사가 나오면 자동으로 여기 다시 올라와요. 관심 없는 제품만 <b>삭제</b>하세요.",
+      unconfirmable: "지켜보는 중인 제품이에요. 새 출시 기사가 발견되면 자동으로 ‘확인 대기’로 옮겨져요.",
+      confirmed: "",
+    }[tab];
+    return t ? `<p class="tab-hint">${t}</p>` : "";
   }
 
   function linkList(list) {
@@ -108,6 +119,7 @@
           <span>
             <span class="badge ${confirmed ? "launch" : c.status === "pending" ? "supply" : "off"}">${STATUS[c.status]?.label || c.status}</span>
             ${c.origin === "permit" ? `<span class="badge plain">신규 허가</span>` : c.origin === "news" ? `<span class="badge plain">뉴스</span>` : ""}
+            ${c.revivedAt && c.status === "pending" ? `<span class="badge revived">다시 올라옴</span>` : ""}
           </span>
           <span class="a-seen">최초 수집 ${esc(c.firstSeen || "-")}</span>
         </div>
@@ -364,7 +376,7 @@
     if (act === "delete" && btn.dataset.armed !== "1") {
       // 실수 방지: 두 번 눌러야 삭제 요청
       btn.dataset.armed = "1";
-      btn.textContent = "한 번 더 누르면 삭제 요청";
+      btn.textContent = "한 번 더 누르면 삭제 (다시 안 불러옴)";
       setTimeout(() => { btn.dataset.armed = ""; btn.textContent = "후보 삭제"; }, 4000);
       return;
     }
