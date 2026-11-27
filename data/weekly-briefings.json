@@ -1,6 +1,31 @@
 {
-  "updatedAt": "2026-11-27T01:26:25.231Z",
+  "updatedAt": "2026-11-27T01:28:16.413Z",
   "briefings": [
+    {
+      "id": "2026-W48",
+      "periodStart": "2026-11-23",
+      "periodEnd": "2026-11-29",
+      "title": "11월 23일 – 11월 29일 신제품 브리핑",
+      "publishedAt": "2026-11-27T01:28:16.414Z",
+      "items": [
+        {
+          "id": "202601351",
+          "name": "일양파모티딘정",
+          "company": "일양약품(주)",
+          "seller": "",
+          "ingredients": [
+            "파모티딘"
+          ],
+          "launchDate": "2026-11-23",
+          "evidence": [
+            {
+              "title": "",
+              "url": "https://dailypharm.com/user/news/344881?REFERER=NP"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "2026-W46",
       "periodStart": "2026-11-09",

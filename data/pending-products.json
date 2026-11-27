@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:26:25.231Z",
+  "updatedAt": "2026-11-27T01:28:16.413Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -90,7 +90,7 @@
       "reviewedAt": "2026-11-27T01:26:25.231Z"
     },
     "202601351": {
-      "status": "pending",
+      "status": "confirmed",
       "firstSeen": "2026-11-27",
       "id": "202601351",
       "itemSeq": "202601351",
@@ -133,7 +133,17 @@
           "title": "[뉴스 2026-11-23] 일양약품 속쓰림·신트림 완화제 '일양파모티딘정' 출시",
           "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1172055&ref=naverpc"
         }
-      ]
+      ],
+      "launchDate": "2026-11-23",
+      "evidence": [
+        {
+          "title": "",
+          "url": "https://dailypharm.com/user/news/344881?REFERER=NP"
+        }
+      ],
+      "seller": "",
+      "memo": "",
+      "reviewedAt": "2026-11-27T01:28:16.413Z"
     },
     "202601715": {
       "status": "confirmed",
