@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T02:17:53.771Z",
+  "updatedAt": "2026-11-27T02:18:29.466Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -1022,24 +1022,6 @@
           "url": "https://www.monews.co.kr/news/articleView.html?idxno=415138"
         }
       ]
-    },
-    "news-1f38527662": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-1f38527662",
-      "itemSeq": "",
-      "name": "오펠라헬스케어코리아, 연질캡슐 제형 둘코락스 '둘코 리퀴젤' 출시",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-02) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-02] 오펠라헬스케어코리아, 연질캡슐 제형 둘코락스 '둘코 리퀴젤' 출시",
-          "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=80428"
-        }
-      ]
     }
   },
   "deleted": {
@@ -1064,6 +1046,7 @@
     "news-b8ee8f6452": "2026-11-27T01:42:56.687Z",
     "news-9fb343e141": "2026-11-27T01:45:38.519Z",
     "news-7fe46ed890": "2026-11-27T02:06:06.403Z",
-    "news-fbded07247": "2026-11-27T02:17:53.771Z"
+    "news-fbded07247": "2026-11-27T02:17:53.771Z",
+    "news-1f38527662": "2026-11-27T02:18:29.466Z"
   }
 }
