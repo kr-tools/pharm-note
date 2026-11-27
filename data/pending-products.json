@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T03:13:18.859Z",
+  "updatedAt": "2026-11-27T03:21:59.468Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -371,7 +371,7 @@
         }
       ],
       "memo": "",
-      "reviewedAt": "2026-11-27T02:15:51.779Z"
+      "reviewedAt": "2026-11-27T03:21:59.338Z"
     },
     "202603373": {
       "status": "unconfirmable",
@@ -411,7 +411,7 @@
         }
       ],
       "memo": "",
-      "reviewedAt": "2026-11-27T02:16:28.835Z"
+      "reviewedAt": "2026-11-27T03:21:59.372Z"
     },
     "202603392": {
       "status": "unconfirmable",
@@ -511,7 +511,7 @@
         }
       ],
       "memo": "",
-      "reviewedAt": "2026-11-27T03:13:18.859Z"
+      "reviewedAt": "2026-11-27T03:21:59.405Z"
     },
     "202603424": {
       "status": "pending",
@@ -976,7 +976,7 @@
       "reviewedAt": "2026-11-27T02:19:02.898Z"
     },
     "202603550": {
-      "status": "pending",
+      "status": "unconfirmable",
       "firstSeen": "2026-11-23",
       "id": "202603550",
       "itemSeq": "202603550",
@@ -991,43 +991,9 @@
           "title": "식약처 의약품안전나라",
           "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202603550"
         }
-      ]
-    },
-    "news-87aa6a85aa": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-87aa6a85aa",
-      "itemSeq": "",
-      "name": "이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-14) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-14] 이부프로펜 감기약 잇단 출시…제약사들, 복합감기약 시장 공략 확대",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026111312154512234"
-        }
-      ]
-    },
-    "news-3659064a59": {
-      "status": "pending",
-      "firstSeen": "2026-11-27",
-      "id": "news-3659064a59",
-      "itemSeq": "",
-      "name": "유한양행, 렉라자 이후는 'R&D 수익화···매년 新항암제 출시 목표",
-      "company": "",
-      "ingredients": "",
-      "permitDate": "",
-      "origin": "news",
-      "foundInfo": "출시 관련 기사 (2026-11-05) — 식약처 DB에서 제품을 특정하지 못함. 품목기준코드 연결 필요",
-      "sources": [
-        {
-          "title": "[뉴스 2026-11-05] 유한양행, 렉라자 이후는 'R&D 수익화···매년 新항암제 출시 목표",
-          "url": "https://www.monews.co.kr/news/articleView.html?idxno=415138"
-        }
-      ]
+      ],
+      "memo": "",
+      "reviewedAt": "2026-11-27T03:21:59.436Z"
     }
   },
   "deleted": {
@@ -1053,6 +1019,8 @@
     "news-9fb343e141": "2026-11-27T01:45:38.519Z",
     "news-7fe46ed890": "2026-11-27T02:06:06.403Z",
     "news-fbded07247": "2026-11-27T02:17:53.771Z",
-    "news-1f38527662": "2026-11-27T02:18:29.466Z"
+    "news-1f38527662": "2026-11-27T02:18:29.466Z",
+    "news-3659064a59": "2026-11-27T03:21:59.273Z",
+    "news-87aa6a85aa": "2026-11-27T03:21:59.468Z"
   }
 }
