@@ -36,7 +36,6 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
       OWNER: ${{ github.repository_owner }}
-      RESULTS_FILE: ${{ runner.temp }}/requests.json
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - name: 저장소 내려받기
@@ -63,7 +62,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "변경 사항 없음"
           else
-            NUMS=$(node -e "try{const r=require(process.env.RESULTS_FILE);console.log(r.map(x=>'#'+x.number).join(' '))}catch(e){}")
+            NUMS=$(node -e "try{const r=require(require('os').tmpdir()+'/pharm-requests.json');console.log(r.map(x=>'#'+x.number).join(' '))}catch(e){}")
             git commit -m "관리자 요청 반영 ${NUMS}"
             git pull --rebase
             git push
