@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T03:50:54.258Z",
+  "updatedAt": "2026-11-27T05:45:30.435Z",
   "items": {
     "202503036": {
       "status": "confirmed",
@@ -144,6 +144,23 @@
       "seller": "",
       "memo": "",
       "reviewedAt": "2026-11-27T01:28:16.413Z"
+    },
+    "202601473": {
+      "id": "202601473",
+      "itemSeq": "202601473",
+      "name": "둘코리퀴젤장용연질캡슐",
+      "company": "코스맥스파마(주)",
+      "ingredients": "비사코딜 · 우르소데옥시콜산 · 도큐세이트나트륨",
+      "permitDate": "2026-05-20",
+      "foundInfo": "관리자가 직접 추가한 후보",
+      "sources": [
+        {
+          "title": "식약처 의약품안전나라",
+          "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202601473"
+        }
+      ],
+      "firstSeen": "2026-11-27",
+      "status": "pending"
     },
     "202601715": {
       "status": "confirmed",
