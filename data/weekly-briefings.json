@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:25:08.596Z",
+  "updatedAt": "2026-11-27T01:25:28.742Z",
   "briefings": [
     {
       "id": "2026-W46",
@@ -38,6 +38,32 @@
             {
               "title": "",
               "url": "https://www.dailypharm.com/user/news/344743?REFERER=NP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-W45",
+      "periodStart": "2026-11-02",
+      "periodEnd": "2026-11-08",
+      "title": "11월 2일 – 11월 8일 신제품 브리핑",
+      "publishedAt": "2026-11-27T01:25:28.742Z",
+      "items": [
+        {
+          "id": "202503036",
+          "name": "톡비타씨오디프스산",
+          "company": "(주)코아팜바이오",
+          "seller": "",
+          "ingredients": [
+            "제피아스코르브산과립 97.5%",
+            "리보플라빈"
+          ],
+          "launchDate": "2026-11-02",
+          "evidence": [
+            {
+              "title": "",
+              "url": "https://www.pharmnews.com/news/articleView.html?idxno=307390"
             }
           ]
         }
