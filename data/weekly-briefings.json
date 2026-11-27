@@ -1,31 +1,6 @@
 {
-  "updatedAt": "2026-11-27T00:55:46.365Z",
+  "updatedAt": "2026-11-27T01:04:10.842Z",
   "briefings": [
-    {
-      "id": "2026-W47",
-      "periodStart": "2026-11-16",
-      "periodEnd": "2026-11-22",
-      "title": "11월 16일 – 11월 22일 신제품 브리핑",
-      "publishedAt": "2026-11-18T08:22:08.197Z",
-      "items": [
-        {
-          "id": "202107495",
-          "name": "게보린브이정(아세트아미노펜)",
-          "company": "삼진제약(주)",
-          "seller": "",
-          "ingredients": [
-            "아세트아미노펜"
-          ],
-          "launchDate": "2026-11-16",
-          "evidence": [
-            {
-              "title": "",
-              "url": "https://m.dailypharm.com/user/news/65246"
-            }
-          ]
-        }
-      ]
-    },
     {
       "id": "2026-W46",
       "periodStart": "2026-11-09",
